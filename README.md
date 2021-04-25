@@ -10,3 +10,5 @@ Ports:
 
 Front-end: 3000
 Back-end: 3001
+
+- Instructions to Backend Server can be found in README.md inside ./server folder.
