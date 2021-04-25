@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const port = 3001;
+const signup = require("./routes/Signup");
+const login = require("./routes/Login");
 
 app.use(
   cors({
@@ -22,3 +24,6 @@ app.listen(port, () => {
     `Express Server for Reddit Server started at http://localhost:${port}`
   );
 });
+
+app.use("/api", signup);
+app.use("/api", login);
