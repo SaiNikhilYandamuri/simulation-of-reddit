@@ -7,6 +7,7 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import "./NavBar.css";
+import mainLogo from "../resources/redditImage.PNG";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,7 +29,7 @@ export default function NavBar() {
       <AppBar position="static" className="nav-bar ">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            <p className="reddit-color">Reddit</p>
+            <img src={mainLogo} className="reddit-image" />
           </Typography>
           <Button href="#text-buttons" color="primary">
             Log In
