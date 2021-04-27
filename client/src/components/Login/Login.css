@@ -1,0 +1,24 @@
+.login-image {
+  margin-top: 0px;
+}
+
+.login-form-data {
+  margin-top: 30vh;
+}
+
+.login-text-field {
+  width: 300px;
+}
+
+.login-button-width {
+  width: 300px;
+}
+
+.login-close {
+  text-align: right;
+}
+
+.login-close-icon {
+  margin-right: 7px;
+  cursor: pointer;
+}
