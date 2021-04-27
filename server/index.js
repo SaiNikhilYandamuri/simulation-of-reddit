@@ -4,6 +4,7 @@ const cors = require("cors");
 const port = 3001;
 const signup = require("./routes/Signup");
 const login = require("./routes/Login");
+const createCommunity = require("./routes/CreateCommunity");
 
 app.use(
   cors({
@@ -27,3 +28,4 @@ app.listen(port, () => {
 
 app.use("/api", signup);
 app.use("/api", login);
+app.use("/api", createCommunity);
