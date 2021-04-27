@@ -7,7 +7,9 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import "./NavBar.css";
-//import mainLogo from "../resources/redditImage.PNG";
+import mainLogo from "../resources/redditImage.PNG";
+import { useHistory } from "react-router-dom";
+import Login from "../Login/Login";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,22 +26,43 @@ const useStyles = makeStyles((theme) => ({
 export default function NavBar() {
   const classes = useStyles();
 
+  const history = useHistory();
+
+  const modalOpen = (type) => {
+    history.push({
+      pathname: "/",
+      search: "?modalOpen=true&type=" + type,
+    });
+  };
+
   return (
     <div className={classes.root}>
       <AppBar position="static" className="nav-bar ">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            {/* <img src={mainLogo} className="reddit-image" /> */}
+            <img src={mainLogo} className="reddit-image" />
           </Typography>
-          <Button href="#text-buttons" color="primary">
+          <Button
+            onClick={() => {
+              modalOpen("login");
+            }}
+            color="primary"
+          >
             Log In
           </Button>
           &nbsp;
-          <Button variant="contained" color="primary" href="#contained-buttons">
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              modalOpen("signUp");
+            }}
+          >
             Sign Up
           </Button>
         </Toolbar>
       </AppBar>
+      <Login />
     </div>
   );
 }
