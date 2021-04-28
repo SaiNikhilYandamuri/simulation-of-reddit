@@ -3,7 +3,7 @@ const pool = require("../utils/mysqlConnection");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { secret } = require("../utils/config");
-const { response } = require("express");
+const UserMetadata = require("../model/UserMetadata");
 
 router.post("/signup", async (req, res) => {
   try {
@@ -25,16 +25,21 @@ router.post("/signup", async (req, res) => {
               signupQuery,
               [email, name, hash],
               async (err, result) => {
-                const payload = {
+                const userMetadata = new UserMetadata({
                   email: email,
-                  name: name,
-                };
-
-                const token = await jwt.sign(payload, secret, {
-                  expiresIn: 600000,
                 });
+                userMetadata.save(async (error, data) => {
+                  const payload = {
+                    email: email,
+                    name: name,
+                  };
 
-                res.status(200).json({ token: "Bearer " + token });
+                  const token = await jwt.sign(payload, secret, {
+                    expiresIn: 600000,
+                  });
+
+                  res.status(200).json({ token: "Bearer " + token });
+                });
               }
             );
           });
