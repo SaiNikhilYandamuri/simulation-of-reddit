@@ -1,6 +1,7 @@
 const connection = new require("./kafka/Connection");
 const mongoose = require("./services/mongoose");
 const createCommunity = require("./services/CreateCommunity");
+const searchCommunity = require("./services/SearchCommunity");
 
 function handleTopicRequest(topic_name, fname) {
   //var topic_name = 'root_topic';
@@ -33,3 +34,4 @@ function handleTopicRequest(topic_name, fname) {
 }
 
 handleTopicRequest("create_community", createCommunity);
+handleTopicRequest("search_community", searchCommunity);
