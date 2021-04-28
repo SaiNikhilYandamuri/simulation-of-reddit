@@ -42,24 +42,28 @@ export default function NavBar() {
           <Typography variant="h6" className={classes.title}>
             <img src={mainLogo} className="reddit-image" />
           </Typography>
-          <Button
-            onClick={() => {
-              modalOpen("login");
-            }}
-            color="primary"
-          >
-            Log In
-          </Button>
+          {sessionStorage.getItem("token") === null && (
+            <Button
+              onClick={() => {
+                modalOpen("login");
+              }}
+              color="primary"
+            >
+              Log In
+            </Button>
+          )}
           &nbsp;
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={() => {
-              modalOpen("signUp");
-            }}
-          >
-            Sign Up
-          </Button>
+          {sessionStorage.getItem("token") === null && (
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => {
+                modalOpen("signUp");
+              }}
+            >
+              Sign Up
+            </Button>
+          )}
         </Toolbar>
       </AppBar>
       <Login />
