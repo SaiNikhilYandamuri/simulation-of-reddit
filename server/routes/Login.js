@@ -4,6 +4,8 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { secret } = require("../utils/config");
 const { response } = require("express");
+const { auth } = require("../Utils/passport");
+auth();
 
 router.post("/login", async (req, res) => {
   try {
@@ -28,7 +30,7 @@ router.post("/login", async (req, res) => {
                   expiresIn: 600000,
                 });
 
-                res.status(200).json({ token: "Bearer " + token });
+                res.status(200).json({ token: "jwt " + token });
               }
             })
             .catch((response) => {

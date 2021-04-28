@@ -14,7 +14,7 @@ function auth() {
   passport.use(
     new JwtStrategy(opts, (jwt_payload, callback) => {
       const email = jwt_payload.email;
-      const getUserQuery = "select fullname,email from User where email=?";
+      const getUserQuery = "select name,email from User where email=?";
 
       pool.query(getUserQuery, [email], (err, sqlResult) => {
         if (err) {
@@ -31,4 +31,4 @@ function auth() {
 }
 
 exports.auth = auth;
-exports.checkAuth = passport.authenticate("jwt", { session: false });
+// exports.checkAuth = passport.authenticate("jwt", { session: false });
