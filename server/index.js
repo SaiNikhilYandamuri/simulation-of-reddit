@@ -6,6 +6,8 @@ const signup = require("./routes/Signup");
 const login = require("./routes/Login");
 const createCommunity = require("./routes/CreateCommunity");
 const searchCommunity = require("./routes/SearchCommunity");
+const addMessages = require("./routes/AddMessages");
+const getMessages = require("./routes/GetMessage");
 
 app.use(
   cors({
@@ -32,3 +34,4 @@ app.use("/api", login);
 app.use("/api", createCommunity);
 app.use("/api", searchCommunity);
 app.use("/api", addMessages);
+app.use("/api", getMessages);

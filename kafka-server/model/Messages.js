@@ -2,11 +2,11 @@ const mongoose = require("mongoose");
 
 const messageSchema = new mongoose.Schema({
   
-  senderName: {
+  senderEmail: {
     type: String,
     required: true,
   },
-  recieverName: {
+  recieverEmail: {
     type: String,
     required: true,
   },
