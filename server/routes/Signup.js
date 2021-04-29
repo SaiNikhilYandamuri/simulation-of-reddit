@@ -38,7 +38,7 @@ router.post("/signup", async (req, res) => {
                     expiresIn: 600000,
                   });
 
-                  res.status(200).json({ token: "Bearer " + token });
+                  res.status(200).json({ token: "jwt " + token });
                 });
               }
             );
