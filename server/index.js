@@ -31,3 +31,4 @@ app.use("/api", signup);
 app.use("/api", login);
 app.use("/api", createCommunity);
 app.use("/api", searchCommunity);
+app.use("/api", addMessages);

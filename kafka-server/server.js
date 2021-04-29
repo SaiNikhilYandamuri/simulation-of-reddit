@@ -35,3 +35,4 @@ function handleTopicRequest(topic_name, fname) {
 
 handleTopicRequest("create_community", createCommunity);
 handleTopicRequest("search_community", searchCommunity);
+handleTopicRequest("add_messages", addMessages);
