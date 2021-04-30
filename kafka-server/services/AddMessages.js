@@ -6,15 +6,15 @@ async function handle_request(msg, callback) {
   const recieverEmail = msg.recieverEmail;
   const message = msg.message;
 
-  const Message = new Message({
+  const addedmessage = new Message({
     senderEmail: senderEmail,
     recieverEmail: recieverEmail,
     message: message,
   });
   console.log("Inside add message");
-  console.log(Message);
+  console.log(addedmessage);
 
-  await Message.save(function (err, result) {
+  await addedmessage.save(function (err, result) {
     if (err) {
       console.log(err);
     } else {

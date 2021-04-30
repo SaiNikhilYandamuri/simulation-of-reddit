@@ -8,7 +8,7 @@ router.post(
     passport.authenticate("jwt", { session: false }),
     async (req, res) => {
       console.log("Inside add messages");
-      kafka.make_request("", req.body, function (err, results) {//add topic/changeeee
+      kafka.make_request("add_messages", req.body, function (err, results) {//add topic/changeeee
         console.log("Inside add message topic");
         if (err) {
           console.log("Inside err");
@@ -19,7 +19,7 @@ router.post(
           res.status(400).end();
         } else {
           console.log("Inside else", results);
-          if (results === "Succesfully added.") {
+          if (results.message === "Message added") {
             res.status(200).send("added successfully");
           }
         }

@@ -8,7 +8,8 @@ router.get(
     passport.authenticate("jwt", { session: false }),
     async (req, res) => {
       console.log("Inside get messages");
-      kafka.make_request("", req.body, function (err, results) {//add topic/changeeeee
+      console.log(req.body);
+      kafka.make_request("get_messages", req.body, function (err, results) {//add topic/changeeeee
         console.log("Inside get message topic");
         if (err) {
           console.log("Inside err");
@@ -19,9 +20,9 @@ router.get(
           res.status(400).end();
         } else {
           console.log("Inside else", results);
-          if (results === "Succesfully added.") {
-            res.status(200).send("added successfully");
-          }
+          
+            res.status(200).send({results:results});
+          
         }
       });
     }

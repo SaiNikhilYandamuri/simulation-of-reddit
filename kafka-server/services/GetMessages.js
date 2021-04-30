@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
-const Messages = require("../model/Messages");
+const Message = require("../model/Messages");
 
 async function handle_request(msg, callback) {
   // Need to implement images later
+  console.log(msg);
   const senderEmail = msg.senderEmail;
   const recieverEmail = msg.recieverEmail;
 
@@ -10,22 +11,16 @@ async function handle_request(msg, callback) {
   console.log(senderEmail);
   console.log(recieverEmail);
 
-  Messages.find(
-    {
-      $and: [
-        { senderEmail: { senderEmail } },
-        { recieverEmail: { recieverEmail } },
-      ],
-    },
-    (error, result) => {
-      if ((error, result)) {
+  Message.find(
+    {senderEmail: senderEmail,recieverEmail:recieverEmail}).then((error, result) => {
+      if (error) {
         callback(null, error);
       } else {
+        console.log("Inside Else of result");
         console.log(result);
         callback(null, result);
       }
-    }
-  );
+    });
 
 }
 
