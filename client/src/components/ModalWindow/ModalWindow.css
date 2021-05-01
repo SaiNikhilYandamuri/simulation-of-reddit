@@ -1,0 +1,69 @@
+.login-image {
+  margin-top: 0px;
+}
+
+.login-form-data {
+  margin-top: 30vh;
+}
+
+.comm-form-data {
+  margin-top: 4vh;
+}
+
+.comm-form-title {
+  border-bottom: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: lightgrey;
+}
+
+.comm-rules-title {
+  color: #212529 !important;
+  font-size: 15px !important;
+  padding-bottom: 5px !important;
+}
+
+.comm-text-title {
+  padding-bottom: 5px;
+}
+
+.comm-rule-title-description {
+  width: 13.5vw;
+}
+
+.comm-multi-text-box {
+  margin-left: -10px;
+}
+
+.login-text-field {
+  width: 300px;
+}
+
+.comm-cancel-create {
+  margin-top: 10vh !important;
+  text-align: right !important;
+}
+
+.comm-multi-select {
+  margin: 0px;
+}
+
+.comm-scroll {
+  overflow-y: scroll;
+}
+
+.comm-text-field {
+  width: 500px;
+}
+
+.login-button-width {
+  width: 300px;
+}
+
+.login-close {
+  text-align: right;
+}
+
+.login-close-icon {
+  margin-right: 7px;
+  cursor: pointer;
+}
