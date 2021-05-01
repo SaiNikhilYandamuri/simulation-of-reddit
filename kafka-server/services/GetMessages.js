@@ -12,7 +12,7 @@ async function handle_request(msg, callback) {
   console.log(recieverEmail);
 
   Message.find(
-    {senderEmail: senderEmail,recieverEmail:recieverEmail}).then((error, result) => {
+    {$or:[{senderEmail: senderEmail,recieverEmail:recieverEmail},{senderEmail:recieverEmail,recieverEmail:senderEmail}]}).sort({"created_time":-1}).then((error, result) => {
       if (error) {
         callback(null, error);
       } else {
