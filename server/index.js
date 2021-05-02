@@ -9,6 +9,8 @@ const createCommunity = require("./routes/CreateCommunity");
 const searchCommunity = require("./routes/SearchCommunity");
 const requestedToJoinCommunity = require("./routes/RequestToJoinCommunity");
 const inviteToJoinCommunity = require("./routes/InviteToJoinCommunity");
+const acceptInvitationByUser = require("./routes/AcceptInvitationByUser.js");
+const getCommunity = require("./routes/GetCommunity");
 
 app.use(
   cors({
@@ -36,3 +38,5 @@ app.use("/api", createCommunity);
 app.use("/api", searchCommunity);
 app.use("/api", requestedToJoinCommunity);
 app.use("/api", inviteToJoinCommunity);
+app.use("/api", acceptInvitationByUser);
+app.use("/api", getCommunity);

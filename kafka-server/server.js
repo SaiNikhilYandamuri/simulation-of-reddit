@@ -4,6 +4,8 @@ const createCommunity = require("./services/CreateCommunity");
 const searchCommunity = require("./services/SearchCommunity");
 const requestToJoinCommunity = require("./services/RequestToJoinCommunity");
 const inviteToJoinCommunity = require("./services/InviteToJoinCommunity");
+const acceptInvitationByUser = require("./services/AcceptInvitationByUser.js");
+const getCommunity = require("./services/GetCommunity");
 
 function handleTopicRequest(topic_name, fname) {
   //var topic_name = 'root_topic';
@@ -35,7 +37,9 @@ function handleTopicRequest(topic_name, fname) {
   });
 }
 
-handleTopicRequest("create_community", createCommunity);
+handleTopicRequest("create_communitys", createCommunity);
 handleTopicRequest("search_community", searchCommunity);
 handleTopicRequest("requesttojoin_community", requestToJoinCommunity);
 handleTopicRequest("invitetojoin_community", inviteToJoinCommunity);
+handleTopicRequest("acceptinvitationbyuser", acceptInvitationByUser);
+handleTopicRequest("getcommunity", getCommunity);
