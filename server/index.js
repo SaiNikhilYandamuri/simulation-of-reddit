@@ -2,10 +2,16 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const port = 3001;
+const mongoose = require("./utils/mongoose");
 const signup = require("./routes/Signup");
 const login = require("./routes/Login");
 const createCommunity = require("./routes/CreateCommunity");
 const searchCommunity = require("./routes/SearchCommunity");
+
+const requestedToJoinCommunity = require("./routes/RequestToJoinCommunity");
+const inviteToJoinCommunity = require("./routes/InviteToJoinCommunity");
+const acceptInvitationByUser = require("./routes/AcceptInvitationByUser.js");
+const getCommunity = require("./routes/GetCommunity");
 const getProfile = require("./routes/GetProfile");
 const updateProfile= require("./routes/UpdateProfile")
 const imageUpload= require("./routes/UploadImage")
@@ -34,7 +40,10 @@ app.use("/api", signup);
 app.use("/api", login);
 app.use("/api", createCommunity);
 app.use("/api", searchCommunity);
+app.use("/api", requestedToJoinCommunity);
+app.use("/api", inviteToJoinCommunity);
+app.use("/api", acceptInvitationByUser);
+app.use("/api", getCommunity);
 app.use("/api", getProfile);
 app.use("/api", updateProfile);
 app.use("/api", imageUpload);
-

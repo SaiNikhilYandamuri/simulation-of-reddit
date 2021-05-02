@@ -8,6 +8,7 @@ const { auth } = require("../utils/passport");
 auth();
 
 router.post("/login", async (req, res) => {
+  console.log("Inside Login");
   try {
     const email = req.body.email;
     const password = req.body.password;
@@ -16,7 +17,10 @@ router.post("/login", async (req, res) => {
       if (err) {
         throw err;
       } else {
+        console.log("Inside Login Else");
+        console.log(result);
         if (result.length > 0) {
+          console.log(result);
           bcrypt
             .compare(password, result[0].password)
             .then(async function (response) {
@@ -25,6 +29,7 @@ router.post("/login", async (req, res) => {
                   email: email,
                   name: result[0].name,
                 };
+                console.log("Inside Login If 2");
 
                 const token = await jwt.sign(payload, secret, {
                   expiresIn: 600000,
