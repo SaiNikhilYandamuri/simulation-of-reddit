@@ -6,6 +6,9 @@ const requestToJoinCommunity = require("./services/RequestToJoinCommunity");
 const inviteToJoinCommunity = require("./services/InviteToJoinCommunity");
 const acceptInvitationByUser = require("./services/AcceptInvitationByUser.js");
 const getCommunity = require("./services/GetCommunity");
+const getProfile = require("./services/GetProfile");
+const updateProfile = require("./services/UpdateProfile");
+const imageUpload = require("./services/UploadImage");
 
 function handleTopicRequest(topic_name, fname) {
   //var topic_name = 'root_topic';
@@ -43,3 +46,6 @@ handleTopicRequest("requesttojoin_community", requestToJoinCommunity);
 handleTopicRequest("invitetojoin_community", inviteToJoinCommunity);
 handleTopicRequest("acceptinvitationbyuser", acceptInvitationByUser);
 handleTopicRequest("getcommunity", getCommunity);
+handleTopicRequest("get_profile", getProfile);
+handleTopicRequest("update_profile", updateProfile);
+handleTopicRequest("upload_image", imageUpload);

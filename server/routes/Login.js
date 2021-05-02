@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { secret } = require("../utils/config");
 const { response } = require("express");
-const { auth } = require("../Utils/passport");
+const { auth } = require("../utils/passport");
 auth();
 
 router.post("/login", async (req, res) => {
