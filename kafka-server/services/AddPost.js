@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Post = require("../model/Post");
 
 async function handle_request(msg, callback) {
+  console.log("123");
   const createdByEmail = msg.createdByEmail;
   const communityName = msg.communityName;
   const postTitle = msg.postTitle;
@@ -9,6 +10,7 @@ async function handle_request(msg, callback) {
   const images = msg.images;
   const url = msg.url;
   const text = msg.text;
+  console.log("inside create abcd");
 
   if (flag === "image") {
     const post = new Post({
@@ -20,7 +22,7 @@ async function handle_request(msg, callback) {
     });
 
     console.log(post);
-    await addedPost.save(function (err, result) {
+    await post.save(function (err, result) {
       if (err) {
         console.log(err);
       } else {
@@ -38,7 +40,7 @@ async function handle_request(msg, callback) {
     });
 
     console.log(post);
-    await addedPost.save(function (err, result) {
+    await post.save(function (err, result) {
       if (err) {
         console.log(err);
       } else {
@@ -56,7 +58,7 @@ async function handle_request(msg, callback) {
     });
 
     console.log(post);
-    await addedPost.save(function (err, result) {
+    await post.save(function (err, result) {
       if (err) {
         console.log(err);
       } else {
