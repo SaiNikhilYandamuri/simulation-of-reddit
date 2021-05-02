@@ -7,6 +7,8 @@ const login = require("./routes/Login");
 const createCommunity = require("./routes/CreateCommunity");
 const searchCommunity = require("./routes/SearchCommunity");
 const getProfile = require("./routes/GetProfile");
+const updateProfile= require("./routes/UpdateProfile")
+const imageUpload= require("./routes/UploadImage")
 
 app.use(
   cors({
@@ -33,3 +35,6 @@ app.use("/api", login);
 app.use("/api", createCommunity);
 app.use("/api", searchCommunity);
 app.use("/api", getProfile);
+app.use("/api", updateProfile);
+app.use("/api", imageUpload);
+
