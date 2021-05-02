@@ -4,12 +4,11 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
 import "./NavBar.css";
 import mainLogo from "../resources/redditImage.PNG";
 import { useHistory } from "react-router-dom";
 import Login from "../ModalWindow/ModalWindow";
+import ProfileMenu from "../ProfileMenu/ProfileMenu";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -64,6 +63,7 @@ export default function NavBar() {
               Sign Up
             </Button>
           )}
+          {sessionStorage.getItem("token") !== null && <ProfileMenu />}
         </Toolbar>
       </AppBar>
       <Login />
