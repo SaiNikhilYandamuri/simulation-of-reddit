@@ -3,7 +3,7 @@ const checkAuth = require("../utils/passport");
 var kafka = require("../kafka/client");
 const passport = require("passport");
 
-router.post(
+router.get(
     "/getPost",
     passport.authenticate("jwt", { session: false }),
     async (req, res) => {
@@ -20,7 +20,7 @@ router.post(
         } else {
           console.log("Inside else", results);
           
-            res.status(200).send("added successfully");
+            res.status(200).send(results);
           
         }
       });
