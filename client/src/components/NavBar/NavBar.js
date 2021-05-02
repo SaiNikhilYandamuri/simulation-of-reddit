@@ -9,7 +9,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import "./NavBar.css";
 import mainLogo from "../resources/redditImage.PNG";
 import { useHistory } from "react-router-dom";
-import Login from "../Login/Login";
+import Login from "../ModalWindow/ModalWindow";
 
 const useStyles = makeStyles((theme) => ({
   root: {
