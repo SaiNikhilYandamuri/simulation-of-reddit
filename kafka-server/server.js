@@ -6,6 +6,9 @@ const addMessages = require("./services/AddMessages");
 const getMessages = require("./services/GetMessages");
 const addPost = require("./services/AddPost");
 const getPost = require("./services/GetPost");
+const getProfile = require("./services/GetProfile");
+const updateProfile=require("./services/UpdateProfile")
+const imageUpload=require("./services/UploadImage")
 
 function handleTopicRequest(topic_name, fname) {
   //var topic_name = 'root_topic';
@@ -43,3 +46,6 @@ handleTopicRequest("add_messages", addMessages);
 handleTopicRequest("get_messages", getMessages);
 handleTopicRequest("add_post", addPost);
 handleTopicRequest("get_post", getPost);
+handleTopicRequest("get_profile", getProfile);
+handleTopicRequest("update_profile", updateProfile);
+handleTopicRequest("upload_image", imageUpload);

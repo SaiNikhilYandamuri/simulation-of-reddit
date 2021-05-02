@@ -10,6 +10,9 @@ const addMessages = require("./routes/AddMessages");
 const getMessages = require("./routes/GetMessage");
 const createPost = require("./routes/CreatePost");
 const getPost = require("./routes/GetPost");
+const getProfile = require("./routes/GetProfile");
+const updateProfile= require("./routes/UpdateProfile")
+const imageUpload= require("./routes/UploadImage")
 
 app.use(
   cors({
@@ -39,3 +42,7 @@ app.use("/api", addMessages);
 app.use("/api", getMessages);
 app.use("/api", createPost);
 app.use("/api", getPost);
+app.use("/api", getProfile);
+app.use("/api", updateProfile);
+app.use("/api", imageUpload);
+
