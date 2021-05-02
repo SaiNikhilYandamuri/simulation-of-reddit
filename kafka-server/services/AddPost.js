@@ -11,6 +11,7 @@ async function handle_request(msg, callback) {
   const url = msg.url;
   const text = msg.text;
   console.log("inside create abcd");
+  console.log(flag);
 
   if (flag === "image") {
     const post = new Post({
@@ -44,6 +45,7 @@ async function handle_request(msg, callback) {
       if (err) {
         console.log(err);
       } else {
+        console.log("url added post");
         callback(null, { message: "Post added" });
       }
     });

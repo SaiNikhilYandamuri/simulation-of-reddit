@@ -9,6 +9,7 @@ const searchCommunity = require("./routes/SearchCommunity");
 const addMessages = require("./routes/AddMessages");
 const getMessages = require("./routes/GetMessage");
 const createPost = require("./routes/CreatePost");
+const getPost = require("./routes/GetPost");
 
 app.use(
   cors({
@@ -37,3 +38,4 @@ app.use("/api", searchCommunity);
 app.use("/api", addMessages);
 app.use("/api", getMessages);
 app.use("/api", createPost);
+app.use("/api", getPost);

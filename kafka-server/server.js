@@ -5,6 +5,7 @@ const searchCommunity = require("./services/SearchCommunity");
 const addMessages = require("./services/AddMessages");
 const getMessages = require("./services/GetMessages");
 const addPost = require("./services/AddPost");
+const getPost = require("./services/GetPost");
 
 function handleTopicRequest(topic_name, fname) {
   //var topic_name = 'root_topic';
@@ -41,3 +42,4 @@ handleTopicRequest("search_community", searchCommunity);
 handleTopicRequest("add_messages", addMessages);
 handleTopicRequest("get_messages", getMessages);
 handleTopicRequest("add_post", addPost);
+handleTopicRequest("get_post", getPost);
