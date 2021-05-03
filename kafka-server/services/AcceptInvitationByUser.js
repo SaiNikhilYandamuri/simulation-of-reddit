@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Community = require("../model/Community");
 const UserMetadata = require("../model/UserMetadata");
 
+// User will accept invite to a community.
 async function handle_request(msg, callback) {
   // Need to implement images later
   const emailOfUser = msg.email;
@@ -18,7 +19,7 @@ async function handle_request(msg, callback) {
     },
     function (err, doc) {
       if (err) callback(null, "Problem adding community to user metadata");
-      Community.findByIdAndUpdate(
+      Community.findOneAndUpdate(
         { communityName: communityName },
         { $push: { members: emailOfUser } },
         function (err, doc) {

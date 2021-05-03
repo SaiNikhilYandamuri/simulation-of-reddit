@@ -22,6 +22,7 @@ async function handle_request(msg, callback) {
       if (error) {
         callback(null, error);
       }
+      console.log(communityDetails);
       if (communityDetails) {
         callback(null, "Community with the name already exists");
       } else {

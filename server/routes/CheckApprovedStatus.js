@@ -4,15 +4,15 @@ var kafka = require("../kafka/client");
 const passport = require("passport");
 
 router.post(
-  "/requestToJoinCommunity",
+  "/checkApprovedStatus",
   passport.authenticate("jwt", { session: false }),
   async (req, res) => {
     console.log("Inside COmm");
     kafka.make_request(
-      "requesttojoin_communitys",
+      "checkapprovedstatus",
       req.body,
       function (err, results) {
-        console.log("Inside requesttojoin_community topic");
+        console.log("Inside checkapprovedstatus topic");
         if (err) {
           console.log("Inside err");
           res.json({
@@ -22,7 +22,7 @@ router.post(
           res.status(400).end();
         } else {
           console.log("Inside else", results);
-          res.status(200).send("Request to Join Community was successful.");
+          res.status(200).send(results);
         }
       }
     );
