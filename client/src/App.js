@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Landing from "./components/Landing/Landing";
 import Home from "./components/HomePage/HomePage";
 import CommunityPage from "./components/CommunityPage/CommunityPage";
+import MyAccount from "./components/MyAccount/MyAccount";
 
 const DefaultContainer = () => (
   <div>
@@ -23,6 +24,7 @@ function App() {
       <div className="App">
         <Switch>
           <Route path="/communityPage" exact component={CommunityPage} />
+          <Route path="/myAccount" exact component={MyAccount} />
           <Route component={DefaultContainer} />
         </Switch>
       </div>

@@ -1,0 +1,13 @@
+.comm-page-header {
+  height: 10vh;
+}
+
+.comm-page-bg {
+  background-color: #dae0e6;
+  height: 100vh;
+}
+
+.comm-page-about {
+  margin-top: 20px !important;
+  margin-left: 10px !important;
+}

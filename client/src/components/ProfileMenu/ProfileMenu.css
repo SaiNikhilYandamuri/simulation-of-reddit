@@ -1,0 +1,14 @@
+.profile-menu {
+  width: 7vw !important;
+  background-color: #ffff !important;
+  height: 50px;
+}
+
+.profile-avatar {
+  margin-left: -60px;
+}
+
+.icon-down {
+  margin-right: -60px;
+  color: gray;
+}
