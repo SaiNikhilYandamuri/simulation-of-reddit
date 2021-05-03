@@ -2,6 +2,10 @@ const connection = new require("./kafka/Connection");
 const mongoose = require("./services/mongoose");
 const createCommunity = require("./services/CreateCommunity");
 const searchCommunity = require("./services/SearchCommunity");
+const addMessages = require("./services/AddMessages");
+const getMessages = require("./services/GetMessages");
+const addPost = require("./services/AddPost");
+const getPost = require("./services/GetPost");
 const requestToJoinCommunity = require("./services/RequestToJoinCommunity");
 const inviteToJoinCommunity = require("./services/InviteToJoinCommunity");
 const acceptInvitationByUser = require("./services/AcceptInvitationByUser.js");
@@ -42,9 +46,14 @@ function handleTopicRequest(topic_name, fname) {
   });
 }
 
-handleTopicRequest("create_communitys1", createCommunity);
-handleTopicRequest("search_community1", searchCommunity);
+
 handleTopicRequest("requesttojoin_communitys", requestToJoinCommunity);
+handleTopicRequest("create_communitys", createCommunity);
+handleTopicRequest("search_community", searchCommunity);
+handleTopicRequest("add_messages", addMessages);
+handleTopicRequest("get_messages", getMessages);
+handleTopicRequest("add_post", addPost);
+handleTopicRequest("get_post", getPost);
 handleTopicRequest("invitetojoin_community", inviteToJoinCommunity);
 handleTopicRequest("acceptinvitationbyuser", acceptInvitationByUser);
 handleTopicRequest("getcommunity", getCommunity);
