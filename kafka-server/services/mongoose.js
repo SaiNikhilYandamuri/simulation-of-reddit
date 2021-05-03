@@ -19,4 +19,3 @@ mongoose
   );
 
 module.exports = mongoose;
-
