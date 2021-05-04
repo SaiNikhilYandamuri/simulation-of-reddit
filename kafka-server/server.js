@@ -13,6 +13,8 @@ const getCommunity = require("./services/GetCommunity");
 const getProfile = require("./services/GetProfile");
 const updateProfile = require("./services/UpdateProfile");
 const imageUpload = require("./services/UploadImage");
+const approverequesttojoincommunity = require("./services/ApproveRequestToJoinCommunity");
+const checkapprovedstatus = require("./services/CheckApprovedStatus");
 
 function handleTopicRequest(topic_name, fname) {
   //var topic_name = 'root_topic';
@@ -44,16 +46,21 @@ function handleTopicRequest(topic_name, fname) {
   });
 }
 
-handleTopicRequest("create_communitys1", createCommunity);
-handleTopicRequest("search_community1", searchCommunity);
+handleTopicRequest("requesttojoin_communitys", requestToJoinCommunity);
+handleTopicRequest("create_communitys", createCommunity);
+handleTopicRequest("search_community", searchCommunity);
 handleTopicRequest("add_messages", addMessages);
 handleTopicRequest("get_messages", getMessages);
 handleTopicRequest("add_post", addPost);
 handleTopicRequest("get_post", getPost);
-handleTopicRequest("requesttojoin_community", requestToJoinCommunity);
 handleTopicRequest("invitetojoin_community", inviteToJoinCommunity);
 handleTopicRequest("acceptinvitationbyuser", acceptInvitationByUser);
 handleTopicRequest("getcommunity", getCommunity);
 handleTopicRequest("get_profile", getProfile);
 handleTopicRequest("update_profile", updateProfile);
 handleTopicRequest("upload_image", imageUpload);
+handleTopicRequest(
+  "approverequesttojoincommunity",
+  approverequesttojoincommunity
+);
+handleTopicRequest("checkapprovedstatus", checkapprovedstatus);

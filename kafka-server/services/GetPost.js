@@ -21,6 +21,7 @@ async function handle_request(msg, callback) {
       } else {
         console.log("Inside Else of result");
 
+
         for (let i = 0; i < result[0].communities.length; i++) {
           joined_community_array.push(result[0].communities[i]);
         }

@@ -7,6 +7,7 @@ const signup = require("./routes/Signup");
 const login = require("./routes/Login");
 const createCommunity = require("./routes/CreateCommunity");
 const searchCommunity = require("./routes/SearchCommunity");
+const acceptRequestToJoinCommunity = require("./routes/ApproveRequestToJoinCommunity");
 const addMessages = require("./routes/AddMessages");
 const getMessages = require("./routes/GetMessage");
 const createPost = require("./routes/CreatePost");
@@ -18,6 +19,8 @@ const getCommunity = require("./routes/GetCommunity");
 const getProfile = require("./routes/GetProfile");
 const updateProfile = require("./routes/UpdateProfile");
 const imageUpload = require("./routes/UploadImage");
+const checkApprovedStatus = require("./routes/CheckApprovedStatus");
+
 
 app.use(
   cors({
@@ -54,3 +57,5 @@ app.use("/api", getCommunity);
 app.use("/api", getProfile);
 app.use("/api", updateProfile);
 app.use("/api", imageUpload);
+app.use("/api", acceptRequestToJoinCommunity);
+app.use("/api", checkApprovedStatus);
