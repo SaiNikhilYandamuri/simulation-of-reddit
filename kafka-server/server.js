@@ -15,6 +15,7 @@ const updateProfile = require("./services/UpdateProfile");
 const imageUpload = require("./services/UploadImage");
 const approverequesttojoincommunity = require("./services/ApproveRequestToJoinCommunity");
 const checkapprovedstatus = require("./services/CheckApprovedStatus");
+const votingforcommunity = require("./services/VotingForCommunity");
 
 function handleTopicRequest(topic_name, fname) {
   //var topic_name = 'root_topic';
@@ -47,7 +48,7 @@ function handleTopicRequest(topic_name, fname) {
 }
 
 handleTopicRequest("requesttojoin_communitys", requestToJoinCommunity);
-handleTopicRequest("create_communitys", createCommunity);
+handleTopicRequest("create_communitys1", createCommunity);
 handleTopicRequest("search_community", searchCommunity);
 handleTopicRequest("add_messages", addMessages);
 handleTopicRequest("get_messages", getMessages);
@@ -64,3 +65,4 @@ handleTopicRequest(
   approverequesttojoincommunity
 );
 handleTopicRequest("checkapprovedstatus", checkapprovedstatus);
+handleTopicRequest("votingforcommunity", votingforcommunity);
