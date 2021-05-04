@@ -16,8 +16,8 @@ const inviteToJoinCommunity = require("./routes/InviteToJoinCommunity");
 const acceptInvitationByUser = require("./routes/AcceptInvitationByUser.js");
 const getCommunity = require("./routes/GetCommunity");
 const getProfile = require("./routes/GetProfile");
-const updateProfile= require("./routes/UpdateProfile")
-const imageUpload= require("./routes/UploadImage")
+const updateProfile = require("./routes/UpdateProfile");
+const imageUpload = require("./routes/UploadImage");
 
 app.use(
   cors({
@@ -46,7 +46,7 @@ app.use("/api", searchCommunity);
 app.use("/api", addMessages);
 app.use("/api", getMessages);
 app.use("/api", createPost);
-app.use("/api", getPost);
+// app.use("/api", getPost);
 app.use("/api", requestedToJoinCommunity);
 app.use("/api", inviteToJoinCommunity);
 app.use("/api", acceptInvitationByUser);
