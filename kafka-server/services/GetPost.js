@@ -20,13 +20,10 @@ async function handle_request(msg, callback) {
         callback(null, error);
       } else {
         console.log("Inside Else of result");
-        console.log(result);
-        console.log(result[0].joinRequestedCommunities);
-        console.log(result[0].joinRequestedCommunities[0]);
-        console.log(result[0].joinRequestedCommunities[1]);
+        
 
-        for (let i = 0; i < result[0].joinRequestedCommunities.length; i++) {
-          joined_community_array.push(result[0].joinRequestedCommunities[i]);
+        for (let i = 0; i < result[0].communities.length; i++) {
+          joined_community_array.push(result[0].communities[i]);
         }
 
         console.log(joined_community_array);
