@@ -21,6 +21,7 @@ const updateProfile = require("./routes/UpdateProfile");
 const imageUpload = require("./routes/UploadImage");
 const checkApprovedStatus = require("./routes/CheckApprovedStatus");
 
+
 app.use(
   cors({
     origin: ["http://localhost:3000"],
@@ -48,7 +49,7 @@ app.use("/api", searchCommunity);
 app.use("/api", addMessages);
 app.use("/api", getMessages);
 app.use("/api", createPost);
-app.use("/api", getPost);
+// app.use("/api", getPost);
 app.use("/api", requestedToJoinCommunity);
 app.use("/api", inviteToJoinCommunity);
 app.use("/api", acceptInvitationByUser);

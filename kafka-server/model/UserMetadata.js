@@ -18,6 +18,12 @@ const userMetadataSchema = new mongoose.Schema({
   communities: {
     type: Array,
   },
+  upvotedCommunity: {
+    type: Array,
+  },
+  downvotedCommunity: {
+    type: Array,
+  },
 });
 
 module.exports = mongoose.model("UserMetadata", userMetadataSchema);

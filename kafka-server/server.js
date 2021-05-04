@@ -46,7 +46,6 @@ function handleTopicRequest(topic_name, fname) {
   });
 }
 
-
 handleTopicRequest("requesttojoin_communitys", requestToJoinCommunity);
 handleTopicRequest("create_communitys", createCommunity);
 handleTopicRequest("search_community", searchCommunity);

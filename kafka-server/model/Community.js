@@ -34,6 +34,22 @@ const communitySchema = new mongoose.Schema({
   requestedToJoin: {
     type: Array,
   },
+  numberOfUpvotes: {
+    type: Number,
+    default: 0,
+  },
+  numberOfDownVotes: {
+    type: Number,
+    default: 0,
+  },
+  numberOfMembers: {
+    type: Number,
+    default: 0,
+  },
+  numberOfPosts: {
+    type: Number,
+    default: 0,
+  },
 });
 
 module.exports = mongoose.model("Community", communitySchema);
