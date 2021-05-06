@@ -21,6 +21,7 @@ const updateProfile = require("./routes/UpdateProfile");
 const imageUpload = require("./routes/UploadImage");
 const checkApprovedStatus = require("./routes/CheckApprovedStatus");
 const votingForCommunity = require("./routes/VotingForCommunity");
+const CommunitiesListByUser = require("./routes/CommunitiesListByUser");
 
 app.use(
   cors({
@@ -60,3 +61,4 @@ app.use("/api", imageUpload);
 app.use("/api", acceptRequestToJoinCommunity);
 app.use("/api", checkApprovedStatus);
 app.use("/api", votingForCommunity);
+app.use("/api", CommunitiesListByUser);
