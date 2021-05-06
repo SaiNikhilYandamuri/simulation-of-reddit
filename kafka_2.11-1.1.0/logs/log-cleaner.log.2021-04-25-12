@@ -1,6 +1,0 @@
-[2021-04-25 12:22:29,689] INFO The cleaning for partition addnote-0 is aborted and paused (kafka.log.LogCleaner)
-[2021-04-25 12:22:29,696] INFO Compaction for partition addnote-0 is resumed (kafka.log.LogCleaner)
-[2021-04-25 12:22:29,696] INFO The cleaning for partition addnote-0 is aborted (kafka.log.LogCleaner)
-[2021-04-25 12:31:03,185] INFO The cleaning for partition note-0 is aborted and paused (kafka.log.LogCleaner)
-[2021-04-25 12:31:03,185] INFO Compaction for partition note-0 is resumed (kafka.log.LogCleaner)
-[2021-04-25 12:31:03,185] INFO The cleaning for partition note-0 is aborted (kafka.log.LogCleaner)
