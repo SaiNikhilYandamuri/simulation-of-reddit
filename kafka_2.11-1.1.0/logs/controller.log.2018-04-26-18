@@ -1,0 +1,8 @@
+[2018-04-26 18:01:37,722] TRACE [Controller id=0] Checking need to trigger auto leader balancing (kafka.controller.KafkaController)
+[2018-04-26 18:01:37,729] DEBUG [Controller id=0] Preferred replicas by broker Map() (kafka.controller.KafkaController)
+[2018-04-26 18:06:37,739] TRACE [Controller id=0] Checking need to trigger auto leader balancing (kafka.controller.KafkaController)
+[2018-04-26 18:06:37,745] DEBUG [Controller id=0] Preferred replicas by broker Map() (kafka.controller.KafkaController)
+[2018-04-26 18:11:37,748] TRACE [Controller id=0] Checking need to trigger auto leader balancing (kafka.controller.KafkaController)
+[2018-04-26 18:11:37,748] DEBUG [Controller id=0] Preferred replicas by broker Map() (kafka.controller.KafkaController)
+[2018-04-26 18:16:37,753] TRACE [Controller id=0] Checking need to trigger auto leader balancing (kafka.controller.KafkaController)
+[2018-04-26 18:16:37,759] DEBUG [Controller id=0] Preferred replicas by broker Map() (kafka.controller.KafkaController)

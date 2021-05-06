@@ -1,0 +1,3 @@
+[2018-04-24 19:59:59,255] INFO Expiring session 0x162df42c3520063, timeout of 6000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-04-24 19:59:59,474] INFO Processed session termination for sessionid: 0x162df42c3520063 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-04-24 19:59:59,488] INFO Closed socket connection for client /127.0.0.1:62233 which had sessionid 0x162df42c3520063 (org.apache.zookeeper.server.NIOServerCnxn)

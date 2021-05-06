@@ -1,0 +1,1090 @@
+[2018-10-16 18:10:33,630] WARN caught end of stream exception (org.apache.zookeeper.server.NIOServerCnxn)
+EndOfStreamException: Unable to read additional data from client sessionid 0x1667ec8d8580005, likely client has closed socket
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:239)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:203)
+	at java.lang.Thread.run(Thread.java:748)
+[2018-10-16 18:10:33,632] INFO Closed socket connection for client /0:0:0:0:0:0:0:1:50963 which had sessionid 0x1667ec8d8580005 (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-10-16 18:10:33,764] INFO Expiring session 0x1667ec8d8580005, timeout of 6000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:10:33,764] INFO Processed session termination for sessionid: 0x1667ec8d8580005 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:10:33,856] INFO Accepted socket connection from /127.0.0.1:51350 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-10-16 18:10:33,856] INFO Client attempting to renew session 0x1667ec8d8580005 at /127.0.0.1:51350 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:10:33,857] INFO Invalid session 0x1667ec8d8580005 for client /127.0.0.1:51350, probably expired (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:10:33,857] INFO Closed socket connection for client /127.0.0.1:51350 which had sessionid 0x1667ec8d8580005 (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-10-16 18:10:33,861] INFO Accepted socket connection from /127.0.0.1:51351 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-10-16 18:10:33,862] INFO Client attempting to establish new session at /127.0.0.1:51351 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:10:33,863] INFO Established session 0x1667ec8d8580006 with negotiated timeout 6000 for client /127.0.0.1:51351 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:10:33,882] INFO Got user-level KeeperException when processing sessionid:0x1667ec8d8580006 type:delete cxid:0x1a zxid:0x2715 txntype:-1 reqpath:n/a Error Path:/admin/preferred_replica_election Error:KeeperErrorCode = NoNode for /admin/preferred_replica_election (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:12:20,402] WARN caught end of stream exception (org.apache.zookeeper.server.NIOServerCnxn)
+EndOfStreamException: Unable to read additional data from client sessionid 0x1667ec8d8580006, likely client has closed socket
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:239)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:203)
+	at java.lang.Thread.run(Thread.java:748)
+[2018-10-16 18:12:20,404] INFO Closed socket connection for client /127.0.0.1:51351 which had sessionid 0x1667ec8d8580006 (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-10-16 18:12:21,423] INFO Accepted socket connection from /0:0:0:0:0:0:0:1:51454 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-10-16 18:12:21,424] INFO Client attempting to renew session 0x1667ec8d8580006 at /0:0:0:0:0:0:0:1:51454 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:12:21,425] INFO Established session 0x1667ec8d8580006 with negotiated timeout 6000 for client /0:0:0:0:0:0:0:1:51454 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:14:07,260] WARN caught end of stream exception (org.apache.zookeeper.server.NIOServerCnxn)
+EndOfStreamException: Unable to read additional data from client sessionid 0x1667ec8d8580006, likely client has closed socket
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:239)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:203)
+	at java.lang.Thread.run(Thread.java:748)
+[2018-10-16 18:14:07,261] INFO Closed socket connection for client /0:0:0:0:0:0:0:1:51454 which had sessionid 0x1667ec8d8580006 (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-10-16 18:14:07,634] INFO Accepted socket connection from /127.0.0.1:51522 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-10-16 18:14:07,634] INFO Client attempting to renew session 0x1667ec8d8580006 at /127.0.0.1:51522 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:14:07,635] INFO Established session 0x1667ec8d8580006 with negotiated timeout 6000 for client /127.0.0.1:51522 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:17:35,001] INFO Expiring session 0x1667ec8d8580006, timeout of 6000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:17:35,001] INFO Processed session termination for sessionid: 0x1667ec8d8580006 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:17:35,004] INFO Closed socket connection for client /127.0.0.1:51522 which had sessionid 0x1667ec8d8580006 (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-10-16 18:17:35,137] INFO Accepted socket connection from /0:0:0:0:0:0:0:1:51591 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-10-16 18:17:35,137] INFO Client attempting to renew session 0x1667ec8d8580006 at /0:0:0:0:0:0:0:1:51591 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:17:35,137] INFO Invalid session 0x1667ec8d8580006 for client /0:0:0:0:0:0:0:1:51591, probably expired (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:17:35,137] INFO Closed socket connection for client /0:0:0:0:0:0:0:1:51591 which had sessionid 0x1667ec8d8580006 (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-10-16 18:17:35,142] INFO Accepted socket connection from /0:0:0:0:0:0:0:1:51592 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-10-16 18:17:35,143] INFO Client attempting to establish new session at /0:0:0:0:0:0:0:1:51592 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:17:35,146] INFO Established session 0x1667ec8d8580007 with negotiated timeout 6000 for client /0:0:0:0:0:0:0:1:51592 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:17:35,163] INFO Got user-level KeeperException when processing sessionid:0x1667ec8d8580007 type:delete cxid:0x1a zxid:0x271b txntype:-1 reqpath:n/a Error Path:/admin/preferred_replica_election Error:KeeperErrorCode = NoNode for /admin/preferred_replica_election (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:19:58,404] INFO Expiring session 0x1667ec8d8580007, timeout of 6000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:19:58,405] INFO Processed session termination for sessionid: 0x1667ec8d8580007 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:19:58,524] INFO Closed socket connection for client /0:0:0:0:0:0:0:1:51592 which had sessionid 0x1667ec8d8580007 (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-10-16 18:19:59,177] INFO Accepted socket connection from /127.0.0.1:51701 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-10-16 18:19:59,178] INFO Client attempting to renew session 0x1667ec8d8580007 at /127.0.0.1:51701 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:19:59,178] INFO Invalid session 0x1667ec8d8580007 for client /127.0.0.1:51701, probably expired (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:19:59,178] INFO Closed socket connection for client /127.0.0.1:51701 which had sessionid 0x1667ec8d8580007 (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-10-16 18:19:59,182] INFO Accepted socket connection from /0:0:0:0:0:0:0:1:51702 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-10-16 18:19:59,182] INFO Client attempting to establish new session at /0:0:0:0:0:0:0:1:51702 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:19:59,183] INFO Established session 0x1667ec8d8580008 with negotiated timeout 6000 for client /0:0:0:0:0:0:0:1:51702 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:19:59,201] INFO Got user-level KeeperException when processing sessionid:0x1667ec8d8580008 type:delete cxid:0x1a zxid:0x2721 txntype:-1 reqpath:n/a Error Path:/admin/preferred_replica_election Error:KeeperErrorCode = NoNode for /admin/preferred_replica_election (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:25:15,408] INFO Expiring session 0x1667ec8d8580008, timeout of 6000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:25:15,409] INFO Processed session termination for sessionid: 0x1667ec8d8580008 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:25:15,414] WARN caught end of stream exception (org.apache.zookeeper.server.NIOServerCnxn)
+EndOfStreamException: Unable to read additional data from client sessionid 0x1667ec8d8580008, likely client has closed socket
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:239)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:203)
+	at java.lang.Thread.run(Thread.java:748)
+[2018-10-16 18:25:15,415] INFO Closed socket connection for client /0:0:0:0:0:0:0:1:51702 which had sessionid 0x1667ec8d8580008 (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-10-16 18:25:15,832] INFO Accepted socket connection from /127.0.0.1:51988 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-10-16 18:25:15,833] INFO Client attempting to renew session 0x1667ec8d8580008 at /127.0.0.1:51988 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:25:15,833] INFO Invalid session 0x1667ec8d8580008 for client /127.0.0.1:51988, probably expired (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:25:15,833] INFO Closed socket connection for client /127.0.0.1:51988 which had sessionid 0x1667ec8d8580008 (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-10-16 18:25:15,840] INFO Accepted socket connection from /0:0:0:0:0:0:0:1:51989 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-10-16 18:25:15,842] INFO Client attempting to establish new session at /0:0:0:0:0:0:0:1:51989 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:25:15,843] INFO Established session 0x1667ec8d8580009 with negotiated timeout 6000 for client /0:0:0:0:0:0:0:1:51989 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:25:15,864] INFO Got user-level KeeperException when processing sessionid:0x1667ec8d8580009 type:delete cxid:0x1a zxid:0x2727 txntype:-1 reqpath:n/a Error Path:/admin/preferred_replica_election Error:KeeperErrorCode = NoNode for /admin/preferred_replica_election (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:53:28,407] INFO Expiring session 0x1667ec8d8580009, timeout of 6000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:53:28,551] INFO Processed session termination for sessionid: 0x1667ec8d8580009 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:53:28,553] INFO Closed socket connection for client /0:0:0:0:0:0:0:1:51989 which had sessionid 0x1667ec8d8580009 (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-10-16 18:53:29,056] INFO Accepted socket connection from /127.0.0.1:52128 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-10-16 18:53:29,057] INFO Client attempting to renew session 0x1667ec8d8580009 at /127.0.0.1:52128 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:53:29,058] INFO Invalid session 0x1667ec8d8580009 for client /127.0.0.1:52128, probably expired (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:53:29,058] INFO Closed socket connection for client /127.0.0.1:52128 which had sessionid 0x1667ec8d8580009 (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-10-16 18:53:29,062] INFO Accepted socket connection from /127.0.0.1:52129 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-10-16 18:53:29,063] INFO Client attempting to establish new session at /127.0.0.1:52129 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:53:29,065] INFO Established session 0x1667ec8d858000a with negotiated timeout 6000 for client /127.0.0.1:52129 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:53:29,087] INFO Got user-level KeeperException when processing sessionid:0x1667ec8d858000a type:delete cxid:0x1a zxid:0x272d txntype:-1 reqpath:n/a Error Path:/admin/preferred_replica_election Error:KeeperErrorCode = NoNode for /admin/preferred_replica_election (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:55:41,079] INFO Expiring session 0x1667ec8d858000a, timeout of 6000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:55:41,084] INFO Processed session termination for sessionid: 0x1667ec8d858000a (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:55:41,086] INFO Closed socket connection for client /127.0.0.1:52129 which had sessionid 0x1667ec8d858000a (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-10-16 18:55:41,392] INFO Accepted socket connection from /0:0:0:0:0:0:0:1:52314 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-10-16 18:55:41,392] INFO Client attempting to renew session 0x1667ec8d858000a at /0:0:0:0:0:0:0:1:52314 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:55:41,392] INFO Invalid session 0x1667ec8d858000a for client /0:0:0:0:0:0:0:1:52314, probably expired (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:55:41,393] INFO Closed socket connection for client /0:0:0:0:0:0:0:1:52314 which had sessionid 0x1667ec8d858000a (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-10-16 18:55:41,397] INFO Accepted socket connection from /0:0:0:0:0:0:0:1:52315 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-10-16 18:55:41,398] INFO Client attempting to establish new session at /0:0:0:0:0:0:0:1:52315 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:55:41,399] INFO Established session 0x1667ec8d858000b with negotiated timeout 6000 for client /0:0:0:0:0:0:0:1:52315 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:55:41,425] INFO Got user-level KeeperException when processing sessionid:0x1667ec8d858000b type:delete cxid:0x1a zxid:0x2733 txntype:-1 reqpath:n/a Error Path:/admin/preferred_replica_election Error:KeeperErrorCode = NoNode for /admin/preferred_replica_election (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:55:52,587] INFO Accepted socket connection from /127.0.0.1:52328 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-10-16 18:55:52,589] WARN Connection request from old client /127.0.0.1:52328; will be dropped if server is in r-o mode (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:55:52,589] INFO Client attempting to establish new session at /127.0.0.1:52328 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:55:52,590] INFO Established session 0x1667ec8d858000c with negotiated timeout 30000 for client /127.0.0.1:52328 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:55:57,006] INFO Accepted socket connection from /127.0.0.1:52331 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-10-16 18:55:57,006] INFO Accepted socket connection from /127.0.0.1:52332 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-10-16 18:55:57,007] WARN Connection request from old client /127.0.0.1:52331; will be dropped if server is in r-o mode (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:55:57,007] INFO Client attempting to establish new session at /127.0.0.1:52331 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:55:57,008] WARN Connection request from old client /127.0.0.1:52332; will be dropped if server is in r-o mode (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:55:57,008] INFO Client attempting to establish new session at /127.0.0.1:52332 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:55:57,008] INFO Established session 0x1667ec8d858000d with negotiated timeout 30000 for client /127.0.0.1:52331 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:55:57,009] INFO Established session 0x1667ec8d858000e with negotiated timeout 30000 for client /127.0.0.1:52332 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:03,005] INFO Accepted socket connection from /127.0.0.1:52339 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-10-16 18:56:03,005] WARN Connection request from old client /127.0.0.1:52339; will be dropped if server is in r-o mode (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:03,005] INFO Client attempting to establish new session at /127.0.0.1:52339 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:03,006] INFO Established session 0x1667ec8d858000f with negotiated timeout 30000 for client /127.0.0.1:52339 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:20,412] INFO Registered kafka:type=kafka.Log4jController MBean (kafka.utils.Log4jControllerRegistration$)
+[2018-10-16 18:56:20,904] INFO starting (kafka.server.KafkaServer)
+[2018-10-16 18:56:20,906] INFO Connecting to zookeeper on localhost:2181 (kafka.server.KafkaServer)
+[2018-10-16 18:56:20,929] INFO [ZooKeeperClient] Initializing a new session to localhost:2181. (kafka.zookeeper.ZooKeeperClient)
+[2018-10-16 18:56:20,944] INFO Client environment:zookeeper.version=3.4.10-39d3a4f269333c922ed3db283be479f9deacaa0f, built on 03/23/2017 10:13 GMT (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:56:20,944] INFO Client environment:host.name=192.168.1.5 (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:56:20,944] INFO Client environment:java.version=1.8.0_162 (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:56:20,944] INFO Client environment:java.vendor=Oracle Corporation (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:56:20,944] INFO Client environment:java.home=/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:56:20,944] INFO Client environment:java.class.path=/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/aopalliance-repackaged-2.5.0-b32.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/argparse4j-0.7.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/commons-lang3-3.5.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/connect-api-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/connect-file-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/connect-json-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/connect-runtime-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/connect-transforms-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/guava-20.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/hk2-api-2.5.0-b32.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/hk2-locator-2.5.0-b32.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/hk2-utils-2.5.0-b32.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-annotations-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-core-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-databind-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-jaxrs-base-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-jaxrs-json-provider-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-module-jaxb-annotations-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javassist-3.20.0-GA.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javassist-3.21.0-GA.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javax.annotation-api-1.2.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javax.inject-1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javax.inject-2.5.0-b32.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javax.servlet-api-3.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javax.ws.rs-api-2.0.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-client-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-common-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-container-servlet-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-container-servlet-core-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-guava-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-media-jaxb-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-server-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-client-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-continuation-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-http-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-io-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-security-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-server-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-servlet-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-servlets-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-util-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jopt-simple-5.0.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-clients-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-log4j-appender-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-streams-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-streams-examples-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-streams-test-utils-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-tools-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka_2.11-1.1.0-sources.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka_2.11-1.1.0-test-sources.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka_2.11-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/log4j-1.2.17.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/lz4-java-1.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/maven-artifact-3.5.2.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/metrics-core-2.2.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/osgi-resource-locator-1.0.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/plexus-utils-3.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/reflections-0.9.11.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/rocksdbjni-5.7.3.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/scala-library-2.11.12.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/scala-logging_2.11-3.7.2.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/scala-reflect-2.11.12.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/slf4j-api-1.7.25.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/slf4j-log4j12-1.7.25.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/snappy-java-1.1.7.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/validation-api-1.1.0.Final.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/zkclient-0.10.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/zookeeper-3.4.10.jar (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:56:20,945] INFO Client environment:java.library.path=/Users/anuragshinde/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:. (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:56:20,945] INFO Client environment:java.io.tmpdir=/var/folders/1n/2j75p54d2lg7lmxhn9h499_w0000gn/T/ (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:56:20,945] INFO Client environment:java.compiler=<NA> (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:56:20,945] INFO Client environment:os.name=Mac OS X (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:56:20,945] INFO Client environment:os.arch=x86_64 (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:56:20,945] INFO Client environment:os.version=10.13.6 (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:56:20,945] INFO Client environment:user.name=anuragshinde (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:56:20,945] INFO Client environment:user.home=/Users/anuragshinde (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:56:20,946] INFO Client environment:user.dir=/Users/anuragshinde/Desktop/kafka_2.11-1.1.0 (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:56:20,947] INFO Initiating client connection, connectString=localhost:2181 sessionTimeout=6000 watcher=kafka.zookeeper.ZooKeeperClient$ZooKeeperClientWatcher$@74fe5c40 (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:56:20,971] INFO [ZooKeeperClient] Waiting until connected. (kafka.zookeeper.ZooKeeperClient)
+[2018-10-16 18:56:20,972] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-10-16 18:56:20,996] INFO Accepted socket connection from /0:0:0:0:0:0:0:1:52349 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-10-16 18:56:20,999] INFO Socket connection established to localhost/0:0:0:0:0:0:0:1:2181, initiating session (org.apache.zookeeper.ClientCnxn)
+[2018-10-16 18:56:21,004] INFO Client attempting to establish new session at /0:0:0:0:0:0:0:1:52349 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:21,005] INFO Established session 0x1667ec8d8580010 with negotiated timeout 6000 for client /0:0:0:0:0:0:0:1:52349 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:21,009] INFO Session establishment complete on server localhost/0:0:0:0:0:0:0:1:2181, sessionid = 0x1667ec8d8580010, negotiated timeout = 6000 (org.apache.zookeeper.ClientCnxn)
+[2018-10-16 18:56:21,013] INFO [ZooKeeperClient] Connected. (kafka.zookeeper.ZooKeeperClient)
+[2018-10-16 18:56:21,057] INFO Got user-level KeeperException when processing sessionid:0x1667ec8d8580010 type:create cxid:0x1 zxid:0x2739 txntype:-1 reqpath:n/a Error Path:/consumers Error:KeeperErrorCode = NodeExists for /consumers (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:56:21,075] INFO Got user-level KeeperException when processing sessionid:0x1667ec8d8580010 type:create cxid:0x2 zxid:0x273a txntype:-1 reqpath:n/a Error Path:/brokers/ids Error:KeeperErrorCode = NodeExists for /brokers/ids (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:56:21,077] INFO Got user-level KeeperException when processing sessionid:0x1667ec8d8580010 type:create cxid:0x3 zxid:0x273b txntype:-1 reqpath:n/a Error Path:/brokers/topics Error:KeeperErrorCode = NodeExists for /brokers/topics (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:56:21,078] INFO Got user-level KeeperException when processing sessionid:0x1667ec8d8580010 type:create cxid:0x4 zxid:0x273c txntype:-1 reqpath:n/a Error Path:/config/changes Error:KeeperErrorCode = NodeExists for /config/changes (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:56:21,079] INFO Got user-level KeeperException when processing sessionid:0x1667ec8d8580010 type:create cxid:0x5 zxid:0x273d txntype:-1 reqpath:n/a Error Path:/admin/delete_topics Error:KeeperErrorCode = NodeExists for /admin/delete_topics (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:56:21,080] INFO Got user-level KeeperException when processing sessionid:0x1667ec8d8580010 type:create cxid:0x6 zxid:0x273e txntype:-1 reqpath:n/a Error Path:/brokers/seqid Error:KeeperErrorCode = NodeExists for /brokers/seqid (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:56:21,081] INFO Got user-level KeeperException when processing sessionid:0x1667ec8d8580010 type:create cxid:0x7 zxid:0x273f txntype:-1 reqpath:n/a Error Path:/isr_change_notification Error:KeeperErrorCode = NodeExists for /isr_change_notification (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:56:21,083] INFO Got user-level KeeperException when processing sessionid:0x1667ec8d8580010 type:create cxid:0x8 zxid:0x2740 txntype:-1 reqpath:n/a Error Path:/latest_producer_id_block Error:KeeperErrorCode = NodeExists for /latest_producer_id_block (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:56:21,084] INFO Got user-level KeeperException when processing sessionid:0x1667ec8d8580010 type:create cxid:0x9 zxid:0x2741 txntype:-1 reqpath:n/a Error Path:/log_dir_event_notification Error:KeeperErrorCode = NodeExists for /log_dir_event_notification (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:56:21,085] INFO Got user-level KeeperException when processing sessionid:0x1667ec8d8580010 type:create cxid:0xa zxid:0x2742 txntype:-1 reqpath:n/a Error Path:/config/topics Error:KeeperErrorCode = NodeExists for /config/topics (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:56:21,086] INFO Got user-level KeeperException when processing sessionid:0x1667ec8d8580010 type:create cxid:0xb zxid:0x2743 txntype:-1 reqpath:n/a Error Path:/config/clients Error:KeeperErrorCode = NodeExists for /config/clients (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:56:21,087] INFO Got user-level KeeperException when processing sessionid:0x1667ec8d8580010 type:create cxid:0xc zxid:0x2744 txntype:-1 reqpath:n/a Error Path:/config/users Error:KeeperErrorCode = NodeExists for /config/users (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:56:21,088] INFO Got user-level KeeperException when processing sessionid:0x1667ec8d8580010 type:create cxid:0xd zxid:0x2745 txntype:-1 reqpath:n/a Error Path:/config/brokers Error:KeeperErrorCode = NodeExists for /config/brokers (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:56:21,352] INFO Cluster ID = 3BugF_sARXS0Sh7BiUV1Uw (kafka.server.KafkaServer)
+[2018-10-16 18:56:21,423] INFO KafkaConfig values: 
+	advertised.host.name = null
+	advertised.listeners = null
+	advertised.port = null
+	alter.config.policy.class.name = null
+	alter.log.dirs.replication.quota.window.num = 11
+	alter.log.dirs.replication.quota.window.size.seconds = 1
+	authorizer.class.name = 
+	auto.create.topics.enable = true
+	auto.leader.rebalance.enable = true
+	background.threads = 10
+	broker.id = 0
+	broker.id.generation.enable = true
+	broker.rack = null
+	compression.type = producer
+	connections.max.idle.ms = 600000
+	controlled.shutdown.enable = true
+	controlled.shutdown.max.retries = 3
+	controlled.shutdown.retry.backoff.ms = 5000
+	controller.socket.timeout.ms = 30000
+	create.topic.policy.class.name = null
+	default.replication.factor = 1
+	delegation.token.expiry.check.interval.ms = 3600000
+	delegation.token.expiry.time.ms = 86400000
+	delegation.token.master.key = null
+	delegation.token.max.lifetime.ms = 604800000
+	delete.records.purgatory.purge.interval.requests = 1
+	delete.topic.enable = true
+	fetch.purgatory.purge.interval.requests = 1000
+	group.initial.rebalance.delay.ms = 0
+	group.max.session.timeout.ms = 300000
+	group.min.session.timeout.ms = 6000
+	host.name = 
+	inter.broker.listener.name = null
+	inter.broker.protocol.version = 1.1-IV0
+	leader.imbalance.check.interval.seconds = 300
+	leader.imbalance.per.broker.percentage = 10
+	listener.security.protocol.map = PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
+	listeners = null
+	log.cleaner.backoff.ms = 15000
+	log.cleaner.dedupe.buffer.size = 134217728
+	log.cleaner.delete.retention.ms = 86400000
+	log.cleaner.enable = true
+	log.cleaner.io.buffer.load.factor = 0.9
+	log.cleaner.io.buffer.size = 524288
+	log.cleaner.io.max.bytes.per.second = 1.7976931348623157E308
+	log.cleaner.min.cleanable.ratio = 0.5
+	log.cleaner.min.compaction.lag.ms = 0
+	log.cleaner.threads = 1
+	log.cleanup.policy = [delete]
+	log.dir = /tmp/kafka-logs
+	log.dirs = /tmp/kafka-logs
+	log.flush.interval.messages = 9223372036854775807
+	log.flush.interval.ms = null
+	log.flush.offset.checkpoint.interval.ms = 60000
+	log.flush.scheduler.interval.ms = 9223372036854775807
+	log.flush.start.offset.checkpoint.interval.ms = 60000
+	log.index.interval.bytes = 4096
+	log.index.size.max.bytes = 10485760
+	log.message.format.version = 1.1-IV0
+	log.message.timestamp.difference.max.ms = 9223372036854775807
+	log.message.timestamp.type = CreateTime
+	log.preallocate = false
+	log.retention.bytes = -1
+	log.retention.check.interval.ms = 300000
+	log.retention.hours = 168
+	log.retention.minutes = null
+	log.retention.ms = null
+	log.roll.hours = 168
+	log.roll.jitter.hours = 0
+	log.roll.jitter.ms = null
+	log.roll.ms = null
+	log.segment.bytes = 1073741824
+	log.segment.delete.delay.ms = 60000
+	max.connections.per.ip = 2147483647
+	max.connections.per.ip.overrides = 
+	max.incremental.fetch.session.cache.slots = 1000
+	message.max.bytes = 1000012
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	min.insync.replicas = 1
+	num.io.threads = 8
+	num.network.threads = 3
+	num.partitions = 1
+	num.recovery.threads.per.data.dir = 1
+	num.replica.alter.log.dirs.threads = null
+	num.replica.fetchers = 1
+	offset.metadata.max.bytes = 4096
+	offsets.commit.required.acks = -1
+	offsets.commit.timeout.ms = 5000
+	offsets.load.buffer.size = 5242880
+	offsets.retention.check.interval.ms = 600000
+	offsets.retention.minutes = 1440
+	offsets.topic.compression.codec = 0
+	offsets.topic.num.partitions = 50
+	offsets.topic.replication.factor = 1
+	offsets.topic.segment.bytes = 104857600
+	password.encoder.cipher.algorithm = AES/CBC/PKCS5Padding
+	password.encoder.iterations = 4096
+	password.encoder.key.length = 128
+	password.encoder.keyfactory.algorithm = null
+	password.encoder.old.secret = null
+	password.encoder.secret = null
+	port = 9092
+	principal.builder.class = null
+	producer.purgatory.purge.interval.requests = 1000
+	queued.max.request.bytes = -1
+	queued.max.requests = 500
+	quota.consumer.default = 9223372036854775807
+	quota.producer.default = 9223372036854775807
+	quota.window.num = 11
+	quota.window.size.seconds = 1
+	replica.fetch.backoff.ms = 1000
+	replica.fetch.max.bytes = 1048576
+	replica.fetch.min.bytes = 1
+	replica.fetch.response.max.bytes = 10485760
+	replica.fetch.wait.max.ms = 500
+	replica.high.watermark.checkpoint.interval.ms = 5000
+	replica.lag.time.max.ms = 10000
+	replica.socket.receive.buffer.bytes = 65536
+	replica.socket.timeout.ms = 30000
+	replication.quota.window.num = 11
+	replication.quota.window.size.seconds = 1
+	request.timeout.ms = 30000
+	reserved.broker.max.id = 1000
+	sasl.enabled.mechanisms = [GSSAPI]
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.principal.to.local.rules = [DEFAULT]
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism.inter.broker.protocol = GSSAPI
+	security.inter.broker.protocol = PLAINTEXT
+	socket.receive.buffer.bytes = 102400
+	socket.request.max.bytes = 104857600
+	socket.send.buffer.bytes = 102400
+	ssl.cipher.suites = []
+	ssl.client.auth = none
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.abort.timed.out.transaction.cleanup.interval.ms = 60000
+	transaction.max.timeout.ms = 900000
+	transaction.remove.expired.transaction.cleanup.interval.ms = 3600000
+	transaction.state.log.load.buffer.size = 5242880
+	transaction.state.log.min.isr = 1
+	transaction.state.log.num.partitions = 50
+	transaction.state.log.replication.factor = 1
+	transaction.state.log.segment.bytes = 104857600
+	transactional.id.expiration.ms = 604800000
+	unclean.leader.election.enable = false
+	zookeeper.connect = localhost:2181
+	zookeeper.connection.timeout.ms = 6000
+	zookeeper.max.in.flight.requests = 10
+	zookeeper.session.timeout.ms = 6000
+	zookeeper.set.acl = false
+	zookeeper.sync.time.ms = 2000
+ (kafka.server.KafkaConfig)
+[2018-10-16 18:56:21,430] INFO KafkaConfig values: 
+	advertised.host.name = null
+	advertised.listeners = null
+	advertised.port = null
+	alter.config.policy.class.name = null
+	alter.log.dirs.replication.quota.window.num = 11
+	alter.log.dirs.replication.quota.window.size.seconds = 1
+	authorizer.class.name = 
+	auto.create.topics.enable = true
+	auto.leader.rebalance.enable = true
+	background.threads = 10
+	broker.id = 0
+	broker.id.generation.enable = true
+	broker.rack = null
+	compression.type = producer
+	connections.max.idle.ms = 600000
+	controlled.shutdown.enable = true
+	controlled.shutdown.max.retries = 3
+	controlled.shutdown.retry.backoff.ms = 5000
+	controller.socket.timeout.ms = 30000
+	create.topic.policy.class.name = null
+	default.replication.factor = 1
+	delegation.token.expiry.check.interval.ms = 3600000
+	delegation.token.expiry.time.ms = 86400000
+	delegation.token.master.key = null
+	delegation.token.max.lifetime.ms = 604800000
+	delete.records.purgatory.purge.interval.requests = 1
+	delete.topic.enable = true
+	fetch.purgatory.purge.interval.requests = 1000
+	group.initial.rebalance.delay.ms = 0
+	group.max.session.timeout.ms = 300000
+	group.min.session.timeout.ms = 6000
+	host.name = 
+	inter.broker.listener.name = null
+	inter.broker.protocol.version = 1.1-IV0
+	leader.imbalance.check.interval.seconds = 300
+	leader.imbalance.per.broker.percentage = 10
+	listener.security.protocol.map = PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
+	listeners = null
+	log.cleaner.backoff.ms = 15000
+	log.cleaner.dedupe.buffer.size = 134217728
+	log.cleaner.delete.retention.ms = 86400000
+	log.cleaner.enable = true
+	log.cleaner.io.buffer.load.factor = 0.9
+	log.cleaner.io.buffer.size = 524288
+	log.cleaner.io.max.bytes.per.second = 1.7976931348623157E308
+	log.cleaner.min.cleanable.ratio = 0.5
+	log.cleaner.min.compaction.lag.ms = 0
+	log.cleaner.threads = 1
+	log.cleanup.policy = [delete]
+	log.dir = /tmp/kafka-logs
+	log.dirs = /tmp/kafka-logs
+	log.flush.interval.messages = 9223372036854775807
+	log.flush.interval.ms = null
+	log.flush.offset.checkpoint.interval.ms = 60000
+	log.flush.scheduler.interval.ms = 9223372036854775807
+	log.flush.start.offset.checkpoint.interval.ms = 60000
+	log.index.interval.bytes = 4096
+	log.index.size.max.bytes = 10485760
+	log.message.format.version = 1.1-IV0
+	log.message.timestamp.difference.max.ms = 9223372036854775807
+	log.message.timestamp.type = CreateTime
+	log.preallocate = false
+	log.retention.bytes = -1
+	log.retention.check.interval.ms = 300000
+	log.retention.hours = 168
+	log.retention.minutes = null
+	log.retention.ms = null
+	log.roll.hours = 168
+	log.roll.jitter.hours = 0
+	log.roll.jitter.ms = null
+	log.roll.ms = null
+	log.segment.bytes = 1073741824
+	log.segment.delete.delay.ms = 60000
+	max.connections.per.ip = 2147483647
+	max.connections.per.ip.overrides = 
+	max.incremental.fetch.session.cache.slots = 1000
+	message.max.bytes = 1000012
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	min.insync.replicas = 1
+	num.io.threads = 8
+	num.network.threads = 3
+	num.partitions = 1
+	num.recovery.threads.per.data.dir = 1
+	num.replica.alter.log.dirs.threads = null
+	num.replica.fetchers = 1
+	offset.metadata.max.bytes = 4096
+	offsets.commit.required.acks = -1
+	offsets.commit.timeout.ms = 5000
+	offsets.load.buffer.size = 5242880
+	offsets.retention.check.interval.ms = 600000
+	offsets.retention.minutes = 1440
+	offsets.topic.compression.codec = 0
+	offsets.topic.num.partitions = 50
+	offsets.topic.replication.factor = 1
+	offsets.topic.segment.bytes = 104857600
+	password.encoder.cipher.algorithm = AES/CBC/PKCS5Padding
+	password.encoder.iterations = 4096
+	password.encoder.key.length = 128
+	password.encoder.keyfactory.algorithm = null
+	password.encoder.old.secret = null
+	password.encoder.secret = null
+	port = 9092
+	principal.builder.class = null
+	producer.purgatory.purge.interval.requests = 1000
+	queued.max.request.bytes = -1
+	queued.max.requests = 500
+	quota.consumer.default = 9223372036854775807
+	quota.producer.default = 9223372036854775807
+	quota.window.num = 11
+	quota.window.size.seconds = 1
+	replica.fetch.backoff.ms = 1000
+	replica.fetch.max.bytes = 1048576
+	replica.fetch.min.bytes = 1
+	replica.fetch.response.max.bytes = 10485760
+	replica.fetch.wait.max.ms = 500
+	replica.high.watermark.checkpoint.interval.ms = 5000
+	replica.lag.time.max.ms = 10000
+	replica.socket.receive.buffer.bytes = 65536
+	replica.socket.timeout.ms = 30000
+	replication.quota.window.num = 11
+	replication.quota.window.size.seconds = 1
+	request.timeout.ms = 30000
+	reserved.broker.max.id = 1000
+	sasl.enabled.mechanisms = [GSSAPI]
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.principal.to.local.rules = [DEFAULT]
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism.inter.broker.protocol = GSSAPI
+	security.inter.broker.protocol = PLAINTEXT
+	socket.receive.buffer.bytes = 102400
+	socket.request.max.bytes = 104857600
+	socket.send.buffer.bytes = 102400
+	ssl.cipher.suites = []
+	ssl.client.auth = none
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.abort.timed.out.transaction.cleanup.interval.ms = 60000
+	transaction.max.timeout.ms = 900000
+	transaction.remove.expired.transaction.cleanup.interval.ms = 3600000
+	transaction.state.log.load.buffer.size = 5242880
+	transaction.state.log.min.isr = 1
+	transaction.state.log.num.partitions = 50
+	transaction.state.log.replication.factor = 1
+	transaction.state.log.segment.bytes = 104857600
+	transactional.id.expiration.ms = 604800000
+	unclean.leader.election.enable = false
+	zookeeper.connect = localhost:2181
+	zookeeper.connection.timeout.ms = 6000
+	zookeeper.max.in.flight.requests = 10
+	zookeeper.session.timeout.ms = 6000
+	zookeeper.set.acl = false
+	zookeeper.sync.time.ms = 2000
+ (kafka.server.KafkaConfig)
+[2018-10-16 18:56:21,460] INFO [ThrottledRequestReaper-Fetch]: Starting (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[2018-10-16 18:56:21,460] INFO [ThrottledRequestReaper-Produce]: Starting (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[2018-10-16 18:56:21,461] INFO [ThrottledRequestReaper-Request]: Starting (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[2018-10-16 18:56:21,512] ERROR [KafkaServer id=0] Fatal error during KafkaServer startup. Prepare to shutdown (kafka.server.KafkaServer)
+kafka.common.KafkaException: Failed to acquire lock on file .lock in /tmp/kafka-logs. A Kafka instance in another process or thread is using this directory.
+	at kafka.log.LogManager$$anonfun$lockLogDirs$1.apply(LogManager.scala:233)
+	at kafka.log.LogManager$$anonfun$lockLogDirs$1.apply(LogManager.scala:229)
+	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)
+	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at scala.collection.TraversableLike$class.flatMap(TraversableLike.scala:241)
+	at scala.collection.AbstractTraversable.flatMap(Traversable.scala:104)
+	at kafka.log.LogManager.lockLogDirs(LogManager.scala:229)
+	at kafka.log.LogManager.<init>(LogManager.scala:96)
+	at kafka.log.LogManager$.apply(LogManager.scala:933)
+	at kafka.server.KafkaServer.startup(KafkaServer.scala:237)
+	at kafka.server.KafkaServerStartable.startup(KafkaServerStartable.scala:38)
+	at kafka.Kafka$.main(Kafka.scala:92)
+	at kafka.Kafka.main(Kafka.scala)
+[2018-10-16 18:56:21,514] INFO [KafkaServer id=0] shutting down (kafka.server.KafkaServer)
+[2018-10-16 18:56:21,517] INFO [ZooKeeperClient] Closing. (kafka.zookeeper.ZooKeeperClient)
+[2018-10-16 18:56:21,518] INFO Processed session termination for sessionid: 0x1667ec8d8580010 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:56:21,519] INFO Session: 0x1667ec8d8580010 closed (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:56:21,520] INFO Closed socket connection for client /0:0:0:0:0:0:0:1:52349 which had sessionid 0x1667ec8d8580010 (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-10-16 18:56:21,521] INFO [ZooKeeperClient] Closed. (kafka.zookeeper.ZooKeeperClient)
+[2018-10-16 18:56:21,521] INFO EventThread shut down for session: 0x1667ec8d8580010 (org.apache.zookeeper.ClientCnxn)
+[2018-10-16 18:56:21,522] INFO [ThrottledRequestReaper-Fetch]: Shutting down (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[2018-10-16 18:56:22,465] INFO [ThrottledRequestReaper-Fetch]: Shutdown completed (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[2018-10-16 18:56:22,465] INFO [ThrottledRequestReaper-Produce]: Shutting down (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[2018-10-16 18:56:22,465] INFO [ThrottledRequestReaper-Fetch]: Stopped (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[2018-10-16 18:56:23,468] INFO [ThrottledRequestReaper-Produce]: Stopped (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[2018-10-16 18:56:23,468] INFO [ThrottledRequestReaper-Produce]: Shutdown completed (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[2018-10-16 18:56:23,469] INFO [ThrottledRequestReaper-Request]: Shutting down (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[2018-10-16 18:56:24,001] INFO Expiring session 0x1667ec8d858000b, timeout of 6000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:24,002] INFO Processed session termination for sessionid: 0x1667ec8d858000b (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:56:24,008] INFO Closed socket connection for client /0:0:0:0:0:0:0:1:52315 which had sessionid 0x1667ec8d858000b (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-10-16 18:56:24,016] WARN caught end of stream exception (org.apache.zookeeper.server.NIOServerCnxn)
+EndOfStreamException: Unable to read additional data from client sessionid 0x1667ec8d858000f, likely client has closed socket
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:239)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:203)
+	at java.lang.Thread.run(Thread.java:748)
+[2018-10-16 18:56:24,016] INFO Closed socket connection for client /127.0.0.1:52339 which had sessionid 0x1667ec8d858000f (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-10-16 18:56:24,016] WARN Exception causing close of session 0x1667ec8d858000c due to java.io.IOException: Connection reset by peer (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-10-16 18:56:24,017] INFO Closed socket connection for client /127.0.0.1:52328 which had sessionid 0x1667ec8d858000c (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-10-16 18:56:24,471] INFO [ThrottledRequestReaper-Request]: Stopped (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[2018-10-16 18:56:24,471] INFO [ThrottledRequestReaper-Request]: Shutdown completed (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[2018-10-16 18:56:24,485] INFO [KafkaServer id=0] shut down completed (kafka.server.KafkaServer)
+[2018-10-16 18:56:24,485] ERROR Exiting Kafka. (kafka.server.KafkaServerStartable)
+[2018-10-16 18:56:24,489] INFO [KafkaServer id=0] shutting down (kafka.server.KafkaServer)
+[2018-10-16 18:56:35,164] INFO Reading configuration from: config/zookeeper.properties (org.apache.zookeeper.server.quorum.QuorumPeerConfig)
+[2018-10-16 18:56:35,168] INFO autopurge.snapRetainCount set to 3 (org.apache.zookeeper.server.DatadirCleanupManager)
+[2018-10-16 18:56:35,168] INFO autopurge.purgeInterval set to 0 (org.apache.zookeeper.server.DatadirCleanupManager)
+[2018-10-16 18:56:35,168] INFO Purge task is not scheduled. (org.apache.zookeeper.server.DatadirCleanupManager)
+[2018-10-16 18:56:35,168] WARN Either no config or no quorum defined in config, running  in standalone mode (org.apache.zookeeper.server.quorum.QuorumPeerMain)
+[2018-10-16 18:56:35,186] INFO Reading configuration from: config/zookeeper.properties (org.apache.zookeeper.server.quorum.QuorumPeerConfig)
+[2018-10-16 18:56:35,187] INFO Starting server (org.apache.zookeeper.server.ZooKeeperServerMain)
+[2018-10-16 18:56:35,196] INFO Server environment:zookeeper.version=3.4.10-39d3a4f269333c922ed3db283be479f9deacaa0f, built on 03/23/2017 10:13 GMT (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:35,196] INFO Server environment:host.name=192.168.1.5 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:35,196] INFO Server environment:java.version=1.8.0_162 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:35,196] INFO Server environment:java.vendor=Oracle Corporation (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:35,196] INFO Server environment:java.home=/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:35,196] INFO Server environment:java.class.path=/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/aopalliance-repackaged-2.5.0-b32.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/argparse4j-0.7.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/commons-lang3-3.5.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/connect-api-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/connect-file-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/connect-json-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/connect-runtime-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/connect-transforms-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/guava-20.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/hk2-api-2.5.0-b32.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/hk2-locator-2.5.0-b32.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/hk2-utils-2.5.0-b32.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-annotations-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-core-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-databind-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-jaxrs-base-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-jaxrs-json-provider-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-module-jaxb-annotations-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javassist-3.20.0-GA.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javassist-3.21.0-GA.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javax.annotation-api-1.2.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javax.inject-1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javax.inject-2.5.0-b32.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javax.servlet-api-3.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javax.ws.rs-api-2.0.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-client-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-common-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-container-servlet-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-container-servlet-core-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-guava-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-media-jaxb-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-server-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-client-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-continuation-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-http-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-io-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-security-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-server-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-servlet-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-servlets-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-util-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jopt-simple-5.0.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-clients-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-log4j-appender-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-streams-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-streams-examples-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-streams-test-utils-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-tools-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka_2.11-1.1.0-sources.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka_2.11-1.1.0-test-sources.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka_2.11-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/log4j-1.2.17.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/lz4-java-1.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/maven-artifact-3.5.2.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/metrics-core-2.2.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/osgi-resource-locator-1.0.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/plexus-utils-3.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/reflections-0.9.11.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/rocksdbjni-5.7.3.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/scala-library-2.11.12.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/scala-logging_2.11-3.7.2.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/scala-reflect-2.11.12.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/slf4j-api-1.7.25.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/slf4j-log4j12-1.7.25.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/snappy-java-1.1.7.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/validation-api-1.1.0.Final.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/zkclient-0.10.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/zookeeper-3.4.10.jar (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:35,197] INFO Server environment:java.library.path=/Users/anuragshinde/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:. (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:35,197] INFO Server environment:java.io.tmpdir=/var/folders/1n/2j75p54d2lg7lmxhn9h499_w0000gn/T/ (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:35,197] INFO Server environment:java.compiler=<NA> (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:35,197] INFO Server environment:os.name=Mac OS X (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:35,197] INFO Server environment:os.arch=x86_64 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:35,197] INFO Server environment:os.version=10.13.6 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:35,197] INFO Server environment:user.name=anuragshinde (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:35,197] INFO Server environment:user.home=/Users/anuragshinde (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:35,197] INFO Server environment:user.dir=/Users/anuragshinde/Desktop/kafka_2.11-1.1.0 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:35,206] INFO tickTime set to 3000 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:35,206] INFO minSessionTimeout set to -1 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:35,206] INFO maxSessionTimeout set to -1 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:35,231] INFO binding to port 0.0.0.0/0.0.0.0:2181 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-10-16 18:56:35,233] ERROR Unexpected exception, exiting abnormally (org.apache.zookeeper.server.ZooKeeperServerMain)
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:67)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.configure(NIOServerCnxnFactory.java:90)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.runFromConfig(ZooKeeperServerMain.java:117)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:87)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.main(ZooKeeperServerMain.java:53)
+	at org.apache.zookeeper.server.quorum.QuorumPeerMain.initializeAndRun(QuorumPeerMain.java:116)
+	at org.apache.zookeeper.server.quorum.QuorumPeerMain.main(QuorumPeerMain.java:78)
+[2018-10-16 18:56:58,139] INFO Reading configuration from: config/zookeeper.properties (org.apache.zookeeper.server.quorum.QuorumPeerConfig)
+[2018-10-16 18:56:58,141] INFO autopurge.snapRetainCount set to 3 (org.apache.zookeeper.server.DatadirCleanupManager)
+[2018-10-16 18:56:58,142] INFO autopurge.purgeInterval set to 0 (org.apache.zookeeper.server.DatadirCleanupManager)
+[2018-10-16 18:56:58,142] INFO Purge task is not scheduled. (org.apache.zookeeper.server.DatadirCleanupManager)
+[2018-10-16 18:56:58,142] WARN Either no config or no quorum defined in config, running  in standalone mode (org.apache.zookeeper.server.quorum.QuorumPeerMain)
+[2018-10-16 18:56:58,156] INFO Reading configuration from: config/zookeeper.properties (org.apache.zookeeper.server.quorum.QuorumPeerConfig)
+[2018-10-16 18:56:58,157] INFO Starting server (org.apache.zookeeper.server.ZooKeeperServerMain)
+[2018-10-16 18:56:58,167] INFO Server environment:zookeeper.version=3.4.10-39d3a4f269333c922ed3db283be479f9deacaa0f, built on 03/23/2017 10:13 GMT (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:58,168] INFO Server environment:host.name=192.168.1.5 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:58,168] INFO Server environment:java.version=1.8.0_162 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:58,168] INFO Server environment:java.vendor=Oracle Corporation (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:58,168] INFO Server environment:java.home=/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:58,168] INFO Server environment:java.class.path=/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/aopalliance-repackaged-2.5.0-b32.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/argparse4j-0.7.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/commons-lang3-3.5.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/connect-api-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/connect-file-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/connect-json-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/connect-runtime-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/connect-transforms-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/guava-20.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/hk2-api-2.5.0-b32.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/hk2-locator-2.5.0-b32.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/hk2-utils-2.5.0-b32.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-annotations-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-core-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-databind-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-jaxrs-base-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-jaxrs-json-provider-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-module-jaxb-annotations-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javassist-3.20.0-GA.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javassist-3.21.0-GA.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javax.annotation-api-1.2.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javax.inject-1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javax.inject-2.5.0-b32.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javax.servlet-api-3.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javax.ws.rs-api-2.0.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-client-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-common-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-container-servlet-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-container-servlet-core-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-guava-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-media-jaxb-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-server-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-client-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-continuation-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-http-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-io-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-security-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-server-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-servlet-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-servlets-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-util-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jopt-simple-5.0.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-clients-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-log4j-appender-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-streams-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-streams-examples-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-streams-test-utils-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-tools-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka_2.11-1.1.0-sources.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka_2.11-1.1.0-test-sources.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka_2.11-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/log4j-1.2.17.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/lz4-java-1.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/maven-artifact-3.5.2.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/metrics-core-2.2.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/osgi-resource-locator-1.0.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/plexus-utils-3.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/reflections-0.9.11.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/rocksdbjni-5.7.3.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/scala-library-2.11.12.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/scala-logging_2.11-3.7.2.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/scala-reflect-2.11.12.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/slf4j-api-1.7.25.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/slf4j-log4j12-1.7.25.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/snappy-java-1.1.7.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/validation-api-1.1.0.Final.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/zkclient-0.10.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/zookeeper-3.4.10.jar (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:58,169] INFO Server environment:java.library.path=/Users/anuragshinde/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:. (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:58,169] INFO Server environment:java.io.tmpdir=/var/folders/1n/2j75p54d2lg7lmxhn9h499_w0000gn/T/ (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:58,169] INFO Server environment:java.compiler=<NA> (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:58,169] INFO Server environment:os.name=Mac OS X (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:58,169] INFO Server environment:os.arch=x86_64 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:58,169] INFO Server environment:os.version=10.13.6 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:58,169] INFO Server environment:user.name=anuragshinde (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:58,169] INFO Server environment:user.home=/Users/anuragshinde (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:58,169] INFO Server environment:user.dir=/Users/anuragshinde/Desktop/kafka_2.11-1.1.0 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:58,176] INFO tickTime set to 3000 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:58,176] INFO minSessionTimeout set to -1 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:58,176] INFO maxSessionTimeout set to -1 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:56:58,203] INFO binding to port 0.0.0.0/0.0.0.0:2181 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-10-16 18:56:58,204] ERROR Unexpected exception, exiting abnormally (org.apache.zookeeper.server.ZooKeeperServerMain)
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:67)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.configure(NIOServerCnxnFactory.java:90)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.runFromConfig(ZooKeeperServerMain.java:117)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:87)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.main(ZooKeeperServerMain.java:53)
+	at org.apache.zookeeper.server.quorum.QuorumPeerMain.initializeAndRun(QuorumPeerMain.java:116)
+	at org.apache.zookeeper.server.quorum.QuorumPeerMain.main(QuorumPeerMain.java:78)
+[2018-10-16 18:57:18,545] INFO Reading configuration from: config/zookeeper.properties (org.apache.zookeeper.server.quorum.QuorumPeerConfig)
+[2018-10-16 18:57:18,547] INFO autopurge.snapRetainCount set to 3 (org.apache.zookeeper.server.DatadirCleanupManager)
+[2018-10-16 18:57:18,547] INFO autopurge.purgeInterval set to 0 (org.apache.zookeeper.server.DatadirCleanupManager)
+[2018-10-16 18:57:18,548] INFO Purge task is not scheduled. (org.apache.zookeeper.server.DatadirCleanupManager)
+[2018-10-16 18:57:18,548] WARN Either no config or no quorum defined in config, running  in standalone mode (org.apache.zookeeper.server.quorum.QuorumPeerMain)
+[2018-10-16 18:57:18,562] INFO Reading configuration from: config/zookeeper.properties (org.apache.zookeeper.server.quorum.QuorumPeerConfig)
+[2018-10-16 18:57:18,563] INFO Starting server (org.apache.zookeeper.server.ZooKeeperServerMain)
+[2018-10-16 18:57:18,571] INFO Server environment:zookeeper.version=3.4.10-39d3a4f269333c922ed3db283be479f9deacaa0f, built on 03/23/2017 10:13 GMT (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:57:18,571] INFO Server environment:host.name=192.168.1.5 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:57:18,571] INFO Server environment:java.version=1.8.0_162 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:57:18,571] INFO Server environment:java.vendor=Oracle Corporation (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:57:18,571] INFO Server environment:java.home=/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:57:18,571] INFO Server environment:java.class.path=/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/aopalliance-repackaged-2.5.0-b32.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/argparse4j-0.7.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/commons-lang3-3.5.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/connect-api-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/connect-file-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/connect-json-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/connect-runtime-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/connect-transforms-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/guava-20.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/hk2-api-2.5.0-b32.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/hk2-locator-2.5.0-b32.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/hk2-utils-2.5.0-b32.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-annotations-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-core-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-databind-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-jaxrs-base-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-jaxrs-json-provider-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-module-jaxb-annotations-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javassist-3.20.0-GA.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javassist-3.21.0-GA.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javax.annotation-api-1.2.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javax.inject-1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javax.inject-2.5.0-b32.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javax.servlet-api-3.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javax.ws.rs-api-2.0.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-client-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-common-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-container-servlet-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-container-servlet-core-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-guava-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-media-jaxb-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-server-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-client-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-continuation-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-http-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-io-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-security-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-server-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-servlet-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-servlets-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-util-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jopt-simple-5.0.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-clients-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-log4j-appender-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-streams-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-streams-examples-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-streams-test-utils-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-tools-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka_2.11-1.1.0-sources.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka_2.11-1.1.0-test-sources.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka_2.11-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/log4j-1.2.17.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/lz4-java-1.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/maven-artifact-3.5.2.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/metrics-core-2.2.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/osgi-resource-locator-1.0.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/plexus-utils-3.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/reflections-0.9.11.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/rocksdbjni-5.7.3.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/scala-library-2.11.12.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/scala-logging_2.11-3.7.2.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/scala-reflect-2.11.12.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/slf4j-api-1.7.25.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/slf4j-log4j12-1.7.25.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/snappy-java-1.1.7.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/validation-api-1.1.0.Final.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/zkclient-0.10.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/zookeeper-3.4.10.jar (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:57:18,572] INFO Server environment:java.library.path=/Users/anuragshinde/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:. (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:57:18,572] INFO Server environment:java.io.tmpdir=/var/folders/1n/2j75p54d2lg7lmxhn9h499_w0000gn/T/ (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:57:18,572] INFO Server environment:java.compiler=<NA> (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:57:18,572] INFO Server environment:os.name=Mac OS X (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:57:18,572] INFO Server environment:os.arch=x86_64 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:57:18,573] INFO Server environment:os.version=10.13.6 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:57:18,573] INFO Server environment:user.name=anuragshinde (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:57:18,573] INFO Server environment:user.home=/Users/anuragshinde (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:57:18,573] INFO Server environment:user.dir=/Users/anuragshinde/Desktop/kafka_2.11-1.1.0 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:57:18,579] INFO tickTime set to 3000 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:57:18,579] INFO minSessionTimeout set to -1 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:57:18,579] INFO maxSessionTimeout set to -1 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:57:18,605] INFO binding to port 0.0.0.0/0.0.0.0:2181 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-10-16 18:57:32,589] INFO Registered kafka:type=kafka.Log4jController MBean (kafka.utils.Log4jControllerRegistration$)
+[2018-10-16 18:57:32,918] INFO starting (kafka.server.KafkaServer)
+[2018-10-16 18:57:32,919] INFO Connecting to zookeeper on localhost:2181 (kafka.server.KafkaServer)
+[2018-10-16 18:57:32,933] INFO [ZooKeeperClient] Initializing a new session to localhost:2181. (kafka.zookeeper.ZooKeeperClient)
+[2018-10-16 18:57:32,940] INFO Client environment:zookeeper.version=3.4.10-39d3a4f269333c922ed3db283be479f9deacaa0f, built on 03/23/2017 10:13 GMT (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:57:32,940] INFO Client environment:host.name=192.168.1.5 (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:57:32,941] INFO Client environment:java.version=1.8.0_162 (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:57:32,941] INFO Client environment:java.vendor=Oracle Corporation (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:57:32,941] INFO Client environment:java.home=/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:57:32,941] INFO Client environment:java.class.path=/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/aopalliance-repackaged-2.5.0-b32.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/argparse4j-0.7.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/commons-lang3-3.5.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/connect-api-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/connect-file-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/connect-json-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/connect-runtime-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/connect-transforms-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/guava-20.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/hk2-api-2.5.0-b32.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/hk2-locator-2.5.0-b32.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/hk2-utils-2.5.0-b32.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-annotations-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-core-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-databind-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-jaxrs-base-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-jaxrs-json-provider-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jackson-module-jaxb-annotations-2.9.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javassist-3.20.0-GA.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javassist-3.21.0-GA.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javax.annotation-api-1.2.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javax.inject-1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javax.inject-2.5.0-b32.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javax.servlet-api-3.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/javax.ws.rs-api-2.0.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-client-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-common-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-container-servlet-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-container-servlet-core-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-guava-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-media-jaxb-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jersey-server-2.25.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-client-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-continuation-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-http-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-io-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-security-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-server-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-servlet-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-servlets-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jetty-util-9.2.24.v20180105.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/jopt-simple-5.0.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-clients-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-log4j-appender-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-streams-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-streams-examples-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-streams-test-utils-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka-tools-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka_2.11-1.1.0-sources.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka_2.11-1.1.0-test-sources.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/kafka_2.11-1.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/log4j-1.2.17.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/lz4-java-1.4.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/maven-artifact-3.5.2.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/metrics-core-2.2.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/osgi-resource-locator-1.0.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/plexus-utils-3.1.0.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/reflections-0.9.11.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/rocksdbjni-5.7.3.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/scala-library-2.11.12.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/scala-logging_2.11-3.7.2.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/scala-reflect-2.11.12.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/slf4j-api-1.7.25.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/slf4j-log4j12-1.7.25.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/snappy-java-1.1.7.1.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/validation-api-1.1.0.Final.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/zkclient-0.10.jar:/Users/anuragshinde/Desktop/kafka_2.11-1.1.0/bin/../libs/zookeeper-3.4.10.jar (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:57:32,942] INFO Client environment:java.library.path=/Users/anuragshinde/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:. (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:57:32,942] INFO Client environment:java.io.tmpdir=/var/folders/1n/2j75p54d2lg7lmxhn9h499_w0000gn/T/ (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:57:32,942] INFO Client environment:java.compiler=<NA> (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:57:32,942] INFO Client environment:os.name=Mac OS X (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:57:32,942] INFO Client environment:os.arch=x86_64 (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:57:32,942] INFO Client environment:os.version=10.13.6 (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:57:32,942] INFO Client environment:user.name=anuragshinde (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:57:32,942] INFO Client environment:user.home=/Users/anuragshinde (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:57:32,942] INFO Client environment:user.dir=/Users/anuragshinde/Desktop/kafka_2.11-1.1.0 (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:57:32,944] INFO Initiating client connection, connectString=localhost:2181 sessionTimeout=6000 watcher=kafka.zookeeper.ZooKeeperClient$ZooKeeperClientWatcher$@74fe5c40 (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:57:32,961] INFO [ZooKeeperClient] Waiting until connected. (kafka.zookeeper.ZooKeeperClient)
+[2018-10-16 18:57:32,962] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-10-16 18:57:32,985] INFO Socket connection established to localhost/0:0:0:0:0:0:0:1:2181, initiating session (org.apache.zookeeper.ClientCnxn)
+[2018-10-16 18:57:32,985] INFO Accepted socket connection from /0:0:0:0:0:0:0:1:52392 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-10-16 18:57:32,999] INFO Client attempting to establish new session at /0:0:0:0:0:0:0:1:52392 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:57:33,000] INFO Creating new log file: log.2748 (org.apache.zookeeper.server.persistence.FileTxnLog)
+[2018-10-16 18:57:33,008] INFO Established session 0x1667fbdd3310000 with negotiated timeout 6000 for client /0:0:0:0:0:0:0:1:52392 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:57:33,012] INFO Session establishment complete on server localhost/0:0:0:0:0:0:0:1:2181, sessionid = 0x1667fbdd3310000, negotiated timeout = 6000 (org.apache.zookeeper.ClientCnxn)
+[2018-10-16 18:57:33,015] INFO [ZooKeeperClient] Connected. (kafka.zookeeper.ZooKeeperClient)
+[2018-10-16 18:57:33,049] INFO Got user-level KeeperException when processing sessionid:0x1667fbdd3310000 type:create cxid:0x1 zxid:0x2749 txntype:-1 reqpath:n/a Error Path:/consumers Error:KeeperErrorCode = NodeExists for /consumers (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:57:33,060] INFO Got user-level KeeperException when processing sessionid:0x1667fbdd3310000 type:create cxid:0x2 zxid:0x274a txntype:-1 reqpath:n/a Error Path:/brokers/ids Error:KeeperErrorCode = NodeExists for /brokers/ids (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:57:33,061] INFO Got user-level KeeperException when processing sessionid:0x1667fbdd3310000 type:create cxid:0x3 zxid:0x274b txntype:-1 reqpath:n/a Error Path:/brokers/topics Error:KeeperErrorCode = NodeExists for /brokers/topics (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:57:33,064] INFO Got user-level KeeperException when processing sessionid:0x1667fbdd3310000 type:create cxid:0x4 zxid:0x274c txntype:-1 reqpath:n/a Error Path:/config/changes Error:KeeperErrorCode = NodeExists for /config/changes (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:57:33,066] INFO Got user-level KeeperException when processing sessionid:0x1667fbdd3310000 type:create cxid:0x5 zxid:0x274d txntype:-1 reqpath:n/a Error Path:/admin/delete_topics Error:KeeperErrorCode = NodeExists for /admin/delete_topics (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:57:33,067] INFO Got user-level KeeperException when processing sessionid:0x1667fbdd3310000 type:create cxid:0x6 zxid:0x274e txntype:-1 reqpath:n/a Error Path:/brokers/seqid Error:KeeperErrorCode = NodeExists for /brokers/seqid (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:57:33,069] INFO Got user-level KeeperException when processing sessionid:0x1667fbdd3310000 type:create cxid:0x7 zxid:0x274f txntype:-1 reqpath:n/a Error Path:/isr_change_notification Error:KeeperErrorCode = NodeExists for /isr_change_notification (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:57:33,070] INFO Got user-level KeeperException when processing sessionid:0x1667fbdd3310000 type:create cxid:0x8 zxid:0x2750 txntype:-1 reqpath:n/a Error Path:/latest_producer_id_block Error:KeeperErrorCode = NodeExists for /latest_producer_id_block (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:57:33,072] INFO Got user-level KeeperException when processing sessionid:0x1667fbdd3310000 type:create cxid:0x9 zxid:0x2751 txntype:-1 reqpath:n/a Error Path:/log_dir_event_notification Error:KeeperErrorCode = NodeExists for /log_dir_event_notification (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:57:33,074] INFO Got user-level KeeperException when processing sessionid:0x1667fbdd3310000 type:create cxid:0xa zxid:0x2752 txntype:-1 reqpath:n/a Error Path:/config/topics Error:KeeperErrorCode = NodeExists for /config/topics (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:57:33,076] INFO Got user-level KeeperException when processing sessionid:0x1667fbdd3310000 type:create cxid:0xb zxid:0x2753 txntype:-1 reqpath:n/a Error Path:/config/clients Error:KeeperErrorCode = NodeExists for /config/clients (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:57:33,077] INFO Got user-level KeeperException when processing sessionid:0x1667fbdd3310000 type:create cxid:0xc zxid:0x2754 txntype:-1 reqpath:n/a Error Path:/config/users Error:KeeperErrorCode = NodeExists for /config/users (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:57:33,079] INFO Got user-level KeeperException when processing sessionid:0x1667fbdd3310000 type:create cxid:0xd zxid:0x2755 txntype:-1 reqpath:n/a Error Path:/config/brokers Error:KeeperErrorCode = NodeExists for /config/brokers (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:57:33,253] INFO Cluster ID = 3BugF_sARXS0Sh7BiUV1Uw (kafka.server.KafkaServer)
+[2018-10-16 18:57:33,304] INFO KafkaConfig values: 
+	advertised.host.name = null
+	advertised.listeners = null
+	advertised.port = null
+	alter.config.policy.class.name = null
+	alter.log.dirs.replication.quota.window.num = 11
+	alter.log.dirs.replication.quota.window.size.seconds = 1
+	authorizer.class.name = 
+	auto.create.topics.enable = true
+	auto.leader.rebalance.enable = true
+	background.threads = 10
+	broker.id = 0
+	broker.id.generation.enable = true
+	broker.rack = null
+	compression.type = producer
+	connections.max.idle.ms = 600000
+	controlled.shutdown.enable = true
+	controlled.shutdown.max.retries = 3
+	controlled.shutdown.retry.backoff.ms = 5000
+	controller.socket.timeout.ms = 30000
+	create.topic.policy.class.name = null
+	default.replication.factor = 1
+	delegation.token.expiry.check.interval.ms = 3600000
+	delegation.token.expiry.time.ms = 86400000
+	delegation.token.master.key = null
+	delegation.token.max.lifetime.ms = 604800000
+	delete.records.purgatory.purge.interval.requests = 1
+	delete.topic.enable = true
+	fetch.purgatory.purge.interval.requests = 1000
+	group.initial.rebalance.delay.ms = 0
+	group.max.session.timeout.ms = 300000
+	group.min.session.timeout.ms = 6000
+	host.name = 
+	inter.broker.listener.name = null
+	inter.broker.protocol.version = 1.1-IV0
+	leader.imbalance.check.interval.seconds = 300
+	leader.imbalance.per.broker.percentage = 10
+	listener.security.protocol.map = PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
+	listeners = null
+	log.cleaner.backoff.ms = 15000
+	log.cleaner.dedupe.buffer.size = 134217728
+	log.cleaner.delete.retention.ms = 86400000
+	log.cleaner.enable = true
+	log.cleaner.io.buffer.load.factor = 0.9
+	log.cleaner.io.buffer.size = 524288
+	log.cleaner.io.max.bytes.per.second = 1.7976931348623157E308
+	log.cleaner.min.cleanable.ratio = 0.5
+	log.cleaner.min.compaction.lag.ms = 0
+	log.cleaner.threads = 1
+	log.cleanup.policy = [delete]
+	log.dir = /tmp/kafka-logs
+	log.dirs = /tmp/kafka-logs
+	log.flush.interval.messages = 9223372036854775807
+	log.flush.interval.ms = null
+	log.flush.offset.checkpoint.interval.ms = 60000
+	log.flush.scheduler.interval.ms = 9223372036854775807
+	log.flush.start.offset.checkpoint.interval.ms = 60000
+	log.index.interval.bytes = 4096
+	log.index.size.max.bytes = 10485760
+	log.message.format.version = 1.1-IV0
+	log.message.timestamp.difference.max.ms = 9223372036854775807
+	log.message.timestamp.type = CreateTime
+	log.preallocate = false
+	log.retention.bytes = -1
+	log.retention.check.interval.ms = 300000
+	log.retention.hours = 168
+	log.retention.minutes = null
+	log.retention.ms = null
+	log.roll.hours = 168
+	log.roll.jitter.hours = 0
+	log.roll.jitter.ms = null
+	log.roll.ms = null
+	log.segment.bytes = 1073741824
+	log.segment.delete.delay.ms = 60000
+	max.connections.per.ip = 2147483647
+	max.connections.per.ip.overrides = 
+	max.incremental.fetch.session.cache.slots = 1000
+	message.max.bytes = 1000012
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	min.insync.replicas = 1
+	num.io.threads = 8
+	num.network.threads = 3
+	num.partitions = 1
+	num.recovery.threads.per.data.dir = 1
+	num.replica.alter.log.dirs.threads = null
+	num.replica.fetchers = 1
+	offset.metadata.max.bytes = 4096
+	offsets.commit.required.acks = -1
+	offsets.commit.timeout.ms = 5000
+	offsets.load.buffer.size = 5242880
+	offsets.retention.check.interval.ms = 600000
+	offsets.retention.minutes = 1440
+	offsets.topic.compression.codec = 0
+	offsets.topic.num.partitions = 50
+	offsets.topic.replication.factor = 1
+	offsets.topic.segment.bytes = 104857600
+	password.encoder.cipher.algorithm = AES/CBC/PKCS5Padding
+	password.encoder.iterations = 4096
+	password.encoder.key.length = 128
+	password.encoder.keyfactory.algorithm = null
+	password.encoder.old.secret = null
+	password.encoder.secret = null
+	port = 9092
+	principal.builder.class = null
+	producer.purgatory.purge.interval.requests = 1000
+	queued.max.request.bytes = -1
+	queued.max.requests = 500
+	quota.consumer.default = 9223372036854775807
+	quota.producer.default = 9223372036854775807
+	quota.window.num = 11
+	quota.window.size.seconds = 1
+	replica.fetch.backoff.ms = 1000
+	replica.fetch.max.bytes = 1048576
+	replica.fetch.min.bytes = 1
+	replica.fetch.response.max.bytes = 10485760
+	replica.fetch.wait.max.ms = 500
+	replica.high.watermark.checkpoint.interval.ms = 5000
+	replica.lag.time.max.ms = 10000
+	replica.socket.receive.buffer.bytes = 65536
+	replica.socket.timeout.ms = 30000
+	replication.quota.window.num = 11
+	replication.quota.window.size.seconds = 1
+	request.timeout.ms = 30000
+	reserved.broker.max.id = 1000
+	sasl.enabled.mechanisms = [GSSAPI]
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.principal.to.local.rules = [DEFAULT]
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism.inter.broker.protocol = GSSAPI
+	security.inter.broker.protocol = PLAINTEXT
+	socket.receive.buffer.bytes = 102400
+	socket.request.max.bytes = 104857600
+	socket.send.buffer.bytes = 102400
+	ssl.cipher.suites = []
+	ssl.client.auth = none
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.abort.timed.out.transaction.cleanup.interval.ms = 60000
+	transaction.max.timeout.ms = 900000
+	transaction.remove.expired.transaction.cleanup.interval.ms = 3600000
+	transaction.state.log.load.buffer.size = 5242880
+	transaction.state.log.min.isr = 1
+	transaction.state.log.num.partitions = 50
+	transaction.state.log.replication.factor = 1
+	transaction.state.log.segment.bytes = 104857600
+	transactional.id.expiration.ms = 604800000
+	unclean.leader.election.enable = false
+	zookeeper.connect = localhost:2181
+	zookeeper.connection.timeout.ms = 6000
+	zookeeper.max.in.flight.requests = 10
+	zookeeper.session.timeout.ms = 6000
+	zookeeper.set.acl = false
+	zookeeper.sync.time.ms = 2000
+ (kafka.server.KafkaConfig)
+[2018-10-16 18:57:33,313] INFO KafkaConfig values: 
+	advertised.host.name = null
+	advertised.listeners = null
+	advertised.port = null
+	alter.config.policy.class.name = null
+	alter.log.dirs.replication.quota.window.num = 11
+	alter.log.dirs.replication.quota.window.size.seconds = 1
+	authorizer.class.name = 
+	auto.create.topics.enable = true
+	auto.leader.rebalance.enable = true
+	background.threads = 10
+	broker.id = 0
+	broker.id.generation.enable = true
+	broker.rack = null
+	compression.type = producer
+	connections.max.idle.ms = 600000
+	controlled.shutdown.enable = true
+	controlled.shutdown.max.retries = 3
+	controlled.shutdown.retry.backoff.ms = 5000
+	controller.socket.timeout.ms = 30000
+	create.topic.policy.class.name = null
+	default.replication.factor = 1
+	delegation.token.expiry.check.interval.ms = 3600000
+	delegation.token.expiry.time.ms = 86400000
+	delegation.token.master.key = null
+	delegation.token.max.lifetime.ms = 604800000
+	delete.records.purgatory.purge.interval.requests = 1
+	delete.topic.enable = true
+	fetch.purgatory.purge.interval.requests = 1000
+	group.initial.rebalance.delay.ms = 0
+	group.max.session.timeout.ms = 300000
+	group.min.session.timeout.ms = 6000
+	host.name = 
+	inter.broker.listener.name = null
+	inter.broker.protocol.version = 1.1-IV0
+	leader.imbalance.check.interval.seconds = 300
+	leader.imbalance.per.broker.percentage = 10
+	listener.security.protocol.map = PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
+	listeners = null
+	log.cleaner.backoff.ms = 15000
+	log.cleaner.dedupe.buffer.size = 134217728
+	log.cleaner.delete.retention.ms = 86400000
+	log.cleaner.enable = true
+	log.cleaner.io.buffer.load.factor = 0.9
+	log.cleaner.io.buffer.size = 524288
+	log.cleaner.io.max.bytes.per.second = 1.7976931348623157E308
+	log.cleaner.min.cleanable.ratio = 0.5
+	log.cleaner.min.compaction.lag.ms = 0
+	log.cleaner.threads = 1
+	log.cleanup.policy = [delete]
+	log.dir = /tmp/kafka-logs
+	log.dirs = /tmp/kafka-logs
+	log.flush.interval.messages = 9223372036854775807
+	log.flush.interval.ms = null
+	log.flush.offset.checkpoint.interval.ms = 60000
+	log.flush.scheduler.interval.ms = 9223372036854775807
+	log.flush.start.offset.checkpoint.interval.ms = 60000
+	log.index.interval.bytes = 4096
+	log.index.size.max.bytes = 10485760
+	log.message.format.version = 1.1-IV0
+	log.message.timestamp.difference.max.ms = 9223372036854775807
+	log.message.timestamp.type = CreateTime
+	log.preallocate = false
+	log.retention.bytes = -1
+	log.retention.check.interval.ms = 300000
+	log.retention.hours = 168
+	log.retention.minutes = null
+	log.retention.ms = null
+	log.roll.hours = 168
+	log.roll.jitter.hours = 0
+	log.roll.jitter.ms = null
+	log.roll.ms = null
+	log.segment.bytes = 1073741824
+	log.segment.delete.delay.ms = 60000
+	max.connections.per.ip = 2147483647
+	max.connections.per.ip.overrides = 
+	max.incremental.fetch.session.cache.slots = 1000
+	message.max.bytes = 1000012
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	min.insync.replicas = 1
+	num.io.threads = 8
+	num.network.threads = 3
+	num.partitions = 1
+	num.recovery.threads.per.data.dir = 1
+	num.replica.alter.log.dirs.threads = null
+	num.replica.fetchers = 1
+	offset.metadata.max.bytes = 4096
+	offsets.commit.required.acks = -1
+	offsets.commit.timeout.ms = 5000
+	offsets.load.buffer.size = 5242880
+	offsets.retention.check.interval.ms = 600000
+	offsets.retention.minutes = 1440
+	offsets.topic.compression.codec = 0
+	offsets.topic.num.partitions = 50
+	offsets.topic.replication.factor = 1
+	offsets.topic.segment.bytes = 104857600
+	password.encoder.cipher.algorithm = AES/CBC/PKCS5Padding
+	password.encoder.iterations = 4096
+	password.encoder.key.length = 128
+	password.encoder.keyfactory.algorithm = null
+	password.encoder.old.secret = null
+	password.encoder.secret = null
+	port = 9092
+	principal.builder.class = null
+	producer.purgatory.purge.interval.requests = 1000
+	queued.max.request.bytes = -1
+	queued.max.requests = 500
+	quota.consumer.default = 9223372036854775807
+	quota.producer.default = 9223372036854775807
+	quota.window.num = 11
+	quota.window.size.seconds = 1
+	replica.fetch.backoff.ms = 1000
+	replica.fetch.max.bytes = 1048576
+	replica.fetch.min.bytes = 1
+	replica.fetch.response.max.bytes = 10485760
+	replica.fetch.wait.max.ms = 500
+	replica.high.watermark.checkpoint.interval.ms = 5000
+	replica.lag.time.max.ms = 10000
+	replica.socket.receive.buffer.bytes = 65536
+	replica.socket.timeout.ms = 30000
+	replication.quota.window.num = 11
+	replication.quota.window.size.seconds = 1
+	request.timeout.ms = 30000
+	reserved.broker.max.id = 1000
+	sasl.enabled.mechanisms = [GSSAPI]
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.principal.to.local.rules = [DEFAULT]
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism.inter.broker.protocol = GSSAPI
+	security.inter.broker.protocol = PLAINTEXT
+	socket.receive.buffer.bytes = 102400
+	socket.request.max.bytes = 104857600
+	socket.send.buffer.bytes = 102400
+	ssl.cipher.suites = []
+	ssl.client.auth = none
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.abort.timed.out.transaction.cleanup.interval.ms = 60000
+	transaction.max.timeout.ms = 900000
+	transaction.remove.expired.transaction.cleanup.interval.ms = 3600000
+	transaction.state.log.load.buffer.size = 5242880
+	transaction.state.log.min.isr = 1
+	transaction.state.log.num.partitions = 50
+	transaction.state.log.replication.factor = 1
+	transaction.state.log.segment.bytes = 104857600
+	transactional.id.expiration.ms = 604800000
+	unclean.leader.election.enable = false
+	zookeeper.connect = localhost:2181
+	zookeeper.connection.timeout.ms = 6000
+	zookeeper.max.in.flight.requests = 10
+	zookeeper.session.timeout.ms = 6000
+	zookeeper.set.acl = false
+	zookeeper.sync.time.ms = 2000
+ (kafka.server.KafkaConfig)
+[2018-10-16 18:57:33,333] INFO [ThrottledRequestReaper-Fetch]: Starting (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[2018-10-16 18:57:33,333] INFO [ThrottledRequestReaper-Produce]: Starting (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[2018-10-16 18:57:33,334] INFO [ThrottledRequestReaper-Request]: Starting (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[2018-10-16 18:57:33,370] ERROR [KafkaServer id=0] Fatal error during KafkaServer startup. Prepare to shutdown (kafka.server.KafkaServer)
+kafka.common.KafkaException: Failed to acquire lock on file .lock in /tmp/kafka-logs. A Kafka instance in another process or thread is using this directory.
+	at kafka.log.LogManager$$anonfun$lockLogDirs$1.apply(LogManager.scala:233)
+	at kafka.log.LogManager$$anonfun$lockLogDirs$1.apply(LogManager.scala:229)
+	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)
+	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at scala.collection.TraversableLike$class.flatMap(TraversableLike.scala:241)
+	at scala.collection.AbstractTraversable.flatMap(Traversable.scala:104)
+	at kafka.log.LogManager.lockLogDirs(LogManager.scala:229)
+	at kafka.log.LogManager.<init>(LogManager.scala:96)
+	at kafka.log.LogManager$.apply(LogManager.scala:933)
+	at kafka.server.KafkaServer.startup(KafkaServer.scala:237)
+	at kafka.server.KafkaServerStartable.startup(KafkaServerStartable.scala:38)
+	at kafka.Kafka$.main(Kafka.scala:92)
+	at kafka.Kafka.main(Kafka.scala)
+[2018-10-16 18:57:33,373] INFO [KafkaServer id=0] shutting down (kafka.server.KafkaServer)
+[2018-10-16 18:57:33,376] INFO [ZooKeeperClient] Closing. (kafka.zookeeper.ZooKeeperClient)
+[2018-10-16 18:57:33,376] INFO Processed session termination for sessionid: 0x1667fbdd3310000 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:57:33,378] INFO Session: 0x1667fbdd3310000 closed (org.apache.zookeeper.ZooKeeper)
+[2018-10-16 18:57:33,378] INFO Closed socket connection for client /0:0:0:0:0:0:0:1:52392 which had sessionid 0x1667fbdd3310000 (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-10-16 18:57:33,379] INFO [ZooKeeperClient] Closed. (kafka.zookeeper.ZooKeeperClient)
+[2018-10-16 18:57:33,379] INFO EventThread shut down for session: 0x1667fbdd3310000 (org.apache.zookeeper.ClientCnxn)
+[2018-10-16 18:57:33,380] INFO [ThrottledRequestReaper-Fetch]: Shutting down (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[2018-10-16 18:57:34,339] INFO [ThrottledRequestReaper-Fetch]: Stopped (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[2018-10-16 18:57:34,339] INFO [ThrottledRequestReaper-Fetch]: Shutdown completed (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[2018-10-16 18:57:34,339] INFO [ThrottledRequestReaper-Produce]: Shutting down (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[2018-10-16 18:57:35,339] INFO [ThrottledRequestReaper-Produce]: Stopped (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[2018-10-16 18:57:35,339] INFO [ThrottledRequestReaper-Produce]: Shutdown completed (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[2018-10-16 18:57:35,340] INFO [ThrottledRequestReaper-Request]: Shutting down (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[2018-10-16 18:57:36,340] INFO [ThrottledRequestReaper-Request]: Stopped (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[2018-10-16 18:57:36,340] INFO [ThrottledRequestReaper-Request]: Shutdown completed (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[2018-10-16 18:57:36,345] INFO [KafkaServer id=0] shut down completed (kafka.server.KafkaServer)
+[2018-10-16 18:57:36,345] ERROR Exiting Kafka. (kafka.server.KafkaServerStartable)
+[2018-10-16 18:57:36,347] INFO [KafkaServer id=0] shutting down (kafka.server.KafkaServer)
+[2018-10-16 18:57:51,001] INFO Expiring session 0x1667ec8d858000f, timeout of 30000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:57:51,001] INFO Expiring session 0x1667ec8d858000d, timeout of 30000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:57:51,001] INFO Expiring session 0x1667ec8d858000e, timeout of 30000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:57:51,002] INFO Expiring session 0x1667ec8d858000c, timeout of 30000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-10-16 18:57:51,002] INFO Processed session termination for sessionid: 0x1667ec8d858000f (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:57:51,002] INFO Processed session termination for sessionid: 0x1667ec8d858000d (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:57:51,002] INFO Processed session termination for sessionid: 0x1667ec8d858000e (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-10-16 18:57:51,002] INFO Processed session termination for sessionid: 0x1667ec8d858000c (org.apache.zookeeper.server.PrepRequestProcessor)

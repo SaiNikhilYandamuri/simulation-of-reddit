@@ -1,0 +1,18 @@
+[2021-04-26 13:16:08,360] WARN caught end of stream exception (org.apache.zookeeper.server.NIOServerCnxn)
+EndOfStreamException: Unable to read additional data from client sessionid 0x1790caac011001b, likely client has closed socket
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:239)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:203)
+	at java.base/java.lang.Thread.run(Unknown Source)
+[2021-04-26 13:16:08,372] INFO Closed socket connection for client /127.0.0.1:49371 which had sessionid 0x1790caac011001b (org.apache.zookeeper.server.NIOServerCnxn)
+[2021-04-26 13:16:09,116] INFO Accepted socket connection from /0:0:0:0:0:0:0:1:49404 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2021-04-26 13:16:09,116] INFO Client attempting to renew session 0x1790caac011001b at /0:0:0:0:0:0:0:1:49404 (org.apache.zookeeper.server.ZooKeeperServer)
+[2021-04-26 13:16:09,118] INFO Established session 0x1790caac011001b with negotiated timeout 6000 for client /0:0:0:0:0:0:0:1:49404 (org.apache.zookeeper.server.ZooKeeperServer)
+[2021-04-26 13:24:45,531] WARN caught end of stream exception (org.apache.zookeeper.server.NIOServerCnxn)
+EndOfStreamException: Unable to read additional data from client sessionid 0x1790caac011001b, likely client has closed socket
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:239)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:203)
+	at java.base/java.lang.Thread.run(Unknown Source)
+[2021-04-26 13:24:45,534] INFO Closed socket connection for client /0:0:0:0:0:0:0:1:49404 which had sessionid 0x1790caac011001b (org.apache.zookeeper.server.NIOServerCnxn)
+[2021-04-26 13:24:46,260] INFO Accepted socket connection from /127.0.0.1:49435 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2021-04-26 13:24:46,267] INFO Client attempting to renew session 0x1790caac011001b at /127.0.0.1:49435 (org.apache.zookeeper.server.ZooKeeperServer)
+[2021-04-26 13:24:46,272] INFO Established session 0x1790caac011001b with negotiated timeout 6000 for client /127.0.0.1:49435 (org.apache.zookeeper.server.ZooKeeperServer)

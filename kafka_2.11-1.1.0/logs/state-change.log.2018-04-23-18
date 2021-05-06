@@ -1,0 +1,5 @@
+[2018-04-23 18:14:08,106] TRACE [Controller id=0 epoch=79] Received response {error_code=0} for request UPDATE_METADATA with correlation id 0 sent to broker 192.168.1.20:9092 (id: 0 rack: null) (state.change.logger)
+[2018-04-23 18:19:53,184] TRACE [Controller id=0 epoch=80] Received response {error_code=0} for request UPDATE_METADATA with correlation id 0 sent to broker 192.168.1.20:9092 (id: 0 rack: null) (state.change.logger)
+[2018-04-23 18:32:40,396] TRACE [Controller id=0 epoch=81] Received response {error_code=0} for request UPDATE_METADATA with correlation id 0 sent to broker 192.168.1.20:9092 (id: 0 rack: null) (state.change.logger)
+[2018-04-23 18:50:09,322] TRACE [Controller id=0 epoch=82] Received response {error_code=0} for request UPDATE_METADATA with correlation id 0 sent to broker 192.168.1.20:9092 (id: 0 rack: null) (state.change.logger)
+[2018-04-23 18:54:40,037] TRACE [Controller id=0 epoch=83] Received response {error_code=0} for request UPDATE_METADATA with correlation id 0 sent to broker 192.168.1.20:9092 (id: 0 rack: null) (state.change.logger)

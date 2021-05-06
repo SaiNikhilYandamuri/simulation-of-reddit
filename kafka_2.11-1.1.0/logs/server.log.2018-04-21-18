@@ -1,0 +1,2 @@
+[2018-04-21 20:59:59,517] WARN Client session timed out, have not heard from server in 4666579ms for sessionid 0x162df42c3520020 (org.apache.zookeeper.ClientCnxn)
+[2018-04-21 20:59:59,518] INFO Client session timed out, have not heard from server in 4666579ms for sessionid 0x162df42c3520020, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
