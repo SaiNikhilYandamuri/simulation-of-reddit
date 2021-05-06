@@ -20,6 +20,7 @@ const getProfile = require("./routes/GetProfile");
 const updateProfile = require("./routes/UpdateProfile");
 const imageUpload = require("./routes/UploadImage");
 const checkApprovedStatus = require("./routes/CheckApprovedStatus");
+const votingForPost = require("./routes/VotingForPost");
 
 
 app.use(
@@ -59,3 +60,4 @@ app.use("/api", updateProfile);
 app.use("/api", imageUpload);
 app.use("/api", acceptRequestToJoinCommunity);
 app.use("/api", checkApprovedStatus);
+app.use("/api", votingForPost);
