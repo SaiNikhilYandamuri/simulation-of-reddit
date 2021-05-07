@@ -5,7 +5,7 @@ const passport = require("passport");
 
 router.get(
     "/CommunitiesListByUser",
-    passport.authenticate("jwt", { session: false }),
+    // passport.authenticate("jwt", { session: false }),
     async (req, res) => {
       console.log("Inside CommunitiesListByUser");
       console.log(req.body);

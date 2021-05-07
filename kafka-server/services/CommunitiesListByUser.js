@@ -12,7 +12,7 @@ async function handle_request(msg, callback) {
 //   console.log(recieverEmail);
 
 Community.find(
-    {senderEmail: senderEmail}).sort({"creationTime":-1}).then((error, result) => {
+    {createdBy: senderEmail}).sort({"creationTime":-1}).then((result,error) => {
       if (error) {
         callback(null, error);
       } else {
