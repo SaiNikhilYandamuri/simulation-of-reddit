@@ -12,6 +12,13 @@ function SideBar() {
     });
   };
 
+  const redirectToCreate = () => {
+    history.push({
+      pathname: "/createpost",
+      //search: "?modalOpen=true&type=" + type,
+    });
+  };
+
   return (
     <div>
       <div className="sidebar">
@@ -21,7 +28,14 @@ function SideBar() {
           favorite subreddits.
         </div>
         <div style={{ textAlign: "center" }}>
-          <button className="btnCreatePost">Create Post</button>
+          <button
+            className="btnCreatePost"
+            onClick={() => {
+              redirectToCreate();
+            }}
+          >
+            Create Post
+          </button>
         </div>
         <div style={{ textAlign: "center" }}>
           <button
