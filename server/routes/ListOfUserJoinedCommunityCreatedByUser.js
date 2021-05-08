@@ -4,13 +4,13 @@ var kafka = require("../kafka/client");
 const passport = require("passport");
 
 router.get(
-    "/CommunitiesListByUser",
+    "/ListOfUserJoinedCommunityCreatedByUser",
     passport.authenticate("jwt", { session: false }),
     async (req, res) => {
-      console.log("Inside CommunitiesListByUser");
+      console.log("Inside ListOfUserJoinedCommunityCreatedByUser");
       console.log(req.body);
-      kafka.make_request("communities_list_by_user", req.body, function (err, results) {//add topic/changeeeee
-        console.log("Inside CommunitiesListByUser");
+      kafka.make_request("list_of_user_joined_community_by_user", req.body, function (err, results) {//add topic/changeeeee
+        console.log("Inside ListOfUserJoinedCommunityCreatedByUser");
         if (err) {
           console.log("Inside err");
           res.json({
