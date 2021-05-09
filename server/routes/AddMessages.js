@@ -7,7 +7,7 @@ const redis = require("redis");
 
 const REDDIS_PORT = process.env.PORT;
 
-const client = redis.createClient(6379, "52.15.224.162");
+const client = redis.createClient(6379, "localhost");
 
 router.post(
   "/addMessages",

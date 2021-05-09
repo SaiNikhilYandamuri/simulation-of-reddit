@@ -46,7 +46,6 @@ function handleTopicRequest(topic_name, fname) {
   });
 }
 
-
 handleTopicRequest("requesttojoin_communitys", requestToJoinCommunity);
 handleTopicRequest("create_communitys", createCommunity);
 handleTopicRequest("search_community", searchCommunity);
@@ -57,9 +56,9 @@ handleTopicRequest("get_post", getPost);
 handleTopicRequest("invitetojoin_community", inviteToJoinCommunity);
 handleTopicRequest("acceptinvitationbyuser", acceptInvitationByUser);
 handleTopicRequest("getcommunity", getCommunity);
-handleTopicRequest("get_profile", getProfile);
-handleTopicRequest("update_profile", updateProfile);
-handleTopicRequest("upload_image", imageUpload);
+handleTopicRequest("get_profiles", getProfile);
+handleTopicRequest("update_profiles", updateProfile);
+handleTopicRequest("upload_images", imageUpload);
 handleTopicRequest(
   "approverequesttojoincommunity",
   approverequesttojoincommunity

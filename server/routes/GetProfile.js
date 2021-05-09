@@ -29,10 +29,10 @@ function cache(req, res, next) {
 router.post(
   "/getProfile",
   cache,
-  //   passport.authenticate("jwt", { session: false }),
+  passport.authenticate("jwt", { session: false }),
   async (req, res) => {
     console.log("Inside get profile");
-    kafka.make_request("get_profile", req.body, function (err, results) {
+    kafka.make_request("get_profiles", req.body, function (err, results) {
       console.log("Inside get_profile topic");
       if (err) {
         console.log("Inside err");

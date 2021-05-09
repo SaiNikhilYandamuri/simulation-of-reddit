@@ -71,6 +71,7 @@ export default function CenteredGrid() {
   const [description, setDescription] = React.useState("");
   const [topics, setTopics] = React.useState([]);
   const [file, setFile] = React.useState("");
+  const [url, setURL] = React.useState(mainLogo);
 
   const handleChangeGender = (e) => {
     setGender(e.target.value);
@@ -82,7 +83,8 @@ export default function CenteredGrid() {
     password,
     gender,
     location,
-    description
+    description,
+    file
   ) => {
     return new Promise((resolve, reject) => {
       Axios.post(
@@ -94,6 +96,7 @@ export default function CenteredGrid() {
           gender,
           location,
           description,
+          file,
         },
         {
           headers: {
@@ -101,6 +104,20 @@ export default function CenteredGrid() {
           },
         }
       ).then((response) => {
+        getAccountDetails().then((result) => {
+          setEmail(result.data.email);
+          setURL(result.data[0].profile_picture);
+
+          setName(result.data[0].name);
+          setLocation(result.data[0].location);
+          setGender(result.data[0].gender);
+          setDescription(result.data[0].description);
+        });
+
+        if (file) {
+          fileUpload(file);
+        }
+
         resolve(response);
       });
     });
@@ -109,6 +126,7 @@ export default function CenteredGrid() {
   useEffect(() => {
     getAccountDetails().then((result) => {
       setEmail(result.data.email);
+      setURL(result.data[0].profile_picture);
 
       setName(result.data[0].name);
       setLocation(result.data[0].location);
@@ -170,7 +188,7 @@ export default function CenteredGrid() {
   function fileChangehandler(event) {
     console.log(event.target.files[0]);
     setFile(event.target.files[0]);
-    console.log(URL.createObjectURL(event.target.files[0]));
+    setURL(URL.createObjectURL(event.target.files[0]));
   }
 
   function fileUpload(file) {
@@ -180,9 +198,19 @@ export default function CenteredGrid() {
     data.append("file", file);
     console.log(data.file);
 
-    Axios.post(endPointObj.url + "upload/" + email, data)
+    Axios.post(endPointObj.url + "api/uploadImage/" + email, data)
       .then((res) => {})
       .catch((err) => {
+        getAccountDetails().then((result) => {
+          setEmail(result.data.email);
+          setURL(result.data[0].profile_picture);
+
+          setName(result.data[0].name);
+          setLocation(result.data[0].location);
+          setGender(result.data[0].gender);
+          setDescription(result.data[0].description);
+        });
+
         console.log(err);
       });
   }
@@ -193,9 +221,18 @@ export default function CenteredGrid() {
     password,
     gender,
     location,
-    description
+    description,
+    file
   ) => {
-    updateAccountDetails(email, name, password, gender, location, description);
+    updateAccountDetails(
+      email,
+      name,
+      password,
+      gender,
+      location,
+      description,
+      file
+    );
   };
 
   return (
@@ -312,7 +349,8 @@ export default function CenteredGrid() {
                             password,
                             gender,
                             location,
-                            description
+                            description,
+                            file
                           );
                         }}
                       >
@@ -327,7 +365,7 @@ export default function CenteredGrid() {
                   variant="square"
                   alt="Remy Sharp"
                   className={profileClasses.large}
-                  src={mainLogo}
+                  src={url}
                 />
                 <div className="profile-edit-button">
                   <label for="file">
