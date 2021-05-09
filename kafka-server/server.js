@@ -50,7 +50,7 @@ function handleTopicRequest(topic_name, fname) {
 
 handleTopicRequest("requesttojoin_communitys", requestToJoinCommunity);
 handleTopicRequest("create_communitys1", createCommunity);
-handleTopicRequest("search_community", searchCommunity);
+handleTopicRequest("search_community1", searchCommunity);
 handleTopicRequest("add_messages", addMessages);
 handleTopicRequest("get_messages", getMessages);
 handleTopicRequest("add_post", addPost);
