@@ -38,7 +38,7 @@ const communitySchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
-  numberOfDownVotes: {
+  numberOfDownvotes: {
     type: Number,
     default: 0,
   },
@@ -49,6 +49,14 @@ const communitySchema = new mongoose.Schema({
   numberOfPosts: {
     type: Number,
     default: 0,
+  },
+  upvoteMembers: {
+    type: Array,
+    default: [],
+  },
+  downvoteMembers: {
+    type: Array,
+    default: [],
   },
 });
 
