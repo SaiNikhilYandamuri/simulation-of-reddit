@@ -15,6 +15,7 @@ const updateProfile = require("./services/UpdateProfile");
 const imageUpload = require("./services/UploadImage");
 const approverequesttojoincommunity = require("./services/ApproveRequestToJoinCommunity");
 const checkapprovedstatus = require("./services/CheckApprovedStatus");
+const votingforpost = require("./services/VotingForPost");
 const votingforcommunity = require("./services/VotingForCommunity");
 
 function handleTopicRequest(topic_name, fname) {
@@ -65,4 +66,5 @@ handleTopicRequest(
   approverequesttojoincommunity
 );
 handleTopicRequest("checkapprovedstatus", checkapprovedstatus);
+handleTopicRequest("votingforpost", votingforpost);
 handleTopicRequest("votingforcommunity", votingforcommunity);
