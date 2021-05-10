@@ -3,8 +3,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComment } from "@fortawesome/free-solid-svg-icons";
 import "./PostTile.css";
 import VoteButton from "../VoteButton/VoteButton";
+import { useHistory } from "react-router-dom";
 
 function PostTile() {
+  const history = useHistory();
+
+  const redirectToViewPost = () => {
+    history.push({
+      pathname: "/viewpost",
+      //search: "?modalOpen=true&type=" + type,
+    });
+  };
+
   return (
     <div>
       <div className="row post">
@@ -15,7 +25,7 @@ function PostTile() {
           <span className="subreddit-info">
             <span className="subreddit-text">
               <a className="posturl" href="">
-                Subreddit name
+                Community Name
               </a>
             </span>
             <span>
@@ -37,11 +47,25 @@ function PostTile() {
           </div>
           <hr />
           <span>
-            <a className="btnCommments" role="button">
+            <a
+              className="btnCommments"
+              role="button"
+              onClick={() => {
+                redirectToViewPost();
+              }}
+            >
               <FontAwesomeIcon icon={faComment} />
               Comments
             </a>
-            <button className="login">Read Post</button>
+            <button
+              className="login"
+              style={{ marginLeft: "5px", float: "right" }}
+              onClick={() => {
+                redirectToViewPost();
+              }}
+            >
+              Read Post
+            </button>
           </span>
         </div>
       </div>
