@@ -1,0 +1,22 @@
+.sidebar-view-subreddit {
+  height: 280px;
+}
+.community-rules {
+  background-color: #0079d3;
+  border-color: #0079d3;
+  color: aliceblue;
+  fill: #0079d3;
+  border: 1px solid;
+  border-radius: 4px;
+  text-align: center;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 24px;
+  padding: 3px 16px;
+  opacity: 1;
+  height: 50px;
+  margin-bottom:0px;
+}

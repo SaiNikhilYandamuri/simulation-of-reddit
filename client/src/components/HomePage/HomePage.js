@@ -9,6 +9,7 @@ import {
   faComments,
   faSearch,
   faUser,
+  faCommentAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   Button,
@@ -23,7 +24,18 @@ import {
   Alert,
   Dropdown,
 } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
+
 function HomePage() {
+  const history = useHistory();
+
+  const redirectToMessages = () => {
+    history.push({
+      pathname: "/messages",
+      //search: "?modalOpen=true&type=" + type,
+    });
+  };
+  
   return (
     <div>
       <div className="reddit-body">
@@ -72,6 +84,16 @@ function HomePage() {
                 <span class="input-group-btn">
                   <button className="search">
                     <FontAwesomeIcon className="sicon" icon={faSearch} />
+                  </button>
+                </span>
+                <span class="input-group-btn">
+                  <button
+                    className="messages"
+                    onClick={() => {
+                      redirectToMessages();
+                    }}
+                  >
+                    <FontAwesomeIcon className="sicon" icon={faCommentAlt} />
                   </button>
                 </span>
               </div>

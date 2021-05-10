@@ -24,8 +24,8 @@ function SideBar() {
       <div className="sidebar">
         <img src="https://www.redditstatic.com/desktop2x/img/id-cards/home-banner@2x.png" />
         <div style={{ textAlign: "center", fontSize: "1em" }}>
-          Welcome to Reddit Clone home page. Come here to check in with your
-          favorite subreddits.
+          Your personal Reddit frontpage. Come here to check in with your
+          favorite communities.
         </div>
         <div style={{ textAlign: "center" }}>
           <button
