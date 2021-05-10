@@ -11,8 +11,16 @@ async function handle_request(msg, callback) {
   console.log(senderEmail);
   console.log(recieverEmail);
 
-  Message.find(
-    {$or:[{senderEmail: senderEmail,recieverEmail:recieverEmail},{senderEmail:recieverEmail,recieverEmail:senderEmail}]}).sort({"created_time":-1}).then((error, result) => {
+  Message.find({
+    $or: [
+      { senderEmail: senderEmail, recieverEmail: recieverEmail },
+      { senderEmail: recieverEmail, recieverEmail: senderEmail },
+    ],
+  })
+    .lean()
+    .select({ senderEmail: 1, message: 1 })
+    .sort({ created_time: -1 })
+    .then((error, result) => {
       if (error) {
         callback(null, error);
       } else {
@@ -21,7 +29,6 @@ async function handle_request(msg, callback) {
         callback(null, result);
       }
     });
-
 }
 
 exports.handle_request = handle_request;
