@@ -29,6 +29,7 @@ const userSearch = require("./routes/UserSearch");
 const addComment = require("./routes/AddComment");
 const getComments = require("./routes/GetComments");
 const getPostById = require("./routes/GetPostById");
+const getUserCommunities = require("./routes/GetUserCommunities");
 
 app.use(
   cors({
@@ -76,3 +77,4 @@ app.use("/api", userSearch);
 app.use("/api", addComment);
 app.use("/api", getComments);
 app.use("/api", getPostById);
+app.use("/api", getUserCommunities);
