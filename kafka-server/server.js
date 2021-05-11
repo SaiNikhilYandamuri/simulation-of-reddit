@@ -58,9 +58,9 @@ handleTopicRequest("getPost", getPost);
 handleTopicRequest("invitetojoin_community", inviteToJoinCommunity);
 handleTopicRequest("acceptinvitationbyuser", acceptInvitationByUser);
 handleTopicRequest("getcommunity", getCommunity);
-handleTopicRequest("get_profile", getProfile);
-handleTopicRequest("update_profile", updateProfile);
-handleTopicRequest("upload_image", imageUpload);
+handleTopicRequest("get_profiles", getProfile);
+handleTopicRequest("update_profiles", updateProfile);
+handleTopicRequest("upload_images", imageUpload);
 handleTopicRequest(
   "approverequesttojoincommunity",
   approverequesttojoincommunity
