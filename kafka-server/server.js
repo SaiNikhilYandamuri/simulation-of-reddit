@@ -17,6 +17,7 @@ const approverequesttojoincommunity = require("./services/ApproveRequestToJoinCo
 const checkapprovedstatus = require("./services/CheckApprovedStatus");
 const votingforpost = require("./services/VotingForPost");
 const votingforcommunity = require("./services/VotingForCommunity");
+const usersearch = require("./services/UserSearch");
 
 function handleTopicRequest(topic_name, fname) {
   //var topic_name = 'root_topic';
@@ -68,3 +69,4 @@ handleTopicRequest(
 handleTopicRequest("checkapprovedstatus", checkapprovedstatus);
 handleTopicRequest("votingforpost", votingforpost);
 handleTopicRequest("votingforcommunity", votingforcommunity);
+handleTopicRequest("user_search", usersearch);
