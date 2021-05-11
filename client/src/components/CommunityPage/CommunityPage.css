@@ -6,6 +6,7 @@
   background-color: #dae0e6;
 
   flex-grow: 2;
+  min-height: 100vh !important;
 }
 
 .comm-page-about {
@@ -14,7 +15,7 @@
 }
 
 .tabs-home {
-  width: 64vw;
+  width: 64.5vw;
 
   margin-left: 2vw;
   margin-top: 5px;
