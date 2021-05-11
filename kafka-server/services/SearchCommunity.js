@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Community = require("../model/Community");
+const paginate= require("../../server/utils/pagination")
 
 async function handle_request(msg, callback) {
   // Need to implement images later
@@ -15,7 +16,9 @@ async function handle_request(msg, callback) {
       const communityDetails1 = await Community.find({
         communityName: new RegExp(searchString),
       }).sort({ numberOfMembers: -1 });
-      callback(null, communityDetails1);
+      var result=paginate(communityDetails1,1,5);
+      console.log("PRINTING RESULT",result)
+      callback(null, result);
       break;
     case "numberOfPosts":
       const communityDetails2 = await Community.find({
@@ -39,6 +42,8 @@ async function handle_request(msg, callback) {
       const communityDetails5 = await Community.find({
         communityName: new RegExp(searchString),
       }).sort({ creationTime: -1 });
+      console.log("I am here")
+      
       callback(null, communityDetails5);
   }
 }

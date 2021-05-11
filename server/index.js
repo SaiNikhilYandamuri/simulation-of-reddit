@@ -20,10 +20,15 @@ const getProfile = require("./routes/GetProfile");
 const updateProfile = require("./routes/UpdateProfile");
 const imageUpload = require("./routes/UploadImage");
 const checkApprovedStatus = require("./routes/CheckApprovedStatus");
+const votingForPost = require("./routes/VotingForPost");
 const votingForCommunity = require("./routes/VotingForCommunity");
 const CommunitiesListByUser = require("./routes/CommunitiesListByUser");
 const RequestedUsersList = require("./routes/RequestedUsersList");
 const ListOfUserJoinedCommunityCreatedByUser = require("./routes/ListOfUserJoinedCommunityCreatedByUser")
+const userSearch = require("./routes/UserSearch");
+const addComment = require("./routes/AddComment");
+const getComments = require("./routes/GetComments");
+const getPostById = require("./routes/GetPostById");
 
 app.use(
   cors({
@@ -52,7 +57,7 @@ app.use("/api", searchCommunity);
 app.use("/api", addMessages);
 app.use("/api", getMessages);
 app.use("/api", createPost);
-// app.use("/api", getPost);
+app.use("/api", getPost);
 app.use("/api", requestedToJoinCommunity);
 app.use("/api", inviteToJoinCommunity);
 app.use("/api", acceptInvitationByUser);
@@ -62,7 +67,12 @@ app.use("/api", updateProfile);
 app.use("/api", imageUpload);
 app.use("/api", acceptRequestToJoinCommunity);
 app.use("/api", checkApprovedStatus);
+app.use("/api", votingForPost);
 app.use("/api", votingForCommunity);
 app.use("/api", CommunitiesListByUser);
 app.use("/api", RequestedUsersList);
 app.use("/api", ListOfUserJoinedCommunityCreatedByUser);
+app.use("/api", userSearch);
+app.use("/api", addComment);
+app.use("/api", getComments);
+app.use("/api", getPostById);

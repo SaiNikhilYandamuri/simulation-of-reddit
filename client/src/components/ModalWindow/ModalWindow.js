@@ -268,10 +268,10 @@ export default function ModalWindow() {
       })
         .then((response) => {
           sessionStorage.setItem("token", response.data.token.split(" ")[1]);
+          dispatch(setUser(email, true));
           history.push({
             pathname: "/home",
           });
-
           setOpen(false);
         })
         .catch((err) => {

@@ -1,11 +1,12 @@
 .profile-menu {
-  width: 7vw !important;
+  width: 100px !important;
   background-color: #ffff !important;
   height: 50px;
 }
 
 .profile-avatar {
   margin-left: -60px;
+  position: absolute;
 }
 
 .icon-down {

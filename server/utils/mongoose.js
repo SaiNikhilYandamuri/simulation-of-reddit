@@ -6,7 +6,7 @@ mongoose
   .connect(
     "mongodb+srv://admin:admin@cluster0.gnqvc.mongodb.net/Reddit?retryWrites=true&w=majority",
     {
-      poolSize: 500,
+      poolSize: 10,
     }
   )
   .then(
@@ -19,4 +19,3 @@ mongoose
   );
 
 module.exports = mongoose;
-
