@@ -12,6 +12,7 @@ async function handle_request(msg, callback) {
     description: description,
     rules: rules,
     createdBy: email,
+    members:email
   });
   console.log("Inside Community");
   console.log(community);
