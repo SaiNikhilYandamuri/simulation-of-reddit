@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     height: "15vh",
-    textAlign: "center",
+    alignItems: "left",
     color: theme.palette.text.secondary,
   },
 
@@ -121,9 +121,7 @@ export default function CommunityPage() {
           </Grid>
           <Grid item xs={12}>
             <Paper className={classes.paper}>
-              <div className="col-sm-12 title">
-                <h1 className="title-text">{title}</h1>
-              </div>
+              <h1 className="title-text">{title}</h1>
             </Paper>
           </Grid>
           <Grid item xs={12}>
