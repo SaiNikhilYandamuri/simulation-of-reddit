@@ -1,0 +1,69 @@
+.myaccount-bg {
+  background-color: #dae0e6;
+  height: 100vh;
+}
+
+.myaccount-blue {
+  background-color: #33a8ff;
+  margin-top: 5vh;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  height: 30vh;
+}
+
+.myaccount-white {
+  background-color: #ffff;
+
+  height: 50vh;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.myaccount-parent {
+  width: 90vw;
+  margin-left: 5vw;
+  margin-right: 10vw;
+  border-radius: 10px;
+  position: fixed;
+  z-index: 0;
+}
+
+.profile-image {
+  margin-top: -72vh;
+  margin-left: 11vh;
+}
+
+.myaccount-form-div {
+  padding-top: 10vh;
+  margin-left: 4vw;
+}
+
+.profile-edit-button {
+  margin-left: 175px;
+  margin-top: -23px;
+  position: relative;
+  z-index: 1;
+  size: 20px;
+  color: #ffff;
+  cursor: pointer;
+}
+
+.gender-label {
+  padding-left: 7px !important;
+}
+
+.upload-button {
+  text-align: right !important;
+  padding-right: 10vw !important;
+  padding-top: 2vh !important;
+}
+
+.input-gender-width {
+  margin-left: 7px;
+  width: 31.5vw;
+}
+
+.hide-button {
+  visibility: hidden;
+}

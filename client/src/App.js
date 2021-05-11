@@ -6,7 +6,14 @@ import Landing from "./components/Landing/Landing";
 import Home from "./components/HomePage/HomePage";
 import CommunityPage from "./components/CommunityPage/CommunityPage";
 import MyAccount from "./components/MyAccount/MyAccount";
+
 import SearchCommunity from "./components/SearchCommunity/SearchCommunity";
+
+import CreatePost from "./components/CreatePost/CreatePost";
+import Messages from "./components/Messages/Messages";
+import ViewPost from "./components/ViewPost/ViewPost";
+
+
 const DefaultContainer = () => (
   <div>
     <div>
@@ -26,6 +33,9 @@ function App() {
           <Route path="/communityPage" exact component={CommunityPage} />
           <Route path="/myAccount" exact component={MyAccount} />
           <Route path="/searchcommunity" exact component={SearchCommunity} />
+          <Route path="/createpost" exact component={CreatePost} />
+          <Route path="/messages" exact component={Messages} />
+          <Route path="/viewpost" exact component={ViewPost} />
           <Route component={DefaultContainer} />
         </Switch>
       </div>
