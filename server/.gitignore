@@ -1,0 +1,3 @@
+/server/node_modules/*
+/client/node_modules/*
+/kafka-server/node_modules/*
