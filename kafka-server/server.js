@@ -15,8 +15,15 @@ const updateProfile = require("./services/UpdateProfile");
 const imageUpload = require("./services/UploadImage");
 const approverequesttojoincommunity = require("./services/ApproveRequestToJoinCommunity");
 const checkapprovedstatus = require("./services/CheckApprovedStatus");
-const votingforpost = require("./services/VotingForPost");
 const votingforcommunity = require("./services/VotingForCommunity");
+const communitiesListByUser = require("./services/CommunitiesListByUser");
+const RequestedUsersList = require("./services/RequestedUsersList");
+const ListOfUserJoinedCommunityCreatedByUser = require("./services/ListOfUserJoinedCommunityCreatedByUser");
+const usersearch = require("./services/UserSearch");
+const addcomment = require("./services/AddComment");
+const getcomment = require("./services/GetComments");
+const getpostbyid = require("./services/GetPostById");
+const getusercommunities = require("./services/GetUserCommunities");
 
 function handleTopicRequest(topic_name, fname) {
   //var topic_name = 'root_topic';
@@ -50,7 +57,7 @@ function handleTopicRequest(topic_name, fname) {
 
 handleTopicRequest("requesttojoin_communitys", requestToJoinCommunity);
 handleTopicRequest("create_communitys1", createCommunity);
-handleTopicRequest("search_community1", searchCommunity);
+handleTopicRequest("search_community", searchCommunity);
 handleTopicRequest("add_messages", addMessages);
 handleTopicRequest("get_messages", getMessages);
 handleTopicRequest("addPost", addPost);
@@ -66,5 +73,12 @@ handleTopicRequest(
   approverequesttojoincommunity
 );
 handleTopicRequest("checkapprovedstatus", checkapprovedstatus);
-handleTopicRequest("votingforpost", votingforpost);
 handleTopicRequest("votingforcommunity", votingforcommunity);
+handleTopicRequest("communities_list_by_user", communitiesListByUser);
+handleTopicRequest("requested_user_list", RequestedUsersList);
+handleTopicRequest("list_of_user_joined_community_by_user", ListOfUserJoinedCommunityCreatedByUser);
+handleTopicRequest("user_search", usersearch);
+handleTopicRequest("add_comment1", addcomment);
+handleTopicRequest("get_comments", getcomment);
+handleTopicRequest("getPostById", getpostbyid);
+handleTopicRequest("getUserCommunities", getusercommunities);

@@ -9,19 +9,20 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 
-  height: 30vh;
+  height: 32vh;
 }
 
 .myaccount-white {
   background-color: #ffff;
 
-  height: 50vh;
+  height: 52vh;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
 
 .myaccount-parent {
   width: 90vw;
+  height: 90vh;
   margin-left: 5vw;
   margin-right: 10vw;
   border-radius: 10px;
@@ -30,7 +31,7 @@
 }
 
 .profile-image {
-  margin-top: -72vh;
+  margin-top: -77vh;
   margin-left: 11vh;
 }
 

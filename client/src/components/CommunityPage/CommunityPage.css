@@ -4,10 +4,32 @@
 
 .comm-page-bg {
   background-color: #dae0e6;
-  height: 100vh;
+
+  flex-grow: 2;
+  min-height: 100vh !important;
 }
 
 .comm-page-about {
-  margin-top: 20px !important;
+  margin-top: 19px !important;
   margin-left: 10px !important;
+}
+
+.tabs-home {
+  width: 64.5vw;
+
+  margin-left: 2vw;
+  margin-top: 5px;
+}
+
+.title {
+  text-align: left;
+}
+
+.title-text {
+  margin-left: 2vw;
+}
+
+.post {
+  width: 64vw !important;
+  margin-left: 26px !important;
 }

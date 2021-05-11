@@ -5,7 +5,7 @@ import "./PostTile.css";
 import VoteButton from "../VoteButton/VoteButton";
 import { useHistory } from "react-router-dom";
 
-function PostTile() {
+function PostTile(props) {
   const history = useHistory();
 
   const redirectToViewPost = () => {
@@ -25,11 +25,11 @@ function PostTile() {
           <span className="subreddit-info">
             <span className="subreddit-text">
               <a className="posturl" href="">
-                Community Name
+                {props.postTitle}
               </a>
             </span>
             <span>
-              . Posted by
+              . Posted by {props.createdByEmail}
               <a className="username" href="">
                 Username
               </a>
@@ -39,7 +39,7 @@ function PostTile() {
           <hr />
           <div className="post-title">
             <a className="postname" href="">
-              Post name add post url here in href
+              {props.text}
             </a>
           </div>
           <div>

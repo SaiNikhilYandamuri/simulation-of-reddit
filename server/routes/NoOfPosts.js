@@ -3,15 +3,13 @@ const checkAuth = require("../utils/passport");
 var kafka = require("../kafka/client");
 const passport = require("passport");
 
-
-router.post(
-  "/getPost",
+router.get(
+  "/noofposts",
   passport.authenticate("jwt", { session: false }),
   async (req, res) => {
-    console.log("Inside get post");
-    kafka.make_request("get_post", req.body, function (err, results) {
-      //add topic/changeeee
-      console.log("Inside get post topic");
+    console.log("Inside COmm");
+    kafka.make_request("no_of_posts", req.body, function (err, results) {
+      console.log("Inside all analytics topic");
       if (err) {
         console.log("Inside err");
         res.json({
@@ -21,7 +19,6 @@ router.post(
         res.status(400).end();
       } else {
         console.log("Inside else", results);
-
         res.status(200).send(results);
       }
     });
@@ -29,4 +26,3 @@ router.post(
 );
 
 module.exports = router;
-
