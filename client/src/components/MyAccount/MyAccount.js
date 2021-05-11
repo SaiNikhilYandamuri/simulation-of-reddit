@@ -126,7 +126,9 @@ export default function CenteredGrid() {
   useEffect(() => {
     getAccountDetails().then((result) => {
       setEmail(result.data.email);
-      setURL(result.data[0].profile_picture);
+      if (result.data[0].profile_picture) {
+        setURL(result.data[0].profile_picture);
+      }
 
       setName(result.data[0].name);
       setLocation(result.data[0].location);

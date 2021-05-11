@@ -9,6 +9,7 @@ import endPointObj from "../../endPointUrl";
 import VoteButton from "../VoteButton/VoteButton";
 import post from "../resources/post.png";
 import { useHistory } from "react-router-dom";
+import NavBar from "../NavBar/NavBar";
 
 function SearchCommunity() {
   const [community, setSearchcommunity] = useState([]);
@@ -54,7 +55,10 @@ function SearchCommunity() {
         setSortstringdesk("Most number of posts");
         break;
     }
-    if (sortStringin !== "numberOfUpvotesDesc" && sortStringin !== "numberOfUpvotesAsc") {
+    if (
+      sortStringin !== "numberOfUpvotesDesc" &&
+      sortStringin !== "numberOfUpvotesAsc"
+    ) {
       setOnSortTriggerd(false);
     }
     getSearchCommunity(searchString, sortStringin);
@@ -103,6 +107,7 @@ function SearchCommunity() {
 
   return (
     <div>
+      <NavBar></NavBar>
       <FormGroup row>
         <Col sm={3}>
           <Dropdown>
@@ -142,7 +147,7 @@ function SearchCommunity() {
             <Button
               variant="dark"
               style={{ width: 100, height: 40 }}
-              onClick={() => ("numberOfUpvotesAsc")}
+              onClick={() => "numberOfUpvotesAsc"}
             >
               Asc
             </Button>{" "}

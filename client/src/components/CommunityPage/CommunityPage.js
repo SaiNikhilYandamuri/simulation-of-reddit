@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     height: "15vh",
     alignItems: "left",
+    marginTop: "-7px",
     color: theme.palette.text.secondary,
   },
 
@@ -115,15 +116,14 @@ export default function CommunityPage() {
     <div className="comm-page-bg">
       <div className={classes.root}>
         <NavigationBar></NavigationBar>
-        <Grid container spacing={0}>
+        <Grid container>
           <Grid item xs={12}>
             <Paper className={classes.paperBlue}></Paper>
-          </Grid>
-          <Grid item xs={12}>
             <Paper className={classes.paper}>
               <h1 className="title-text">{title}</h1>
             </Paper>
           </Grid>
+
           <Grid item xs={12}>
             <Grid container>
               <Grid item xs={8}>
