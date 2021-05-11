@@ -4,7 +4,7 @@ import { faComment } from "@fortawesome/free-solid-svg-icons";
 import "./PostTile.css";
 import VoteButton from "../VoteButton/VoteButton";
 
-function PostTile() {
+function PostTile(props) {
   return (
     <div>
       <div className="row post">
@@ -15,11 +15,11 @@ function PostTile() {
           <span className="subreddit-info">
             <span className="subreddit-text">
               <a className="posturl" href="">
-                Subreddit name
+                {props.postTitle}
               </a>
             </span>
             <span>
-              . Posted by
+              . Posted by {props.createdByEmail}
               <a className="username" href="">
                 Username
               </a>
@@ -29,7 +29,7 @@ function PostTile() {
           <hr />
           <div className="post-title">
             <a className="postname" href="">
-              Post name add post url here in href
+              {props.text}
             </a>
           </div>
           <div>
