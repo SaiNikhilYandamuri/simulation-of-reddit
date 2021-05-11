@@ -16,6 +16,7 @@ const imageUpload = require("./services/UploadImage");
 const approverequesttojoincommunity = require("./services/ApproveRequestToJoinCommunity");
 const checkapprovedstatus = require("./services/CheckApprovedStatus");
 const votingforcommunity = require("./services/VotingForCommunity");
+const usersearch = require("./services/UserSearch");
 const addcomment = require("./services/AddComment");
 const getcomment = require("./services/GetComments");
 
@@ -68,5 +69,6 @@ handleTopicRequest(
 );
 handleTopicRequest("checkapprovedstatus", checkapprovedstatus);
 handleTopicRequest("votingforcommunity", votingforcommunity);
+handleTopicRequest("user_search", usersearch);
 handleTopicRequest("add_comment1", addcomment);
 handleTopicRequest("get_comments", getcomment);

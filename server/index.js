@@ -22,6 +22,7 @@ const imageUpload = require("./routes/UploadImage");
 const checkApprovedStatus = require("./routes/CheckApprovedStatus");
 const votingForPost = require("./routes/VotingForPost");
 const votingForCommunity = require("./routes/VotingForCommunity");
+const userSearch = require("./routes/UserSearch");
 const addComment = require("./routes/AddComment");
 const getComments = require("./routes/GetComments");
 
@@ -64,5 +65,6 @@ app.use("/api", acceptRequestToJoinCommunity);
 app.use("/api", checkApprovedStatus);
 app.use("/api", votingForPost);
 app.use("/api", votingForCommunity);
+app.use("/api", userSearch);
 app.use("/api", addComment);
 app.use("/api", getComments);
