@@ -52,7 +52,7 @@ KafkaRPC.prototype.makeRequest = function (topic_name, content, callback) {
         topic: topic_name,
         messages: JSON.stringify({
           correlationId: correlationId,
-          replyTo: "responses",
+          replyTo: "responses1",
           data: content,
         }),
         partition: 0,
@@ -77,7 +77,7 @@ KafkaRPC.prototype.setupResponseQueue = function (producer, topic_name, next) {
   self = this;
 
   //subscribe to messages
-  var consumer = self.connection.getConsumer("responses");
+  var consumer = self.connection.getConsumer("responses1");
   consumer.on("message", function (message) {
     console.log("msg received");
     var data = JSON.parse(message.value);

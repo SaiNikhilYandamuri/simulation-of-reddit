@@ -7,6 +7,14 @@ async function handle_request(msg, callback) {
   console.log(msg);
   console.log("inside this");
   console.log(msg.userEmail);
+
+  const searchString = msg.searchString;
+  console.log(searchString);
+  console.log("Hello");
+  const search = "/" + searchString + "/";
+  console.log(search);
+  const sortExpression = msg.sort;
+
   email = msg.userEmail;
   communityName = msg.communityName;
   joined_community_array = [];
@@ -20,7 +28,6 @@ async function handle_request(msg, callback) {
         callback(null, error);
       } else {
         console.log("Inside Else of result");
-
 
         for (let i = 0; i < result[0].communities.length; i++) {
           joined_community_array.push(result[0].communities[i]);
@@ -39,26 +46,91 @@ async function handle_request(msg, callback) {
 
   posts_array = [];
 
-  for (let i = 0; i < joined_community_array.length; i++) {
-    await Post.find({ communityName: joined_community_array[i] })
-      .sort({ createdTime: -1 })
-      .then((result, error) => {
-        if (error) {
-          callback(null, error);
-        } else {
-          console.log("Inside Else of result");
-          console.log(result);
-          posts_array.push(result);
+  switch (sortExpression) {
+    case "numberOfUpvotesAsc":
+      for (let i = 0; i < joined_community_array.length; i++) {
+        await Post.find({ communityName: joined_community_array[i] })
+          .sort({ numberOfUpvotes: -1 })
+          .then((result, error) => {
+            if (error) {
+              callback(null, error);
+            } else {
+              console.log("Inside Else of result");
+              console.log(result);
+              posts_array.push(result);
+            }
+          });
+      }
+      callback(null, posts_array);
+      break;
 
-          // callback(null, result);
-        }
-      });
+    case "numberOfUpvotesDesc":
+      for (let i = 0; i < joined_community_array.length; i++) {
+        await Post.find({ communityName: joined_community_array[i] })
+          .sort({ numberOfUpvotes: 1 })
+          .then((result, error) => {
+            if (error) {
+              callback(null, error);
+            } else {
+              console.log("Inside Else of result");
+              console.log(result);
+              posts_array.push(result);
+            }
+          });
+      }
+      callback(null, posts_array);
+      break;
+
+    case "numberOfDownvotesAsc":
+      for (let i = 0; i < joined_community_array.length; i++) {
+        await Post.find({ communityName: joined_community_array[i] })
+          .sort({ numberOfDownvotes: -1 })
+          .then((result, error) => {
+            if (error) {
+              callback(null, error);
+            } else {
+              console.log("Inside Else of result");
+              console.log(result);
+              posts_array.push(result);
+            }
+          });
+      }
+      callback(null, posts_array);
+      break;
+
+    case "numberOfDownvotesDesc":
+      for (let i = 0; i < joined_community_array.length; i++) {
+        await Post.find({ communityName: joined_community_array[i] })
+          .sort({ numberOfDownvotes: 1 })
+          .then((result, error) => {
+            if (error) {
+              callback(null, error);
+            } else {
+              console.log("Inside Else of result");
+              console.log(result);
+              posts_array.push(result);
+            }
+          });
+      }
+      callback(null, posts_array);
+      break;
+
+    default:
+      for (let i = 0; i < joined_community_array.length; i++) {
+        await Post.find({ communityName: joined_community_array[i] })
+          .sort({ createdTime: -1 })
+          .then((result, error) => {
+            if (error) {
+              callback(null, error);
+            } else {
+              console.log("Inside Else of result");
+              console.log(result);
+              posts_array.push(result);
+            }
+          });
+      }
+      callback(null, posts_array);
   }
-  console.log(
-    "====================================================================="
-  );
-  console.log(posts_array);
-  callback(null, posts_array);
 }
 
 exports.handle_request = handle_request;
