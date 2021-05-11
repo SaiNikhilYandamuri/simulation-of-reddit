@@ -23,6 +23,8 @@ const checkApprovedStatus = require("./routes/CheckApprovedStatus");
 const votingForPost = require("./routes/VotingForPost");
 const votingForCommunity = require("./routes/VotingForCommunity");
 const userSearch = require("./routes/UserSearch");
+const addComment = require("./routes/AddComment");
+const getComments = require("./routes/GetComments");
 
 app.use(
   cors({
@@ -51,7 +53,7 @@ app.use("/api", searchCommunity);
 app.use("/api", addMessages);
 app.use("/api", getMessages);
 app.use("/api", createPost);
-// app.use("/api", getPost);
+app.use("/api", getPost);
 app.use("/api", requestedToJoinCommunity);
 app.use("/api", inviteToJoinCommunity);
 app.use("/api", acceptInvitationByUser);
@@ -64,3 +66,5 @@ app.use("/api", checkApprovedStatus);
 app.use("/api", votingForPost);
 app.use("/api", votingForCommunity);
 app.use("/api", userSearch);
+app.use("/api", addComment);
+app.use("/api", getComments);

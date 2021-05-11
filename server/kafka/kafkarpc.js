@@ -77,7 +77,9 @@ KafkaRPC.prototype.setupResponseQueue = function (producer, topic_name, next) {
   self = this;
 
   //subscribe to messages
-  var consumer = self.connection.getConsumer("responses2");
+
+
+  var consumer = self.connection.getConsumer("responses_topic");
   consumer.on("message", function (message) {
     console.log("msg received");
     var data = JSON.parse(message.value);
