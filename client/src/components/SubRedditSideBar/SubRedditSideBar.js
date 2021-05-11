@@ -6,12 +6,17 @@ function SubRedditSideBar() {
     <div>
       <div className="sidebar-view-subreddit">
         <div style={{ color: "black", fontWeight: "bold" }}>
-          Browse Subreddits
+          <img
+            style={{ height: "100px", width: "310px" }}
+            src="https://media.wired.com/photos/5abece0a9ccf76090d775185/125:94/w_1374,h_1033,c_limit/hangoutsscreen_2.jpg"
+          />
         </div>
         <hr />
         <span>
           <span className="subreddit-text">
-            <a href="">Subreddits</a>
+            <p>
+              name of community <button className="rounded-pill">Join</button>
+            </p>
           </span>
           <hr />
         </span>
