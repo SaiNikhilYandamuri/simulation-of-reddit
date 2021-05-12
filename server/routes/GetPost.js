@@ -3,6 +3,7 @@ const checkAuth = require("../utils/passport");
 var kafka = require("../kafka/client");
 const passport = require("passport");
 
+
 router.post(
   "/getPost",
   passport.authenticate("jwt", { session: false }),
@@ -28,3 +29,4 @@ router.post(
 );
 
 module.exports = router;
+
