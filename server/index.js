@@ -50,21 +50,14 @@ io.on("connection", (socket) => {
     console.log(name, user);
     console.log(socket.id);
     // user = [name, (name = user)][0];
-    const { error, userNew } = addUser({ id: socket.id, name, user });
-    if (error) return callback(error);
+    const { existingUser, userNew } = addUser({ id: socket.id, name, user });
+    // if (error) return callback(error);
     console.log(userNew);
-
-    // socket.emit("message", {
-    //   user: "Hello",
-    //   text: `${userNew.name}, welcome to chat with ${userNew.user}`,
-    // });
-
-    // socket.broadcast.to(userNew.user).emit("message", {
-    //   user: "Hello",
-    //   text: `${userNew.name} has also joined`,
-    // });
-
-    socket.join(userNew.user);
+    if (existingUser) {
+      socket.join(name);
+    } else {
+      socket.join(userNew.user);
+    }
 
     callback();
   });
@@ -76,8 +69,9 @@ io.on("connection", (socket) => {
       const user = getUser(socket.id);
       console.log(user);
       console.log(message);
-
-      io.to(user.user).emit("message", { user: user.name, text: message });
+      if (user.user) {
+        io.to(user.user).emit("message", { user: user.name, text: message });
+      }
 
       callback();
     }

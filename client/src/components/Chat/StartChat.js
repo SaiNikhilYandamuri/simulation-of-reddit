@@ -5,6 +5,7 @@ import "./StartChat.css";
 
 const StartChat = () => {
   const [name, setName] = useState("");
+  const [user, setUser] = useState("");
   return (
     <div className="joinOuterContainer">
       <div className="joinInnerContainer">
@@ -17,10 +18,18 @@ const StartChat = () => {
             onChange={(event) => setName(event.target.value)}
           />
         </div>
+        <div>
+          <input
+            placeholder="User"
+            className="joinInput"
+            type="text"
+            onChange={(event) => setUser(event.target.value)}
+          />
+        </div>
 
         <Link
           onClick={(e) => (!name ? e.preventDefault() : null)}
-          to={`/chat?name=${name}`}
+          to={`/chat?name=${name}&user=${user}`}
         >
           <button className={"button mt-20"} type="submit">
             Start Chat

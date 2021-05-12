@@ -4,13 +4,31 @@ const addUser = ({ id, name, user }) => {
   name = name.trim().toLowerCase();
   user = user.trim().toLowerCase();
 
+  // const existingUser = users.find((user1) => {
+  //   console.log(user1);
+  //   user1.user === user && user1.name === name;
+  // });
+  // console.log(existingUser);
+
+  const combString = name + user;
+  const combString1 = user + name;
+  console.log(combString, combString1);
+
   const existingUser = users.find(
-    (user1) => user1.user === user && user1.name === name
+    (user1) => user1.user === combString || user1.user === combString1
   );
+  console.log("Yes");
+  console.log(existingUser);
 
   if (existingUser) {
-    return { error: "Chat already is on!!!!" };
+    const user = existingUser.user;
+    const userNew = { id, name, user };
+
+    users.push(userNew);
+    console.log(users);
+    return { userNew };
   }
+  user = combString;
 
   const userNew = { id, name, user };
 

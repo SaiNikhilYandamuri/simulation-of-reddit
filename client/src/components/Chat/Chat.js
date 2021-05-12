@@ -22,9 +22,10 @@ const Chat = ({ location }) => {
   const [users, setUsers] = useState("");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const user = "Nikhil";
+  // const user = "Nikhil";
+  const [user, setUser] = useState("");
   useEffect(() => {
-    const { name, room } = queryString.parse(location.search);
+    const { name, user } = queryString.parse(location.search);
 
     socket = io(ENDPOINT, {
       transports: ["websocket"],
@@ -33,6 +34,7 @@ const Chat = ({ location }) => {
 
     // setRoom(room);
     setName(name);
+    setUser(user);
     // user = [name, (name = user)][0];
     socket.emit("start", { name, user }, () => {});
 
