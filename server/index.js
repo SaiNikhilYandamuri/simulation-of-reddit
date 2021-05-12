@@ -1,4 +1,5 @@
 const express = require("express");
+const axios = require("axios");
 const socketio = require("socket.io");
 const http = require("http");
 const app = express();
@@ -34,11 +35,18 @@ const getPostById = require("./routes/GetPostById");
 const getUserCommunities = require("./routes/GetUserCommunities");
 const router = require("./router");
 const { addUser, removeUser, getUser, getUsersInRoom } = require("./users");
+const { backendServer } = require("./utils/config");
 
 const server = http.createServer(app);
 const io = socketio(server);
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:3000"],
+    methods: ["GET", "POST"],
+    credentials: true,
+  })
+);
 app.use(router);
 // console.log(io);
 
@@ -72,6 +80,20 @@ io.on("connection", (socket) => {
       if (user.user) {
         io.to(user.user).emit("message", { user: user.name, text: message });
       }
+      console.log("Helllooooo");
+      console.log(backendServer);
+      axios
+        .post(`${backendServer}/addMessages`, {
+          message,
+          senderEmail,
+          recieverEmail,
+        })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
 
       callback();
     }

@@ -61,7 +61,11 @@ const Chat = ({ location }) => {
     // user = [name, (name = user)][0];
 
     if (message) {
-      socket.emit("sendMessage", { message, name, user }, () => setMessage(""));
+      socket.emit(
+        "sendMessage",
+        { message, senderEmail: name, recieverEmail: user },
+        () => setMessage("")
+      );
     }
   };
 
