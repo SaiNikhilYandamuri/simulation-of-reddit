@@ -73,10 +73,13 @@ handleTopicRequest(
   approverequesttojoincommunity
 );
 handleTopicRequest("checkapprovedstatus", checkapprovedstatus);
-handleTopicRequest("votingforcommunity", votingforcommunity);
+handleTopicRequest("votingforcommunity1", votingforcommunity);
 handleTopicRequest("communities_list_by_user", communitiesListByUser);
 handleTopicRequest("requested_user_list", RequestedUsersList);
-handleTopicRequest("list_of_user_joined_community_by_user", ListOfUserJoinedCommunityCreatedByUser);
+handleTopicRequest(
+  "list_of_user_joined_community_by_user",
+  ListOfUserJoinedCommunityCreatedByUser
+);
 handleTopicRequest("user_search", usersearch);
 handleTopicRequest("add_comment1", addcomment);
 handleTopicRequest("get_comments", getcomment);
