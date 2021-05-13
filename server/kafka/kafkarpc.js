@@ -52,6 +52,7 @@ KafkaRPC.prototype.makeRequest = function (topic_name, content, callback) {
         topic: topic_name,
         messages: JSON.stringify({
           correlationId: correlationId,
+
           replyTo: "response1212",
           data: content,
         }),

@@ -53,7 +53,7 @@ export default function NavBar() {
 
   const redirectToMessages = () => {
     history.push({
-      pathname: "/messages",
+      pathname: "/StartChat",
     });
   };
 

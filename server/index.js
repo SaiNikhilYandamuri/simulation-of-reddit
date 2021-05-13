@@ -1,4 +1,7 @@
 const express = require("express");
+const axios = require("axios");
+const socketio = require("socket.io");
+const http = require("http");
 const app = express();
 const cors = require("cors");
 const port = 3001;
@@ -30,6 +33,13 @@ const addComment = require("./routes/AddComment");
 const getComments = require("./routes/GetComments");
 const getPostById = require("./routes/GetPostById");
 const getUserCommunities = require("./routes/GetUserCommunities");
+
+const router = require("./router");
+const { addUser, removeUser, getUser, getUsersInRoom } = require("./users");
+const { backendServer } = require("./utils/config");
+
+const server = http.createServer(app);
+const io = socketio(server);
 const leaveCommunity = require("./routes/LeaveCommunity");
 const votingForComments = require("./routes/VotingForComments");
 
@@ -40,6 +50,64 @@ app.use(
     credentials: true,
   })
 );
+app.use(router);
+// console.log(io);
+
+console.log(io.socket);
+
+io.on("connection", (socket) => {
+  console.log("We have new connection");
+  socket.on("start", ({ name, user }, callback) => {
+    console.log(name, user);
+    console.log(socket.id);
+    // user = [name, (name = user)][0];
+    const { existingUser, userNew } = addUser({ id: socket.id, name, user });
+    // if (error) return callback(error);
+    console.log(userNew);
+    if (existingUser) {
+      socket.join(name);
+    } else {
+      socket.join(userNew.user);
+    }
+
+    callback();
+  });
+
+  socket.on(
+    "sendMessage",
+    ({ message, senderEmail, recieverEmail }, callback) => {
+      console.log(socket.id);
+      const user = getUser(socket.id);
+      console.log(user);
+      console.log(message);
+      if (user.user) {
+        io.to(user.user).emit("message", { user: user.name, text: message });
+      }
+      console.log("Helllooooo");
+      console.log(backendServer);
+      axios
+        .post(`${backendServer}/addMessages`, {
+          message,
+          senderEmail,
+          recieverEmail,
+        })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+
+      callback();
+    }
+  );
+  socket.on("disconnect", () => {
+    const user = removeUser(socket.id);
+    console.log("User has left!");
+  });
+});
+
+server.listen(port, () => console.log(`Server has started on port ${port}`));
 
 app.use(express.json());
 
@@ -47,11 +115,11 @@ app.get("/", (req, res) => {
   res.status(200).send("Welcome to Reddit Server");
 });
 
-app.listen(port, () => {
-  console.log(
-    `Express Server for Reddit Server started at http://localhost:${port}`
-  );
-});
+// app.listen(port, () => {
+//   console.log(
+//     `Express Server for Reddit Server started at http://localhost:${port}`
+//   );
+// });
 
 app.use("/api", signup);
 app.use("/api", login);
