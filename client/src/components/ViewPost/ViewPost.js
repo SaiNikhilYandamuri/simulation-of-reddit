@@ -41,6 +41,7 @@ function ViewPost() {
       .then((response) => {
         console.log("successfully fetched comments");
         // setTitle(response.data.communityName);
+        setComments;
       })
       .catch((err) => {
         console.error("an error occured");
@@ -131,6 +132,7 @@ function ViewPost() {
                   </button>
                 </div>
                 <br></br>
+
                 <Comments></Comments>
                 {/* <div style={{ marginTop: "60px" }}>
                   <div class="comment">

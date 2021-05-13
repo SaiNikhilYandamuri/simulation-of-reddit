@@ -12,6 +12,7 @@ import SearchCommunity from "./components/SearchCommunity/SearchCommunity";
 import CreatePost from "./components/CreatePost/CreatePost";
 import Messages from "./components/Messages/Messages";
 import ViewPost from "./components/ViewPost/ViewPost";
+import AnalyticsPage from "./components/AnalyticsPage/AnalyticsPage"
 
 
 const DefaultContainer = () => (
@@ -36,6 +37,7 @@ function App() {
           <Route path="/createpost" exact component={CreatePost} />
           <Route path="/messages" exact component={Messages} />
           <Route path="/viewpost" exact component={ViewPost} />
+          <Route path="/analytics" exact component={AnalyticsPage} />
           <Route component={DefaultContainer} />
         </Switch>
       </div>

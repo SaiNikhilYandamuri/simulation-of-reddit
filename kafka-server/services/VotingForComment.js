@@ -1,21 +1,22 @@
 const mongoose = require("mongoose");
-const Community = require("../model/Community");
-const UserMetadata = require("../model/UserMetadata");
+const Comment = require("../model/Comment");
+// const UserMetadata = require("../model/UserMetadata");
 
 async function handle_request(msg, callback) {
   const emailOfUser = msg.email;
-  const communityName = msg.communityName;
+  const id = msg.id;
   const vote = msg.voteString.toLowerCase();
 
-  console.log("Inside Voting for community");
+  console.log("Inside Voting for comment");
+  console.log("here");
 
   if (vote === "upvote") {
-    const communityDetails = await Community.findOne({
-      communityName: communityName,
+    const commentDetails = await Comment.findOne({
+      _id: id,
     });
-    if (communityDetails.upvoteMembers.includes(emailOfUser)) {
-      Community.findOneAndUpdate(
-        { communityName: communityName },
+    if (commentDetails.upvoteMembers.includes(emailOfUser)) {
+      Comment.findOneAndUpdate(
+        { _id: id },
         {
           $pull: {
             upvoteMembers: emailOfUser,
@@ -28,12 +29,12 @@ async function handle_request(msg, callback) {
           if (err) callback(null, err);
           console.log("Inside Upvote");
           console.log(doc);
-          callback(null, "Upvoted completed for community");
+          callback(null, "Upvoted completed for comment");
         }
       );
-    } else if (communityDetails.downvoteMembers.includes(emailOfUser)) {
-      Community.findOneAndUpdate(
-        { communityName: communityName },
+    } else if (commentDetails.downvoteMembers.includes(emailOfUser)) {
+      Comment.findOneAndUpdate(
+        { _id: id },
         {
           $pull: {
             downvoteMembers: emailOfUser,
@@ -46,12 +47,12 @@ async function handle_request(msg, callback) {
           if (err) callback(null, err);
           console.log("Inside Upvote");
           console.log(doc);
-          callback(null, "Upvoted completed for community");
+          callback(null, "Upvoted completed for comment");
         }
       );
     } else {
-      Community.findOneAndUpdate(
-        { communityName: communityName },
+      Comment.findOneAndUpdate(
+        { _id: id },
         {
           $push: {
             upvoteMembers: emailOfUser,
@@ -64,18 +65,18 @@ async function handle_request(msg, callback) {
           if (err) callback(null, err);
           console.log("Inside Upvote");
           console.log(doc);
-          callback(null, "Upvoted completed for community");
+          callback(null, "Upvoted completed for comment");
         }
       );
     }
   } else if (vote === "downvote") {
-    const communityDetails = await Community.findOne({
-      communityName: communityName,
+    const commentDetails = await Comment.findOne({
+      _id: id,
     });
-    console.log(communityDetails.upvoteMembers.includes(emailOfUser));
-    if (communityDetails.upvoteMembers.includes(emailOfUser)) {
-      Community.findOneAndUpdate(
-        { communityName: communityName },
+    console.log(commentDetails.upvoteMembers.includes(emailOfUser));
+    if (commentDetails.upvoteMembers.includes(emailOfUser)) {
+      Comment.findOneAndUpdate(
+        { _id: id },
         {
           $pull: {
             upvoteMembers: emailOfUser,
@@ -88,12 +89,12 @@ async function handle_request(msg, callback) {
           if (err) callback(null, err);
           console.log("Inside Upvote");
           console.log(doc);
-          callback(null, "Downvoted completed for community");
+          callback(null, "Downvoted completed for comment");
         }
       );
-    } else if (communityDetails.downvoteMembers.includes(emailOfUser)) {
-      Community.findOneAndUpdate(
-        { communityName: communityName },
+    } else if (commentDetails.downvoteMembers.includes(emailOfUser)) {
+      Comment.findOneAndUpdate(
+        { _id: id },
         {
           $pull: {
             downvoteMembers: emailOfUser,
@@ -106,12 +107,12 @@ async function handle_request(msg, callback) {
           if (err) callback(null, err);
           console.log("Inside Upvote");
           console.log(doc);
-          callback(null, "Downvoted completed for community");
+          callback(null, "Downvoted completed for comment");
         }
       );
     } else {
-      Community.findOneAndUpdate(
-        { communityName: communityName },
+      Comment.findOneAndUpdate(
+        { _id: id },
         {
           $push: {
             downvoteMembers: emailOfUser,
@@ -122,7 +123,7 @@ async function handle_request(msg, callback) {
         },
         function (err, doc) {
           if (err) callback(null, err);
-          callback(null, "Downvoted completed for community");
+          callback(null, "Downvoted completed for comment");
         }
       );
     }

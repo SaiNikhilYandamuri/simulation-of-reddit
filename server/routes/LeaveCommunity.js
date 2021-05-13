@@ -4,13 +4,12 @@ var kafka = require("../kafka/client");
 const passport = require("passport");
 
 router.post(
-  "/votingForPost",
+  "/leaveCommunity",
   passport.authenticate("jwt", { session: false }),
   async (req, res) => {
-    console.log("Inside voting post");
-    kafka.make_request("votingforpost1", req.body, function (err, results) {
-      //add topic/changeeee
-      console.log("Inside votingForPost topic");
+    console.log("Inside COmm");
+    kafka.make_request("leavecommunity", req.body, function (err, results) {
+      console.log("Inside Leave Community topic");
       if (err) {
         console.log("Inside err");
         res.json({
@@ -20,7 +19,7 @@ router.post(
         res.status(400).end();
       } else {
         console.log("Inside else", results);
-        res.status(200).send(results);
+        res.status(200).send("Leave Community by user is done");
       }
     });
   }
