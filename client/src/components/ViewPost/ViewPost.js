@@ -10,14 +10,10 @@ import AboutCommunity from "../AboutCommunity/AboutCommunity";
 import CommunityRules from "../CommunityRules/CommunityRules";
 import Comments from "../Comments/Comments";
 
-import { useLocation, Switch } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import Axios from "axios";
-import endPointObj from "../../endPointUrl";
 import NavigationBar from "../NavBar/NavBar";
 import { useDispatch, useSelector } from "react-redux";
 import endPointObj from "../../endPointUrl";
-import Axios from "axios";
 
 const queryString = require("query-string");
 
