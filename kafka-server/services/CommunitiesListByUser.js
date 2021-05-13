@@ -3,6 +3,7 @@ const Community = require("../model/Community");
 
 async function handle_request(msg, callback) {
   // Need to implement images later
+  console.log("inside comm list");
   console.log(msg);
   const senderEmail = msg.senderEmail;
 //   const recieverEmail = msg.recieverEmail;

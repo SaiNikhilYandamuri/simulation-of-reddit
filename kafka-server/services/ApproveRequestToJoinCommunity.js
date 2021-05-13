@@ -35,7 +35,7 @@ async function handle_request(msg, callback) {
     );
   }
 
-  callback(null, "Successfully sent request to join the community!");
+  callback(null, "Successfully approved the request to join community");
   // callback(null, "Successfully sent request to join the community!");
 }
 

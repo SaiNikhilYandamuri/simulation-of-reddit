@@ -27,6 +27,7 @@ const getusercommunities = require("./services/GetUserCommunities");
 const votingforpost = require("./services/VotingForPost");
 const leavecommunity = require("./services/LeaveCommunity");
 const votingforcomment = require("./services/VotingForComment");
+const deletecommunity = require("./services/DeleteCommunity");
 
 function handleTopicRequest(topic_name, fname) {
   //var topic_name = 'root_topic';
@@ -59,13 +60,13 @@ function handleTopicRequest(topic_name, fname) {
 }
 
 handleTopicRequest("requesttojoin_communitys", requestToJoinCommunity);
-handleTopicRequest("create_communitys1", createCommunity);
+handleTopicRequest("create_communitys12", createCommunity);
 
 handleTopicRequest("search_community2", searchCommunity);
 handleTopicRequest("add_messages", addMessages);
 handleTopicRequest("get_messages", getMessages);
-handleTopicRequest("add_post", addPost);
-handleTopicRequest("get_post", getPost);
+handleTopicRequest("AddPost1", addPost);
+handleTopicRequest("getPost", getPost);
 handleTopicRequest("invitetojoin_community", inviteToJoinCommunity);
 handleTopicRequest("acceptinvitationbyuser", acceptInvitationByUser);
 handleTopicRequest("getcommunity", getCommunity);
@@ -92,3 +93,4 @@ handleTopicRequest("getUserCommunities", getusercommunities);
 handleTopicRequest("votingforpost1", votingforpost);
 handleTopicRequest("leavecommunity", leavecommunity);
 handleTopicRequest("votingforcomment", votingforcomment);
+handleTopicRequest("deletecommunity", deletecommunity);

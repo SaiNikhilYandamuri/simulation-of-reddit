@@ -5,10 +5,10 @@ const passport = require("passport");
 
 router.post(
     "/createPost",
-    passport.authenticate("jwt", { session: false }),
+    // passport.authenticate("jwt", { session: false }),
     async (req, res) => {
       console.log("Inside create post");
-      kafka.make_request("add_post", req.body, function (err, results) {//add topic/changeeee
+      kafka.make_request("AddPost1", req.body, function (err, results) {//add topic/changeeee
         console.log("Inside create post topic");
         if (err) {
           console.log("Inside err");
