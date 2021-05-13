@@ -6,6 +6,8 @@ import Landing from "./components/Landing/Landing";
 import Home from "./components/HomePage/HomePage";
 import CommunityPage from "./components/CommunityPage/CommunityPage";
 import MyAccount from "./components/MyAccount/MyAccount";
+
+import CommunityModeration from "./components/CommunityModeration/CommunityModeration";
 import SearchCommunity from "./components/SearchCommunity/SearchCommunity";
 import CreatePost from "./components/CreatePost/CreatePost";
 import Messages from "./components/Messages/Messages";
@@ -37,10 +39,14 @@ function App() {
           <Route path="/messages" exact component={Messages} />
           <Route path="/viewpost" exact component={ViewPost} />
 
+
           <Route path="/startChat" exact component={StartChat} />
           <Route path="/chat" exact component={Chat} />
           <Route path="/analytics" exact component={AnalyticsPage} />
+
+          <Route path="/communitymoderation" exact component={CommunityModeration} />
           <Route component={DefaultContainer} />
+
         </Switch>
       </div>
     </Router>
