@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Community = require("../model/Community");
+const UserMetadata = require("../model/UserMetadata");
 
 async function handle_request(msg, callback) {
   // Need to implement images later
@@ -12,7 +13,7 @@ async function handle_request(msg, callback) {
     description: description,
     rules: rules,
     createdBy: email,
-    members:email
+    members: email,
   });
   console.log("Inside Community");
   console.log(community);
@@ -31,7 +32,13 @@ async function handle_request(msg, callback) {
           if (error) {
             callback(null, error);
           } else {
-            callback(null, "Succesfully created.");
+            UserMetadata.findOneAndUpdate(
+              { email: email },
+              { $push: { communities: communityName } },
+              (error, result) => {
+                callback(null, "Succesfully created.");
+              }
+            );
           }
         });
       }

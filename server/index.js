@@ -33,7 +33,7 @@ const addComment = require("./routes/AddComment");
 const getComments = require("./routes/GetComments");
 const getPostById = require("./routes/GetPostById");
 const getUserCommunities = require("./routes/GetUserCommunities");
-
+const deleteCommunity = require("./routes/DeleteCommunity");
 const router = require("./router");
 const { addUser, removeUser, getUser, getUsersInRoom } = require("./users");
 const { backendServer } = require("./utils/config");
@@ -150,3 +150,4 @@ app.use("/api", getPostById);
 app.use("/api", getUserCommunities);
 app.use("/api", leaveCommunity);
 app.use("/api", votingForComments);
+app.use("/api", deleteCommunity);

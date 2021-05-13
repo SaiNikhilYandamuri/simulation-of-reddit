@@ -8,26 +8,30 @@ router.post(
   passport.authenticate("jwt", { session: false }),
   async (req, res) => {
     console.log("Inside COmm");
-    kafka.make_request("create_communitys1", req.body, function (err, results) {
-      console.log("Inside create_community topic");
-      if (err) {
-        console.log("Inside err");
-        res.json({
-          status: "error",
-          msg: "Error",
-        });
-        res.status(400).end();
-      } else {
-        console.log("Inside else", results);
-        if (results === "Succesfully created.") {
-          res.status(200).send("Created successfully");
+    kafka.make_request(
+      "create_communitys12",
+      req.body,
+      function (err, results) {
+        console.log("Inside create_community topic");
+        if (err) {
+          console.log("Inside err");
+          res.json({
+            status: "error",
+            msg: "Error",
+          });
+          res.status(400).end();
         } else {
-          res
-            .status(409)
-            .send("Community with the present name already exists");
+          console.log("Inside else", results);
+          if (results === "Succesfully created.") {
+            res.status(200).send("Created successfully");
+          } else {
+            res
+              .status(409)
+              .send("Community with the present name already exists");
+          }
         }
       }
-    });
+    );
   }
 );
 
