@@ -41,7 +41,7 @@ function ViewPost() {
       .then((response) => {
         console.log("successfully fetched comments");
         // setTitle(response.data.communityName);
-        setComments;
+        // setComments;
       })
       .catch((err) => {
         console.error("an error occured");
