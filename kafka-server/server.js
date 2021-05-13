@@ -24,6 +24,7 @@ const addcomment = require("./services/AddComment");
 const getcomment = require("./services/GetComments");
 const getpostbyid = require("./services/GetPostById");
 const getusercommunities = require("./services/GetUserCommunities");
+const leavecommunity = require("./services/LeaveCommunity");
 
 function handleTopicRequest(topic_name, fname) {
   //var topic_name = 'root_topic';
@@ -85,3 +86,4 @@ handleTopicRequest("add_comment1", addcomment);
 handleTopicRequest("get_comments", getcomment);
 handleTopicRequest("getPostById", getpostbyid);
 handleTopicRequest("getUserCommunities", getusercommunities);
+handleTopicRequest("leavecommunity", leavecommunity);

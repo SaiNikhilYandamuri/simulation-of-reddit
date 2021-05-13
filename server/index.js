@@ -24,12 +24,13 @@ const votingForPost = require("./routes/VotingForPost");
 const votingForCommunity = require("./routes/VotingForCommunity");
 const CommunitiesListByUser = require("./routes/CommunitiesListByUser");
 const RequestedUsersList = require("./routes/RequestedUsersList");
-const ListOfUserJoinedCommunityCreatedByUser = require("./routes/ListOfUserJoinedCommunityCreatedByUser")
+const ListOfUserJoinedCommunityCreatedByUser = require("./routes/ListOfUserJoinedCommunityCreatedByUser");
 const userSearch = require("./routes/UserSearch");
 const addComment = require("./routes/AddComment");
 const getComments = require("./routes/GetComments");
 const getPostById = require("./routes/GetPostById");
 const getUserCommunities = require("./routes/GetUserCommunities");
+const leaveCommunity = require("./routes/LeaveCommunity");
 
 app.use(
   cors({
@@ -78,3 +79,4 @@ app.use("/api", addComment);
 app.use("/api", getComments);
 app.use("/api", getPostById);
 app.use("/api", getUserCommunities);
+app.use("/api", leaveCommunity);
