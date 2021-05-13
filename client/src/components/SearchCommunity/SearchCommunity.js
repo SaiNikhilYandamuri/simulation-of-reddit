@@ -89,12 +89,12 @@ function SearchCommunity() {
 
     setSearchString(opt.target.value);
     getSearchCommunity(opt.target.value, " ");
-    setOnChangeTriggerd(true);
+   // setOnChangeTriggerd(true);
 
-    let final_list = community.filter((li) => {
-      return li.communityName.includes(opt.target.value);
-    });
-    setDisplayList(final_list);
+    // let final_list = community.filter((li) => {
+    //   return li.communityName.includes(opt.target.value);
+    // });
+    //setDisplayList(final_list);
   };
   const time = (timestamp) => {
     if (timestamp) {
@@ -116,12 +116,14 @@ function SearchCommunity() {
   }, []);
 
   return (
+ 
+      
     <div className="search-comm">
       <NavBar></NavBar>
       <FormGroup row>
         <Col sm={2}>
           <Dropdown className="drop-down">
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
+            <Dropdown.Toggle  id="dropdown-basic" variant="dark">
               Dropdown Button
             </Dropdown.Toggle>
 
@@ -174,7 +176,7 @@ function SearchCommunity() {
       <div>
         <br />
       </div>
-      {onChangeTriggered == true &&
+      {/* {onChangeTriggered == true &&
         displayList.map((com) => (
           <article className="row post-width">
             <div class="arrows">
@@ -216,10 +218,11 @@ function SearchCommunity() {
               </div>
             </div>
           </article>
-        ))}
+        ))} */}
 
-      {onChangeTriggered == false &&
-        community.map((com) => (
+      {/* {onChangeTriggered == false && */}
+      
+       { community.map((com) => (
           <article className="row post-width">
             <div class="arrows">
               <VoteButton
@@ -261,6 +264,7 @@ function SearchCommunity() {
           </article>
         ))}
     </div>
+    
   );
 }
 export default SearchCommunity;
