@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import VoteButton from "../VoteButton/VoteButton";
 import "./ViewPost.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,8 +8,74 @@ import SubRedditSideBar from "../SubRedditSideBar/SubRedditSideBar";
 import AboutCommunity from "../AboutCommunity/AboutCommunity";
 import CommunityRules from "../CommunityRules/CommunityRules";
 import Comments from "../Comments/Comments";
+import { useLocation, Switch } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import Axios from "axios";
+import endPointObj from "../../endPointUrl";
+const queryString = require("query-string");
 
 function ViewPost() {
+  const location = useLocation();
+  const [comment, setComment] = React.useState("");
+  const email = useSelector((state) => state.login.username);
+  const commentHandle = (e) => {
+    console.log(e.target.value);
+
+    setComment(e.target.value);
+  };
+
+  const fetchComments = () => {
+    Axios.post(
+      endPointObj.url + "api/getComments",
+      {
+        parentId: queryString.parse(location.search).id,
+      },
+      {
+        headers: {
+          Authorization: "jwt " + sessionStorage.getItem("token"),
+        },
+      }
+    )
+      .then((response) => {
+        console.log("successfully fetched comments");
+        // setTitle(response.data.communityName);
+      })
+      .catch((err) => {
+        console.error("an error occured");
+        if (err.response && err.response.data) {
+        }
+      });
+  };
+
+  useEffect(() => {
+    fetchComments();
+  }, []);
+
+  const addComment = (comment) => {
+    Axios.post(
+      endPointObj.url + "api/addComment",
+      {
+        comment: comment,
+        commentedBy: email,
+        parentId: queryString.parse(location.search).id,
+      },
+      {
+        headers: {
+          Authorization: "jwt " + sessionStorage.getItem("token"),
+        },
+      }
+    )
+      .then((response) => {
+        console.log("successfully fetched comm");
+        // setTitle(response.data.communityName);
+      })
+      .catch((err) => {
+        console.error("an error occured");
+        if (err.response && err.response.data) {
+        }
+      });
+  };
+
   return (
     <div>
       <div class="container">
