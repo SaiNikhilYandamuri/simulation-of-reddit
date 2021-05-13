@@ -26,6 +26,7 @@ const getpostbyid = require("./services/GetPostById");
 const getusercommunities = require("./services/GetUserCommunities");
 const votingforpost = require("./services/VotingForPost");
 const leavecommunity = require("./services/LeaveCommunity");
+const votingforcomment = require("./services/VotingForComment");
 
 
 function handleTopicRequest(topic_name, fname) {
@@ -90,4 +91,5 @@ handleTopicRequest("getPostById", getpostbyid);
 handleTopicRequest("getUserCommunities", getusercommunities);
 handleTopicRequest("votingforpost1", votingforpost);
 handleTopicRequest("leavecommunity", leavecommunity);
+handleTopicRequest("votingforcomment", votingforcomment);
 
