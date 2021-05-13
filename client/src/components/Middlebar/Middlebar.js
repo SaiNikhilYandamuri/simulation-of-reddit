@@ -20,9 +20,9 @@ function Middlebar(props) {
   const [alert, setAlert] = useState('');
   const [returncomm, setReturncomm] = useState([]);
   const [searchcommunity, setsearchcommunity] = useState([]);
-  const [openmodel, setopenmodel] = useState([false]);
-  const [openmodel2, setopenmodel2] = useState([false]);
-  const [openmodel3, setopenmodel3] = useState([false]);
+  const [openmodel, setopenmodel] = useState(false);
+  const [openmodel2, setopenmodel2] = useState(false);
+ 
   const [searchString, setSearchString] = useState("");
   const [onChangeTriggered, setOnChangeTriggerd] = useState(false);
   const [displayList, setDisplayList] = useState([]);
@@ -164,6 +164,7 @@ function Middlebar(props) {
     Axios.post(
      endPointObj.url + "api/CommunitiesListByUser",
       {
+       // senderEmail : email,
         senderEmail : "danesh2497@reddit.com",
       },
       {
@@ -183,33 +184,11 @@ function Middlebar(props) {
       });
     });
   };
-  const getSearchCommunity = (searchString, sort) => {
-    console.log(sort);
-    Axios.post(
-      endPointObj.url + "api/searchCommunity",
-      {
-        searchString,
-        sort,
-      },
-      {
-        headers: {
-          Authorization: "jwt " + sessionStorage.getItem("token"),
-        },
-      }
-    )
-      .then((response) => {
-        console.log(response.data);
-        setsearchcommunity(response.data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  };
+  
 
   useEffect(() => {
     getCommunityUser();
-    //getCommunity();
-  //  getSearchCommunity();
+    
   }, []);
 
 
@@ -235,7 +214,8 @@ function Middlebar(props) {
       }
     )
       .then((response) => {
-        console.log(response.data);      
+        console.log(response.data); 
+        setAlert(response.data);       
       })
       .catch((e) => {
         console.log(e);
@@ -243,56 +223,8 @@ function Middlebar(props) {
    
   };
 
-  //   const accept = (groupName, email) => {
-  //     acceptInvite(groupName, email).then((result) => {
-  //       getInvites(email).then((result) => {
-  //         setInvites(result);
-  //       });
-  //     });
-  //   };
-
-  //   function getInvites(email) {
-  //     return new Promise((resolve, reject) => {
-  //       Axios.get(endPointObj.url + 'invites/' + email)
-  //         .then((response) => {
-  //           resolve(response.data);
-  //         })
-  //         .catch((e) => {
-  //           console.log(e);
-  //         });
-  //     });
-  //   }
-
-  //   function acceptInvite(groupName, email) {
-  //     return new Promise((resolve, reject) => {
-  //       Axios.post(endPointObj.url + 'inviteStatus', {
-  //         status: true,
-  //         groupName: groupName,
-  //         email: email,
-  //       })
-  //         .then((response) => {
-  //           resolve(response.data);
-  //         })
-  //         .catch((e) => {
-  //           console.log(e);
-  //         });
-  //     });
-  //   }
-  function deletecommuniy(groupName, email) {
-    //     return new Promise((resolve, reject) => {
-    //       Axios.post(endPointObj.url + 'inviteStatus', {
-    //         status: true,
-    //         groupName: groupName,
-    //         email: email,
-    //       })
-    //         .then((response) => {
-    //           resolve(response.data);
-    //         })
-    //         .catch((e) => {
-    //           console.log(e);
-    //         });
-    //     });
-  }
+ 
+  
 
   const approve = () => {
     console.log("in aprrove");
@@ -324,8 +256,8 @@ function Middlebar(props) {
       opt = "";
     }
 
-    setSearchString(opt.target.value);
-    getSearchCommunity(opt.target.value, " ");
+    // setSearchString(opt.target.value);
+    // getSearchCommunity(opt.target.value, " ");
     setOnChangeTriggerd(true);
 
     let final_list = list.filter((li) => {
@@ -365,11 +297,13 @@ function Middlebar(props) {
         show={openmodel}
         onHide={handleClose}
       >
+       
         <Modal.Header closeButton>
           <Modal.Title>Uses requested to join</Modal.Title>
         </Modal.Header>
+       
         <Modal.Body>
-          <div class="info">
+          <div class="paper">
             
               <div>
               {requsers.map((com) => (
@@ -403,6 +337,7 @@ function Middlebar(props) {
           
           </div>
         </Modal.Body>
+        
       </Modal>
       <Modal
         aria-labelledby="transition-modal-title"
@@ -430,8 +365,11 @@ function Middlebar(props) {
                     id="flexCheckDefault"
                     onClick={() => {handlearrayuserinv(com.email)}}
                   />
-                  <label class="form-check-label" for="flexCheckDefault">
+                  {/* <label class="form-check-label" for="flexCheckDefault"> */}
+                  <label class="form-check-label">
                   <a className="posturl">{com.email}</a>
+                  <br/>
+                  <a className="posturl">{com.name}</a>
                   </label>
                 </div>
                 </header>
