@@ -18,7 +18,7 @@ async function handle_request(msg, callback) {
         console.log("Inside else");
         Community.findOneAndUpdate(
           { communityName: communityName },
-          { $pull: { members: email } },
+          { $pull: { members: email }, $inc: { numberOfMembers: -1 } },
           (error, result) => {
             callback(null, "Leave Community completed");
           }

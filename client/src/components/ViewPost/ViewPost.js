@@ -9,10 +9,11 @@ import SubRedditSideBar from "../SubRedditSideBar/SubRedditSideBar";
 import AboutCommunity from "../AboutCommunity/AboutCommunity";
 import CommunityRules from "../CommunityRules/CommunityRules";
 import Comments from "../Comments/Comments";
+
+import Axios from "axios";
 import NavigationBar from "../NavBar/NavBar";
 import { useDispatch, useSelector } from "react-redux";
 import endPointObj from "../../endPointUrl";
-import Axios from "axios";
 
 const queryString = require("query-string");
 
@@ -41,7 +42,6 @@ function ViewPost() {
       .then((response) => {
         console.log("successfully fetched comments");
         // setTitle(response.data.communityName);
-        // setComments;
       })
       .catch((err) => {
         console.error("an error occured");

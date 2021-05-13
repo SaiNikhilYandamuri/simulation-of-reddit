@@ -6,6 +6,7 @@ const config = {
   myqlDatabase: "Reddit",
   mysqlPort: 3306,
   secret: "cmope273spring21team2",
+  backendServer: "http://localhost:3001/api",
 };
 
 module.exports = config;

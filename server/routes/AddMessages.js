@@ -11,13 +11,14 @@ const client = redis.createClient(6379, "localhost");
 
 router.post(
   "/addMessages",
-  passport.authenticate("jwt", { session: false }),
+
   async (req, res) => {
+    console.log("Inside Add Messages");
     client.flushall((err, succedded) => {
       console.log(succedded);
     }); //not sure if the right approach ....:(
     console.log("Inside add messages");
-    kafka.make_request("add_messages", req.body, function (err, results) {
+    kafka.make_request("add_messages1", req.body, function (err, results) {
       //add topic/changeeee
       console.log("Inside add message topic");
       if (err) {

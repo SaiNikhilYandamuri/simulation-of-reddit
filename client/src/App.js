@@ -6,14 +6,13 @@ import Landing from "./components/Landing/Landing";
 import Home from "./components/HomePage/HomePage";
 import CommunityPage from "./components/CommunityPage/CommunityPage";
 import MyAccount from "./components/MyAccount/MyAccount";
-
 import SearchCommunity from "./components/SearchCommunity/SearchCommunity";
-
 import CreatePost from "./components/CreatePost/CreatePost";
 import Messages from "./components/Messages/Messages";
 import ViewPost from "./components/ViewPost/ViewPost";
+import StartChat from "./components/Chat/StartChat";
+import Chat from "./components/Chat/Chat";
 import AnalyticsPage from "./components/AnalyticsPage/AnalyticsPage"
-
 
 const DefaultContainer = () => (
   <div>
@@ -37,6 +36,9 @@ function App() {
           <Route path="/createpost" exact component={CreatePost} />
           <Route path="/messages" exact component={Messages} />
           <Route path="/viewpost" exact component={ViewPost} />
+
+          <Route path="/startChat" exact component={StartChat} />
+          <Route path="/chat" exact component={Chat} />
           <Route path="/analytics" exact component={AnalyticsPage} />
           <Route component={DefaultContainer} />
         </Switch>
