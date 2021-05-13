@@ -37,7 +37,7 @@ const deleteCommunity = require("./routes/DeleteCommunity");
 const router = require("./router");
 const { addUser, removeUser, getUser, getUsersInRoom } = require("./users");
 const { backendServer } = require("./utils/config");
-
+const getInvitations = require("./routes/GetInvitations");
 const server = http.createServer(app);
 const io = socketio(server);
 const leaveCommunity = require("./routes/LeaveCommunity");
@@ -151,3 +151,4 @@ app.use("/api", getUserCommunities);
 app.use("/api", leaveCommunity);
 app.use("/api", votingForComments);
 app.use("/api", deleteCommunity);
+app.use("/api", getInvitations);
