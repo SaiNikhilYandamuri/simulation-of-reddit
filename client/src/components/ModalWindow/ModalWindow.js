@@ -259,6 +259,7 @@ export default function ModalWindow() {
   };
 
   const signUp = (name, email, password) => {
+    
     console.log("signUp");
 
     if (inputValidatorSignUp(name, email, password)) {
@@ -296,6 +297,11 @@ export default function ModalWindow() {
           setOpen(false);
         })
         .catch((err) => {
+          console.log("before erro");
+          console.log(err.response.data.message);
+          setPasswordValidState(false);
+          setPasswordValidTextState(err.response.data.message);
+          
           console.error(err);
         });
     }
@@ -349,6 +355,12 @@ export default function ModalWindow() {
   };
 
   useEffect(() => {
+    setPasswordValidTextState("");
+    setPasswordValidState(true);
+    setUsernameValidTextState("");
+    setUsernameValidState(true);
+    setEmailValidTextState("");
+    setEmailValidState(true);
     if (queryString.parse(location.search).modalOpen === "true") {
       handleOpen();
     }
