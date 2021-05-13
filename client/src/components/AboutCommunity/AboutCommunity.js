@@ -8,6 +8,9 @@ import Typography from "@material-ui/core/Typography";
 import Axios from "axios";
 import endPointObj from "../../endPointUrl";
 import "./AboutCommunity.css";
+import { useLocation, Switch } from "react-router-dom";
+
+const queryString = require("query-string");
 
 const useStyles = makeStyles({
   root: {
@@ -37,6 +40,8 @@ export default function AboutCommunity() {
   const [creationTime, setCreationTime] = React.useState("");
   const options = { year: "numeric", month: "long", day: "numeric" };
 
+  const location = useLocation();
+
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
 
@@ -45,7 +50,7 @@ export default function AboutCommunity() {
       Axios.post(
         endPointObj.url + "api/getCommunity",
         {
-          communityName: "ma comm",
+          communityName: queryString.parse(location.search).name,
         },
         {
           headers: {
@@ -94,7 +99,7 @@ export default function AboutCommunity() {
             description: {description}
           </div>
           <div className="col-sm-7 description">members: {memberCount}</div>
-          <div className="col-sm-7 description">created at: {creationTime}</div>
+          <div className="col-sm-8 description">created at: {creationTime}</div>
           <div className="col-sm-7 description">community topics</div>
         </div>
       </CardContent>

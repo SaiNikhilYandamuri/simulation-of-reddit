@@ -33,12 +33,15 @@ const addComment = require("./routes/AddComment");
 const getComments = require("./routes/GetComments");
 const getPostById = require("./routes/GetPostById");
 const getUserCommunities = require("./routes/GetUserCommunities");
+
 const router = require("./router");
 const { addUser, removeUser, getUser, getUsersInRoom } = require("./users");
 const { backendServer } = require("./utils/config");
 
 const server = http.createServer(app);
 const io = socketio(server);
+const leaveCommunity = require("./routes/LeaveCommunity");
+const votingForComments = require("./routes/VotingForComments");
 
 app.use(
   cors({
@@ -145,3 +148,5 @@ app.use("/api", addComment);
 app.use("/api", getComments);
 app.use("/api", getPostById);
 app.use("/api", getUserCommunities);
+app.use("/api", leaveCommunity);
+app.use("/api", votingForComments);

@@ -20,6 +20,7 @@ function SearchCommunity() {
   const [sortdesk, setSortstringdesk] = useState("Created at");
   const [searchString, setSearchString] = useState("");
   const getSearchCommunity = (searchString, sort) => {
+    console.log(searchString);
     console.log(sort);
     Axios.post(
       endPointObj.url + "api/searchCommunity",
@@ -35,6 +36,7 @@ function SearchCommunity() {
     )
       .then((response) => {
         console.log(response.data);
+
         setSearchcommunity(response.data);
       })
       .catch((e) => {
@@ -65,12 +67,14 @@ function SearchCommunity() {
   };
 
   const communityPage = (group) => {
+    console.log(group);
     handleClickGroup(group);
   };
 
-  const handleClickGroup = (path) => {
+  const handleClickGroup = (communityName) => {
     history.push({
-      pathname: "/",
+      pathname: "/communityPage",
+      search: "?name=" + communityName,
     });
   };
 
@@ -101,19 +105,26 @@ function SearchCommunity() {
     return "";
   };
 
+  const upVoteClick = () => {
+    console.log("hello");
+    console.log(searchString);
+    getSearchCommunity(searchString, sortdesk);
+  };
+
   useEffect(() => {
-    getSearchCommunity();
+    getSearchCommunity("", "");
   }, []);
 
   return (
-    <div>
+    <div className="search-comm">
       <NavBar></NavBar>
       <FormGroup row>
-        <Col sm={3}>
-          <Dropdown>
-            {/* <Button color="primary">Sort</Button> */}
-            Sort By {sortdesk}
-            <Dropdown.Toggle split variant="dark" id="dropdown-split-basic" />
+        <Col sm={2}>
+          <Dropdown className="drop-down">
+            <Dropdown.Toggle variant="success" id="dropdown-basic">
+              Dropdown Button
+            </Dropdown.Toggle>
+
             <Dropdown.Menu>
               <Dropdown.Item onClick={() => handleUsers("createdat")}>
                 Created at
@@ -124,18 +135,16 @@ function SearchCommunity() {
               <Dropdown.Item onClick={() => handleUsers("numberOfPosts")}>
                 Most number of posts
               </Dropdown.Item>
-              <NavDropdown.Item
-                onClick={() => handleVotes("Most upvoted posts")}
-              >
-                {" "}
+              <Dropdown.Item onClick={() => handleVotes("Most upvoted posts")}>
                 Most upvoted posts
-              </NavDropdown.Item>
+              </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </Col>
-        <Col sm={3}>
+        <Col sm={7}>
           <Input
             type="text"
+            className="comm-search"
             placeholder="Search Community Name"
             onChange={(opt) => onChange(opt, community)}
             pattern="^[a-zA-Z]+([ ]{1}[a-zA-Z]+)*$"
@@ -143,7 +152,7 @@ function SearchCommunity() {
           />
         </Col>
         {onSortTriggered == true && (
-          <Col sm={3}>
+          <Col sm={3} className="button-div">
             <Button
               variant="dark"
               style={{ width: 100, height: 40 }}
@@ -167,9 +176,20 @@ function SearchCommunity() {
       </div>
       {onChangeTriggered == true &&
         displayList.map((com) => (
-          <article className="row post">
+          <article className="row post-width">
             <div class="arrows">
-              <VoteButton />
+              {console.log("search comm", com)}
+              <VoteButton
+                type={"community"}
+                id={com.communityName}
+                searchString={searchString}
+                sortdesk={sortdesk}
+                upVoteClick={upVoteClick}
+                votes={
+                  parseInt(com.numberOfUpvotes) -
+                  parseInt(com.numberOfDownvotes)
+                }
+              />
             </div>
 
             <img src={post} height="55" width="55" class="thumbnail" />
@@ -187,7 +207,7 @@ function SearchCommunity() {
                   <Nav.Link
                     data-testid="Group"
                     key={com.description}
-                    onClick={() => communityPage(com.communtityName)}
+                    onClick={() => communityPage(com.communityName)}
                     className="posturl"
                   >
                     {com.communityName}
@@ -200,9 +220,19 @@ function SearchCommunity() {
 
       {onChangeTriggered == false &&
         community.map((com) => (
-          <article className="row post">
+          <article className="row post-width">
             <div class="arrows">
-              <VoteButton />
+              <VoteButton
+                type={"community"}
+                id={com.communityName}
+                searchString={searchString}
+                sortdesk={sortdesk}
+                upVoteClick={upVoteClick}
+                votes={
+                  parseInt(com.numberOfUpvotes) -
+                  parseInt(com.numberOfDownvotes)
+                }
+              />
             </div>
 
             <img src={post} height="55" width="55" class="thumbnail" />
@@ -220,7 +250,7 @@ function SearchCommunity() {
                   <Nav.Link
                     data-testid="Group"
                     key={com.communtityName}
-                    onClick={() => communityPage(com.communtityName)}
+                    onClick={() => communityPage(com.communityName)}
                     className="links-dashboard-groups"
                   >
                     {com.communityName}

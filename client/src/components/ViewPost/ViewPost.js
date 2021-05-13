@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import VoteButton from "../VoteButton/VoteButton";
 import "./ViewPost.css";
+import { useLocation, Switch } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComments } from "@fortawesome/free-solid-svg-icons";
 import SideBar from "../SideBar/SideBar";
@@ -8,10 +9,16 @@ import SubRedditSideBar from "../SubRedditSideBar/SubRedditSideBar";
 import AboutCommunity from "../AboutCommunity/AboutCommunity";
 import CommunityRules from "../CommunityRules/CommunityRules";
 import Comments from "../Comments/Comments";
+
 import { useLocation, Switch } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Axios from "axios";
 import endPointObj from "../../endPointUrl";
+import NavigationBar from "../NavBar/NavBar";
+import { useDispatch, useSelector } from "react-redux";
+import endPointObj from "../../endPointUrl";
+import Axios from "axios";
+
 const queryString = require("query-string");
 
 function ViewPost() {
@@ -78,6 +85,7 @@ function ViewPost() {
 
   return (
     <div>
+      <NavigationBar></NavigationBar>
       <div class="container">
         <div class="row">
           <hr />
@@ -112,19 +120,23 @@ function ViewPost() {
                   {/* Inner HTML Fix Karna Hai */}
                 </div>
                 <div class="post-comment">
-                  <form>
-                    <div class="form-group">
-                      <textarea
-                        class="form-control"
-                        placeholder="Your Thoughts?"
-                      ></textarea>
-                    </div>
-                    <button type="submit" class="login float-right">
-                      Comment
-                    </button>
-                  </form>
+                  <div class="form-group">
+                    <textarea
+                      class="form-control"
+                      placeholder="Your Thoughts?"
+                      onChange={(e) => commentHandle(e)}
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    class="login float-right"
+                    onClick={() => addComment(comment)}
+                  >
+                    Comment
+                  </button>
                 </div>
                 <br></br>
+
                 <Comments></Comments>
                 {/* <div style={{ marginTop: "60px" }}>
                   <div class="comment">

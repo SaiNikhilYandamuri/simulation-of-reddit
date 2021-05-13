@@ -4,13 +4,13 @@ var kafka = require("../kafka/client");
 const passport = require("passport");
 
 router.post(
-  "/votingForPost",
+  "/votingForComment",
   passport.authenticate("jwt", { session: false }),
   async (req, res) => {
-    console.log("Inside voting post");
-    kafka.make_request("votingforpost1", req.body, function (err, results) {
+    console.log("Inside voting comment");
+    kafka.make_request("votingforcomment", req.body, function (err, results) {
       //add topic/changeeee
-      console.log("Inside votingForPost topic");
+      console.log("Inside votingForcomment topic");
       if (err) {
         console.log("Inside err");
         res.json({

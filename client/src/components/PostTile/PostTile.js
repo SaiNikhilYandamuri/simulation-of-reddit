@@ -5,31 +5,49 @@ import "./PostTile.css";
 import VoteButton from "../VoteButton/VoteButton";
 import { useHistory } from "react-router-dom";
 
-function PostTile(props) {
+function PostTile({
+  id,
+  votes,
+  postTitle,
+  createdByEmail,
+  text,
+  upVoteClickCommHome,
+  commName,
+}) {
   const history = useHistory();
 
   const redirectToViewPost = () => {
     history.push({
       pathname: "/viewpost",
-      //search: "?modalOpen=true&type=" + type,
+      search: "?id=" + id + "&name=" + commName,
     });
   };
+
+  function upVoteClick(name) {
+    upVoteClickCommHome(name);
+    console.log(name);
+  }
+
+  // function downVoteClick(name) {
+  //   downVoteClickCommHome(name);
+  //   console.log(name);
+  // }
 
   return (
     <div>
       <div className="row post">
         <div className="col-md-1">
-          <VoteButton />
+          <VoteButton id={id} votes={votes} upVoteClick={upVoteClick} />
         </div>
         <div className="col-md-11">
           <span className="subreddit-info">
             <span className="subreddit-text">
               <a className="posturl" href="">
-                {props.postTitle}
+                {postTitle}
               </a>
             </span>
             <span>
-              . Posted by {props.createdByEmail}
+              . Posted by {createdByEmail}
               <a className="username" href="">
                 Username
               </a>
@@ -39,7 +57,7 @@ function PostTile(props) {
           <hr />
           <div className="post-title">
             <a className="postname" href="">
-              {props.text}
+              {text}
             </a>
           </div>
           <div>

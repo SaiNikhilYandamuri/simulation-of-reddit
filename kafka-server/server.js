@@ -24,6 +24,9 @@ const addcomment = require("./services/AddComment");
 const getcomment = require("./services/GetComments");
 const getpostbyid = require("./services/GetPostById");
 const getusercommunities = require("./services/GetUserCommunities");
+const votingforpost = require("./services/VotingForPost");
+const leavecommunity = require("./services/LeaveCommunity");
+const votingforcomment = require("./services/VotingForComment");
 
 function handleTopicRequest(topic_name, fname) {
   //var topic_name = 'root_topic';
@@ -57,11 +60,12 @@ function handleTopicRequest(topic_name, fname) {
 
 handleTopicRequest("requesttojoin_communitys", requestToJoinCommunity);
 handleTopicRequest("create_communitys1", createCommunity);
-handleTopicRequest("search_community", searchCommunity);
-handleTopicRequest("add_messages1", addMessages);
+
+handleTopicRequest("search_community2", searchCommunity);
+handleTopicRequest("add_messages", addMessages);
 handleTopicRequest("get_messages", getMessages);
-handleTopicRequest("add_post", addPost);
-handleTopicRequest("get_post", getPost);
+handleTopicRequest("addPost", addPost);
+handleTopicRequest("getPost", getPost);
 handleTopicRequest("invitetojoin_community", inviteToJoinCommunity);
 handleTopicRequest("acceptinvitationbyuser", acceptInvitationByUser);
 handleTopicRequest("getcommunity", getCommunity);
@@ -73,7 +77,7 @@ handleTopicRequest(
   approverequesttojoincommunity
 );
 handleTopicRequest("checkapprovedstatus", checkapprovedstatus);
-handleTopicRequest("votingforcommunity", votingforcommunity);
+handleTopicRequest("votingforcommunity1", votingforcommunity);
 handleTopicRequest("communities_list_by_user", communitiesListByUser);
 handleTopicRequest("requested_user_list", RequestedUsersList);
 handleTopicRequest(
@@ -85,3 +89,6 @@ handleTopicRequest("add_comment1", addcomment);
 handleTopicRequest("get_comments", getcomment);
 handleTopicRequest("getPostById", getpostbyid);
 handleTopicRequest("getUserCommunities", getusercommunities);
+handleTopicRequest("votingforpost1", votingforpost);
+handleTopicRequest("leavecommunity", leavecommunity);
+handleTopicRequest("votingforcomment", votingforcomment);

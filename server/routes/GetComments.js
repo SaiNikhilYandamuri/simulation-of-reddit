@@ -3,7 +3,7 @@ const checkAuth = require("../utils/passport");
 var kafka = require("../kafka/client");
 const passport = require("passport");
 
-router.get(
+router.post(
   "/getComments",
   passport.authenticate("jwt", { session: false }),
   async (req, res) => {

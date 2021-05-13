@@ -246,6 +246,7 @@ export default function ModalWindow() {
       .then((response) => {
         history.push({
           pathname: "/communityPage",
+          search: "?name=" + communityName,
         });
         console.log("successfully create community");
       })
