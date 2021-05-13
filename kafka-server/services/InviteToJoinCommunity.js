@@ -5,6 +5,7 @@ const UserMetadata = require("../model/UserMetadata");
 // Adming will invite n number of users to join a community
 async function handle_request(msg, callback) {
   // Need to implement images later
+ 
   const emailOfUser = msg.email;
   const communityName = msg.communityName;
   emailOfUser.forEach((element) => {
