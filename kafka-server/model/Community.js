@@ -44,7 +44,7 @@ const communitySchema = new mongoose.Schema({
   },
   numberOfMembers: {
     type: Number,
-    default: 0,
+    default: 1,
   },
   numberOfPosts: {
     type: Number,
