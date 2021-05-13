@@ -9,10 +9,10 @@ router.post(
   async (req, res) => {
     console.log("Inside COmm");
     kafka.make_request(
-      "invitetojoin_community",
+      "invitetojoin_communitys",
       req.body,
       function (err, results) {
-        console.log("Inside invitetojoin_community topic");
+        console.log("Inside invitetojoin_communitys topic");
         if (err) {
           console.log("Inside err");
           res.json({

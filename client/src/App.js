@@ -14,7 +14,8 @@ import Messages from "./components/Messages/Messages";
 import ViewPost from "./components/ViewPost/ViewPost";
 import StartChat from "./components/Chat/StartChat";
 import Chat from "./components/Chat/Chat";
-import AnalyticsPage from "./components/AnalyticsPage/AnalyticsPage"
+import AnalyticsPage from "./components/AnalyticsPage/AnalyticsPage";
+import InvitationPage from "./components/InvitationPage/InvitationPage";
 
 const DefaultContainer = () => (
   <div>
@@ -39,14 +40,17 @@ function App() {
           <Route path="/messages" exact component={Messages} />
           <Route path="/viewpost" exact component={ViewPost} />
 
-
           <Route path="/startChat" exact component={StartChat} />
           <Route path="/chat" exact component={Chat} />
           <Route path="/analytics" exact component={AnalyticsPage} />
 
-          <Route path="/communitymoderation" exact component={CommunityModeration} />
+          <Route
+            path="/communitymoderation"
+            exact
+            component={CommunityModeration}
+          />
+          <Route path="/invitationPage" exact component={InvitationPage} />
           <Route component={DefaultContainer} />
-
         </Switch>
       </div>
     </Router>
