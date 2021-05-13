@@ -8,7 +8,7 @@ router.post(
   passport.authenticate("jwt", { session: false }),
   async (req, res) => {
     console.log("Inside voting post");
-    kafka.make_request("votingforpost", req.body, function (err, results) {
+    kafka.make_request("votingforpost1", req.body, function (err, results) {
       //add topic/changeeee
       console.log("Inside votingForPost topic");
       if (err) {
