@@ -216,24 +216,8 @@ export default function CenteredGrid() {
       });
   }
 
-  const updateProfile = (
-    email,
-    name,
-    password,
-    gender,
-    location,
-    description,
-    file
-  ) => {
-    updateAccountDetails(
-      email,
-      name,
-      password,
-      gender,
-      location,
-      description,
-      file
-    );
+  const updateProfile = (email, name, gender, location, description, file) => {
+    updateAccountDetails(email, name, gender, location, description, file);
   };
 
   return (
@@ -341,7 +325,6 @@ export default function CenteredGrid() {
                           updateProfile(
                             email,
                             name,
-                            password,
                             gender,
                             location,
                             description,
