@@ -1,9 +1,11 @@
 import React from "react";
 import "./SideBar.css";
 import { useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 function SideBar() {
   const history = useHistory();
+  const email = useSelector((state) => state.login.username);
 
   const modalOpen = (type) => {
     history.push({
@@ -15,7 +17,7 @@ function SideBar() {
   const redirectToCreate = () => {
     history.push({
       pathname: "/createpost",
-      //search: "?modalOpen=true&type=" + type,
+      // search: `?email=${email}`,
     });
   };
 

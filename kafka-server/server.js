@@ -28,10 +28,15 @@ const votingforpost = require("./services/VotingForPost");
 const leavecommunity = require("./services/LeaveCommunity");
 const votingforcomment = require("./services/VotingForComment");
 const deletecommunity = require("./services/DeleteCommunity");
+
 const communityimages = require("./services/MultiImgCommunity");
 const noofmembers = require("./services/NoOfMembers");
+
 const noofposts=require("./services/NoOfPosts")
 const usermaxpost=require("./services/UserMaxPost")
+
+const getinvitations = require("./services/GetInvitations");
+
 
 function handleTopicRequest(topic_name, fname) {
   //var topic_name = 'root_topic';
@@ -67,12 +72,13 @@ handleTopicRequest("requesttojoin_communitys", requestToJoinCommunity);
 handleTopicRequest("create_communitys12", createCommunity);
 
 handleTopicRequest("search_community2", searchCommunity);
-handleTopicRequest("add_messages", addMessages);
+handleTopicRequest("add_messages1", addMessages);
 handleTopicRequest("get_messages", getMessages);
+
 handleTopicRequest("AddPost1", addPost);
 handleTopicRequest("getPost", getPost);
-handleTopicRequest("invitetojoin_community", inviteToJoinCommunity);
-handleTopicRequest("acceptinvitationbyuser", acceptInvitationByUser);
+handleTopicRequest("invitetojoin_communitys", inviteToJoinCommunity);
+handleTopicRequest("acceptinvitationbyuser1", acceptInvitationByUser);
 handleTopicRequest("getcommunity", getCommunity);
 handleTopicRequest("get_profiles", getProfile);
 handleTopicRequest("update_profiles", updateProfile);
@@ -100,5 +106,13 @@ handleTopicRequest("votingforcomment", votingforcomment);
 handleTopicRequest("deletecommunity", deletecommunity);
 handleTopicRequest("community_imgs", communityimages);
 handleTopicRequest("noofmembers", noofmembers);
+
 handleTopicRequest("no_of_posts", noofposts);
 handleTopicRequest("user_max_post", usermaxpost);
+
+
+handleTopicRequest("no_of_posts", noofposts);
+
+handleTopicRequest("getInvitations", getinvitations);
+
+
