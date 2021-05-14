@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Community = require("../model/Community");
 
 async function handle_request(msg, callback) {
+  user_email=msg.user_email
   // Need to implement images later
   
 
@@ -23,7 +24,7 @@ async function handle_request(msg, callback) {
   //   }
   // );
  
-  const allusers= await Community.find({},{communityName:1,numberOfMembers:1}
+  const allusers= await Community.find({createdBy:user_email},{communityName:1,numberOfMembers:1}
   , (error, allusers) => {
       if (error) {
         callback(null, error);

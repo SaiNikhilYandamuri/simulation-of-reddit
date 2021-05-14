@@ -5,6 +5,9 @@ const Post = require("../model/Post");
   
  
   async function handle_request(msg, callback) {
+        user_email=msg.user_email
+        
+    
 
    
     const all_posts= await Post.aggregate(
