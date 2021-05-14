@@ -98,6 +98,7 @@ function Middlebar(props) {
   const email = useSelector((state) => state.login.username);
 
   const getCommunityUser = (pageNum, pageSize) => {
+    setPageSize(pageSize);
     console.log(email);
     return new Promise((resolve, reject) => {
       Axios.post(
@@ -149,6 +150,8 @@ function Middlebar(props) {
       }
     )
       .then((response) => {
+        setopenmodel2(false);
+        setopenmodel(false);
         console.log(response.data);
         setAlert(response.data);
       })
@@ -234,7 +237,11 @@ function Middlebar(props) {
   return (
     <div className="App__content">
       <Dropdown className="drop-down">
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
+        <Dropdown.Toggle
+          variant="dark"
+          className="toggle-mod"
+          id="dropdown-basic"
+        >
           {pageSize}
         </Dropdown.Toggle>
 
@@ -282,9 +289,9 @@ function Middlebar(props) {
         show={openmodel}
         onHide={handleClose}
       >
-        <div class="paper">
+        <div>
           <Modal.Header closeButton>
-            <Modal.Title>Uses requested to join</Modal.Title>
+            <Modal.Title>Users requested to join</Modal.Title>
           </Modal.Header>
 
           <Modal.Body>
@@ -308,7 +315,7 @@ function Middlebar(props) {
                 </header>
               ))}
               <Button
-                color="primary"
+                variant="dark"
                 onClick={() => {
                   approve();
                 }}
@@ -356,7 +363,6 @@ function Middlebar(props) {
               ))}
               <Button
                 variant="contained"
-                color="primary"
                 className="login-button-width"
                 onClick={() => {
                   invite(commname);
@@ -419,41 +425,49 @@ function Middlebar(props) {
             returncomm.map((com) => (
               <article className="mod-list-width">
                 {/* <article > */}
-                <img src={post} height="55" width="55" class="thumbnail" />
-                <div class="info">
-                  <header>
-                    <span className="subreddit-text">
-                      <a className="posturl">{com.communityName}</a>
-                    </span>
-                  </header>
-                  <div>
-                    submitted on {time(com.creationTime)} by{" "}
-                    <span class> {com.createdBy}</span>
+
+                <div className="row">
+                  <div className="col-sm-1">
+                    <img src={post} height="55" width="55" class="thumbnail" />
                   </div>
+                  <div className="col-sm-6">
+                    <div class="info">
+                      <header>
+                        <span className="subreddit-text">
+                          <a className="posturl">{com.communityName}</a>
+                        </span>
+                      </header>
+                      <div>
+                        submitted on {time(com.creationTime)} by{" "}
+                        <span class> {com.createdBy}</span>
+                      </div>
 
-                  <span>
-                    <Button
-                      variant="secondary"
-                      onClick={() => {
-                        handleReq(com.communityName);
-                      }}
-                    >
-                      Approve
-                    </Button>
-
-                    <Button
-                      variant="secondary"
-                      onClick={() => {
-                        handleInv(com.communityName);
-                      }}
-                    >
-                      Invite
-                    </Button>
-
-                    {/* <Button variant="secondary" onClick={handleInv()}>
+                      <span>
+                        <Button
+                          variant="dark"
+                          className="approve-invite"
+                          onClick={() => {
+                            handleReq(com.communityName);
+                          }}
+                        >
+                          Approve
+                        </Button>
+                        &nbsp;&nbsp;
+                        <Button
+                          variant="dark"
+                          className="approve-invite"
+                          onClick={() => {
+                            handleInv(com.communityName);
+                          }}
+                        >
+                          Invite
+                        </Button>
+                        {/* <Button variant="secondary" onClick={handleInv()}>
                 Invite
               </Button> */}
-                  </span>
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </article>
             ))}
@@ -465,20 +479,26 @@ function Middlebar(props) {
           </Alert>
         )}
 
-        <Button
-          onClick={() => {
-            onClickNext(pageNum, pageSize);
-          }}
-        >
-          Next
-        </Button>
-        <Button
-          onClick={() => {
-            onClickPrev(pageNum, pageSize);
-          }}
-        >
-          Previous
-        </Button>
+        <center>
+          <Button
+            color="primary"
+            variant="dark"
+            onClick={() => {
+              onClickNext(pageNum, pageSize);
+            }}
+          >
+            Next
+          </Button>
+          &nbsp;
+          <Button
+            variant="dark"
+            onClick={() => {
+              onClickPrev(pageNum, pageSize);
+            }}
+          >
+            Previous
+          </Button>
+        </center>
       </div>
     </div>
   );

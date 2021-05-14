@@ -10,6 +10,7 @@ import VoteButton from "../VoteButton/VoteButton";
 import post from "../resources/post.png";
 import { useHistory } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
+import { useDispatch, useSelector } from "react-redux";
 
 function SearchCommunity() {
   let gPageNum = 0;
@@ -23,6 +24,9 @@ function SearchCommunity() {
   const [sortdesk, setSortstringdesk] = useState("Created at");
   const [searchString, setSearchString] = useState("");
   const [sortString, setSortStringIn] = useState("");
+
+  const email = useSelector((state) => state.login.username);
+
   const getSearchCommunity = (searchString, sort, pageNum, pageSize) => {
     setPageSize(pageSize);
     console.log(searchString);
@@ -252,6 +256,14 @@ function SearchCommunity() {
               searchString={searchString}
               sortdesk={sortdesk}
               upVoteClick={upVoteClick}
+              upvoteMembersTrue={
+                com.upvoteMembers.filter((member) => member === email).length >
+                0
+              }
+              downvoteMembersTrue={
+                com.downvoteMembers.filter((member) => member === email)
+                  .length > 0
+              }
               votes={
                 parseInt(com.numberOfUpvotes) - parseInt(com.numberOfDownvotes)
               }

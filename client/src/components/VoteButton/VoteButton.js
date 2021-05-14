@@ -6,8 +6,19 @@ import Axios from "axios";
 import "./VoteButton.css";
 import { useDispatch, useSelector } from "react-redux";
 
-function VoteButton({ id, votes, upVoteClick, type, searchString, sortdesk }) {
+function VoteButton({
+  id,
+  votes,
+  upVoteClick,
+  type,
+  searchString,
+  sortdesk,
+  upvoteMembersTrue,
+  downvoteMembersTrue,
+}) {
   const email = useSelector((state) => state.login.username);
+
+  console.log(upvoteMembersTrue);
 
   function vote(id, voteString, type = "post") {
     return new Promise((resolve, reject) => {
@@ -69,7 +80,7 @@ function VoteButton({ id, votes, upVoteClick, type, searchString, sortdesk }) {
         <div className="p-2">
           {console.log("id is", id)}
           <FontAwesomeIcon
-            className="upvote"
+            className={!upvoteMembersTrue ? "upvote" : "upvote-color"}
             icon={faArrowUp}
             onClick={() => {
               console.log(type);
@@ -81,7 +92,7 @@ function VoteButton({ id, votes, upVoteClick, type, searchString, sortdesk }) {
         <div className="p-2 votecount">{votes}</div>
         <div className="p-2">
           <FontAwesomeIcon
-            className="downvote"
+            className={!downvoteMembersTrue ? "downvote" : "downvote-color"}
             icon={faArrowDown}
             onClick={() => {
               vote(id, "downVote", type);

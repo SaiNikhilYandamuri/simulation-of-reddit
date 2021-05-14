@@ -120,7 +120,6 @@ export default function CommunityPage() {
   };
 
   let getPosts = (sortExpression) => {
-    
     return new Promise((resolve, reject) => {
       Axios.post(
         endPointObj.url + "api/getPost",
@@ -150,14 +149,14 @@ export default function CommunityPage() {
   //gk
   const handletop = () => {
     console.log("top");
-    getPosts("numberOfUpvotesDesc")
+    getPosts("numberOfUpvotesDesc");
   };
-//gk
+  //gk
 
-const handlenew = () => {
-  console.log("new");
-  getPosts("");
-};
+  const handlenew = () => {
+    console.log("new");
+    getPosts("");
+  };
   const onHover = (status) => {
     console.log(status);
     if (status == "Joined") {
@@ -194,7 +193,7 @@ const handlenew = () => {
       )
         .then((response) => {
           console.log(response);
-          setInviteStatus("Join")
+          setInviteStatus("Join");
           checkApprovedStatus().then((result) => {
             console.log(result);
           });
@@ -207,13 +206,7 @@ const handlenew = () => {
     });
   };
 
-
-
-
-
-
   const requestToJoinCommunity = () => {
-
     return new Promise((resolve, reject) => {
       Axios.post(
         endPointObj.url + "api/requestToJoinCommunity",
@@ -287,11 +280,10 @@ const handlenew = () => {
                   color="primary"
                   href="#outlined-buttons"
                   onClick={() => {
-                    if(inviteStatus == "Join")
-                    {
-                    requestToJoinCommunity();
+                    if (inviteStatus == "Join") {
+                      requestToJoinCommunity();
                     }
-                    if(inviteStatus == "leave"){
+                    if (inviteStatus == "leave") {
                       leaveCommunity();
                     }
                   }}
@@ -323,17 +315,21 @@ const handlenew = () => {
                       onChange={handleChange}
                       aria-label="disabled tabs example"
                     >
-                      
                       <Tab icon={<img src={hot}></img>}></Tab>
-                    
-                      <Tab icon={<img src={newImage}></img>} onClick={() => {
-                           handlenew();
-                          }}></Tab>
-                      
-                      <Tab icon={<img src={top}></img>} onClick={() => {
-                           handletop();
-                          }}
-                        ></Tab>
+
+                      <Tab
+                        icon={<img src={newImage}></img>}
+                        onClick={() => {
+                          handlenew();
+                        }}
+                      ></Tab>
+
+                      <Tab
+                        icon={<img src={top}></img>}
+                        onClick={() => {
+                          handletop();
+                        }}
+                      ></Tab>
                     </Tabs>
                   </Paper>
                 )}
@@ -342,6 +338,14 @@ const handlenew = () => {
                     onClick={() => {
                       console.log("hello");
                     }}
+                    upvoteMembersTrue={
+                      post.upvoteMembers.filter((member) => member === email)
+                        .length > 0
+                    }
+                    downvoteMembersTrue={
+                      post.downvoteMembers.filter((member) => member === email)
+                        .length > 0
+                    }
                     className="post"
                     upVoteClickCommHome={upVoteClickCommHome}
                     postTitle={post.postTitle}
