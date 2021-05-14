@@ -7,7 +7,7 @@ const redis = require("redis");
 
 const REDDIS_PORT = process.env.PORT;
 
-const client = redis.createClient(6379, "localhost");
+const client = redis.createClient(6379, "18.216.48.26");
 
 //cache middleware
 function cache(req, res, next) {
