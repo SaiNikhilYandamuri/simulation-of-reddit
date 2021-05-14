@@ -25,7 +25,7 @@ async function handle_request(msg, callback) {
       if (err) callback(null, "Problem adding community to user metadata");
       Community.findOneAndUpdate(
         { communityName: communityName },
-        { $push: { members: emailOfUser } },
+        { $push: { members: emailOfUser }, $inc: { numberOfMembers: 1 } },
         function (err, doc) {
           console.log(doc);
           if (err) callback(null, "Problem adding community to user metadata");

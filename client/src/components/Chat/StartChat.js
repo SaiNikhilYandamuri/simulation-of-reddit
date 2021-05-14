@@ -74,20 +74,13 @@ const StartChat = () => {
         <div className="joinInnerContainer">
           <h1 className="heading">Start Chat</h1>
           <div>
-            {/* <input
-            placeholder="Name"
-            className="joinInput"
-            type="text"
-            onChange={(event) => setName(event.target.value)}
-          /> */}
-
             <Autocomplete
               id="combo-box-demo"
               options={users}
               getOptionLabel={(option) => option.email}
               style={{ width: 300 }}
               renderInput={(params) => (
-                <TextField {...params} label="Combo box" variant="outlined" />
+                <TextField {...params} label="User Search" variant="outlined" />
               )}
               onChange={(event, newValue) => {
                 handleChangeNameFilter(newValue);
