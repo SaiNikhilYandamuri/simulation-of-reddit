@@ -43,6 +43,8 @@ const io = socketio(server);
 const leaveCommunity = require("./routes/LeaveCommunity");
 const votingForComments = require("./routes/VotingForComments");
 const multiImages=require("./routes/MultipleImages")
+const noOfMembers=require("./routes/NoOfMembers")
+
 
 app.use(
   cors({
@@ -153,3 +155,4 @@ app.use("/api", leaveCommunity);
 app.use("/api", votingForComments);
 app.use("/api", deleteCommunity);
 app.use("/api", multiImages);
+app.use("/api", noOfMembers);

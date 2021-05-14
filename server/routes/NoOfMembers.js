@@ -7,8 +7,8 @@ router.get(
   "/noofmembers",
   passport.authenticate("jwt", { session: false }),
   async (req, res) => {
-    console.log("Inside COmm");
-    kafka.make_request("no_of_members", req.body, function (err, results) {
+    console.log("Inside members in community");
+    kafka.make_request("noofmembers", req.body, function (err, results) {
       console.log("Inside all analytics topic");
       if (err) {
         console.log("Inside err");
