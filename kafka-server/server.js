@@ -33,6 +33,7 @@ const communityimages = require("./services/MultiImgCommunity");
 const noofmembers = require("./services/NoOfMembers");
 
 const noofposts=require("./services/NoOfPosts")
+const usermaxpost=require("./services/UserMaxPost")
 
 const getinvitations = require("./services/GetInvitations");
 
@@ -107,6 +108,11 @@ handleTopicRequest("community_imgs", communityimages);
 handleTopicRequest("noofmembers", noofmembers);
 
 handleTopicRequest("no_of_posts", noofposts);
+handleTopicRequest("user_max_post", usermaxpost);
+
+
+handleTopicRequest("no_of_posts", noofposts);
 
 handleTopicRequest("getInvitations", getinvitations);
+
 
