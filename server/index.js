@@ -44,6 +44,9 @@ const leaveCommunity = require("./routes/LeaveCommunity");
 const votingForComments = require("./routes/VotingForComments");
 const multiImages=require("./routes/MultipleImages")
 const noOfMembers=require("./routes/NoOfMembers")
+const noOfPosts=require("./routes/NoOfPosts")
+
+
 
 
 app.use(
@@ -156,4 +159,8 @@ app.use("/api", votingForComments);
 app.use("/api", deleteCommunity);
 app.use("/api", multiImages);
 app.use("/api", noOfMembers);
+
+app.use("/api", noOfPosts);
+
 app.use("/api", getInvitations);
+
