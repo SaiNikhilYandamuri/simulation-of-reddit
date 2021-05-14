@@ -60,6 +60,7 @@ export default function AboutCommunity() {
       )
         .then((response) => {
           console.log("successfully fetched comm");
+          console.log(response.data, "response");
 
           setDescription(response.data.description);
           setMemberCount(response.data.members.length);
@@ -96,11 +97,22 @@ export default function AboutCommunity() {
         </Typography>
         <div className="row">
           <div className="col-sm-12 description">
-            description: {description}
+            <b>Description:</b>
+            <i>{description}</i>
           </div>
-          <div className="col-sm-7 description">members: {memberCount}</div>
-          <div className="col-sm-8 description">created at: {creationTime}</div>
-          <div className="col-sm-7 description">community topics</div>
+
+          <div className="col-sm-12 description">
+            <b>Members:</b>
+            <i>{memberCount}</i>
+          </div>
+
+          <div className="col-sm-12 description">
+            <b>Created At:</b> <i>{creationTime}</i>
+          </div>
+
+          <div className="col-sm-12 description">
+            <b>Topics:</b>
+          </div>
         </div>
       </CardContent>
 

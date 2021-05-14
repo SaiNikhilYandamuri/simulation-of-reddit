@@ -57,6 +57,7 @@ function CreatePost() {
           console.log(response);
 
           setCommunities(response.data.communities);
+          setName(response.data.communities[0]);
         })
         .catch((err) => {
           console.error("an error occured");
@@ -96,7 +97,7 @@ function CreatePost() {
           console.log(response);
           setAlertMessage("Post Created Successfully");
           alert("Post created Successfully");
-          setName("");
+
           setTitle("");
           setText("");
           setURL("");

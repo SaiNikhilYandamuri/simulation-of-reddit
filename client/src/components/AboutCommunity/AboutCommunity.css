@@ -4,7 +4,11 @@
 }
 
 .description {
-  width: 40px !important;
+  width: 242px !important;
+  /* 40 px initial */
   margin-left: 1vw;
   height: 5vh;
+  line-height: 1.5em;
+  letter-spacing: 0.25px;
+  display: flex;
 }
