@@ -49,7 +49,7 @@ const UserMaxPost = require("./routes/UserMaxPost");
 
 app.use(
   cors({
-    origin: ["http://18.217.42.36:3000"],
+    origin: "*",
     methods: ["GET", "POST"],
     credentials: true,
   })
