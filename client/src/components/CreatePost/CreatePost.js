@@ -41,31 +41,38 @@ function CreatePost() {
   const [images_url, setImgURL] = React.useState("");
 
   let getUserCommunities = () => {
-    return new Promise((resolve, reject) => {
-      Axios.post(
-        endPointObj.url + "api/getUserCommunities",
-        {
-          email: email,
-        },
-        {
-          headers: {
-            Authorization: "jwt " + sessionStorage.getItem("token"),
+    if (queryString.parse(location.search).communityname) {
+      return new Promise((resolve, reject) => {
+        setCommunities([`${queryString.parse(location.search).communityname}`]);
+        setName(`${queryString.parse(location.search).communityname}`);
+      });
+    } else {
+      return new Promise((resolve, reject) => {
+        Axios.post(
+          endPointObj.url + "api/getUserCommunities",
+          {
+            email: email,
           },
-        }
-      )
-        .then((response) => {
-          console.log(response);
-
-          setCommunities(response.data.communities);
-          setName(response.data.communities[0]);
-        })
-        .catch((err) => {
-          console.error("an error occured");
-          if (err.response && err.response.data) {
-            setAlertMessage(err.response.data);
+          {
+            headers: {
+              Authorization: "jwt " + sessionStorage.getItem("token"),
+            },
           }
-        });
-    });
+        )
+          .then((response) => {
+            console.log(response);
+
+            setCommunities(response.data.communities);
+            setName(response.data.communities[0]);
+          })
+          .catch((err) => {
+            console.error("an error occured");
+            if (err.response && err.response.data) {
+              setAlertMessage(err.response.data);
+            }
+          });
+      });
+    }
   };
 
   useEffect(() => {

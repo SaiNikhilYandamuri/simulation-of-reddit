@@ -3,6 +3,7 @@ import { Image } from "react-bootstrap/esm";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import "./Landing.css";
 import image1 from "../resources/redditGp.PNG";
+import landing from "../resources/landing.PNG";
 
 export default function Landing() {
   return (
