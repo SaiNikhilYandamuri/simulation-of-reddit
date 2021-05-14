@@ -25,7 +25,7 @@ async function handle_request(msg, callback) {
       const communityDetails2 = await Community.find({
         communityName: new RegExp(searchString),
       }).sort({ numberOfPosts: -1 });
-      var result = paginate(communityDetails2, 1, 5);
+      var result = paginate(communityDetails2, msg.pageNum, msg.pageSize);
       // console.log(result "community lengthhhh");
       callback(null, result);
       break;

@@ -12,14 +12,19 @@ import { useHistory } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 
 function SearchCommunity() {
+  let gPageNum = 0;
   const [community, setSearchcommunity] = useState([]);
+  const [pageSize, setPageSize] = useState(2);
+  const [pageNum, setPageNum] = useState(1);
   const history = useHistory();
   const [displayList, setDisplayList] = useState([]);
   const [onChangeTriggered, setOnChangeTriggerd] = useState(false);
   const [onSortTriggered, setOnSortTriggerd] = useState(false);
   const [sortdesk, setSortstringdesk] = useState("Created at");
   const [searchString, setSearchString] = useState("");
-  const getSearchCommunity = (searchString, sort) => {
+  const [sortString, setSortStringIn] = useState("");
+  const getSearchCommunity = (searchString, sort, pageNum, pageSize) => {
+    setPageSize(pageSize);
     console.log(searchString);
     console.log(sort);
     Axios.post(
@@ -27,6 +32,8 @@ function SearchCommunity() {
       {
         searchString,
         sort,
+        pageNum,
+        pageSize,
       },
       {
         headers: {
@@ -43,7 +50,7 @@ function SearchCommunity() {
         console.log(e);
       });
   };
-  const handleUsers = (sortStringin) => {
+  const handleUsers = (sortStringin, pageNum, pageSize) => {
     console.log(sortStringin == "numberOfUpvotesDesc");
     switch (sortStringin) {
       case "createdat":
@@ -63,7 +70,8 @@ function SearchCommunity() {
     ) {
       setOnSortTriggerd(false);
     }
-    getSearchCommunity(searchString, sortStringin);
+    setSortStringIn(sortStringin);
+    getSearchCommunity(searchString, sortStringin, pageNum, pageSize);
   };
 
   const communityPage = (group) => {
@@ -89,7 +97,7 @@ function SearchCommunity() {
 
     setSearchString(opt.target.value);
     getSearchCommunity(opt.target.value, " ");
-   // setOnChangeTriggerd(true);
+    // setOnChangeTriggerd(true);
 
     // let final_list = community.filter((li) => {
     //   return li.communityName.includes(opt.target.value);
@@ -105,45 +113,102 @@ function SearchCommunity() {
     return "";
   };
 
+  const clickNext = (searchString, sortdesk, pageNum, pageSize) => {
+    gPageNum = pageNum + 1;
+    setPageNum(gPageNum);
+    getSearchCommunity(searchString, sortdesk, gPageNum, pageSize);
+  };
+
+  const clickPrev = (searchString, sortdesk, pageNum, pageSize) => {
+    if (pageNum > 1) {
+      gPageNum = pageNum - 1;
+      setPageNum(gPageNum);
+
+      getSearchCommunity(searchString, sortdesk, gPageNum, pageSize);
+    }
+  };
+
   const upVoteClick = () => {
     console.log("hello");
     console.log(searchString);
-    getSearchCommunity(searchString, sortdesk);
+    getSearchCommunity(searchString, sortdesk, pageNum, pageSize);
   };
 
   useEffect(() => {
-    getSearchCommunity("", "");
+    getSearchCommunity("", "", 1, 2);
   }, []);
 
   return (
- 
-      
     <div className="search-comm">
       <NavBar></NavBar>
       <FormGroup row>
         <Col sm={2}>
           <Dropdown className="drop-down">
-            <Dropdown.Toggle  id="dropdown-basic" variant="dark">
-              Dropdown Button
+            <Dropdown.Toggle id="dropdown-basic" variant="dark">
+              {sortdesk}
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
-              <Dropdown.Item onClick={() => handleUsers("createdat")}>
+              <Dropdown.Item
+                onClick={() => handleUsers("createdat", pageNum, pageSize)}
+              >
                 Created at
               </Dropdown.Item>
-              <Dropdown.Item onClick={() => handleUsers("numberOfMembers")}>
+              <Dropdown.Item
+                onClick={() =>
+                  handleUsers("numberOfMembers", pageNum, pageSize)
+                }
+              >
                 Most number of users
               </Dropdown.Item>
-              <Dropdown.Item onClick={() => handleUsers("numberOfPosts")}>
+              <Dropdown.Item
+                onClick={() => handleUsers("numberOfPosts", pageNum, pageSize)}
+              >
                 Most number of posts
               </Dropdown.Item>
-              <Dropdown.Item onClick={() => handleVotes("Most upvoted posts")}>
+              <Dropdown.Item
+                onClick={() =>
+                  handleVotes("Most upvoted posts", pageNum, pageSize)
+                }
+              >
                 Most upvoted posts
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </Col>
-        <Col sm={7}>
+
+        <Col sm={2}>
+          <Dropdown className="drop-down">
+            <Dropdown.Toggle id="dropdown-basic" variant="dark">
+              {pageSize}
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              <Dropdown.Item
+                onClick={() => {
+                  getSearchCommunity(searchString, sortString, pageNum, 2);
+                }}
+              >
+                2
+              </Dropdown.Item>
+              <Dropdown.Item
+                onClick={() => {
+                  getSearchCommunity(searchString, sortString, pageNum, 5);
+                }}
+              >
+                5
+              </Dropdown.Item>
+              <Dropdown.Item
+                onClick={() => {
+                  getSearchCommunity(searchString, sortString, pageNum, 10);
+                }}
+              >
+                10
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        </Col>
+        <Col sm={4}>
           <Input
             type="text"
             className="comm-search"
@@ -158,14 +223,18 @@ function SearchCommunity() {
             <Button
               variant="dark"
               style={{ width: 100, height: 40 }}
-              onClick={() => "numberOfUpvotesAsc"}
+              onClick={() =>
+                handleUsers("numberOfUpvotesDesc", pageNum, pageSize)
+              }
             >
               Asc
             </Button>{" "}
             <Button
               variant="dark"
               style={{ width: 100, height: 40 }}
-              onClick={() => handleUsers("numberOfUpvotesDesc")}
+              onClick={() =>
+                handleUsers("numberOfUpvotesAsc", pageNum, pageSize)
+              }
             >
               Des
             </Button>
@@ -221,50 +290,69 @@ function SearchCommunity() {
         ))} */}
 
       {/* {onChangeTriggered == false && */}
-      
-       { community.map((com) => (
-          <article className="row post-width">
-            <div class="arrows">
-              <VoteButton
-                type={"community"}
-                id={com.communityName}
-                searchString={searchString}
-                sortdesk={sortdesk}
-                upVoteClick={upVoteClick}
-                votes={
-                  parseInt(com.numberOfUpvotes) -
-                  parseInt(com.numberOfDownvotes)
-                }
-              />
-            </div>
 
-            <img src={post} height="55" width="55" class="thumbnail" />
-            <div class="info">
-              <header>
-                <span className="subreddit-text">
-                  <a className="posturl">{com.description}</a>
-                </span>
-              </header>
-              <div>
-                submitted on {time(com.creationTime)}
-                by <span class>{com.createdBy}</span>
-                from{" "}
-                <span>
-                  <Nav.Link
-                    data-testid="Group"
-                    key={com.communtityName}
-                    onClick={() => communityPage(com.communityName)}
-                    className="links-dashboard-groups"
-                  >
-                    {com.communityName}
-                  </Nav.Link>
-                </span>
-              </div>
+      {community.map((com) => (
+        <article className="row post-width">
+          <div class="arrows">
+            <VoteButton
+              type={"community"}
+              id={com.communityName}
+              searchString={searchString}
+              sortdesk={sortdesk}
+              upVoteClick={upVoteClick}
+              votes={
+                parseInt(com.numberOfUpvotes) - parseInt(com.numberOfDownvotes)
+              }
+            />
+          </div>
+
+          <img src={post} height="55" width="55" class="thumbnail" />
+          <div class="info">
+            <header>
+              <span className="subreddit-text">
+                <a className="posturl">{com.description}</a>
+              </span>
+            </header>
+            <div>
+              submitted on {time(com.creationTime)}
+              by <span class>{com.createdBy}</span>
+              from{" "}
+              <span>
+                <Nav.Link
+                  data-testid="Group"
+                  key={com.communtityName}
+                  onClick={() => communityPage(com.communityName)}
+                  className="links-dashboard-groups"
+                >
+                  {com.communityName}
+                </Nav.Link>
+              </span>
             </div>
-          </article>
-        ))}
+          </div>
+        </article>
+      ))}
+      <div className="col-sm-12">
+        <center>
+          <Button
+            variant="dark"
+            onClick={() =>
+              clickPrev(searchString, sortString, pageNum, pageSize)
+            }
+          >
+            Previous
+          </Button>
+          &nbsp;
+          <Button
+            variant="dark"
+            onClick={() =>
+              clickNext(searchString, sortString, pageNum, pageSize)
+            }
+          >
+            Next
+          </Button>
+        </center>
+      </div>
     </div>
-    
   );
 }
 export default SearchCommunity;
