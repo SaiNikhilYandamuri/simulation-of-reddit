@@ -8,10 +8,20 @@ function Rules() {
       <div className="sidebar-view-subreddit">
         <img src={rulesLogo} />
         <div className="sidebar-view-subreddit">
-          <hr />
           <span>
-            <span className="subreddit-text">
-              <a>Rules</a>
+            <span>
+              <ol type="1">
+                <li>Remember the human</li>
+                <hr />
+                <li>Behave like you would in real life</li>
+                <hr />
+                <li>Look for the original source of content</li>
+                <hr />
+                <li>Search for duplicates before posting</li>
+                <hr />
+                <li>Read the community’s rules</li>
+                <hr />
+              </ol>
             </span>
             <hr />
           </span>

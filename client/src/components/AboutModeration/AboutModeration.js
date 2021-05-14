@@ -7,9 +7,10 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Axios from "axios";
 import endPointObj from "../../endPointUrl";
-import "./AboutCommunity.css";
+import "./AboutModeration.css";
 import { useLocation, Switch } from "react-router-dom";
-
+import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 const queryString = require("query-string");
 
 const useStyles = makeStyles({
@@ -34,53 +35,47 @@ const useStyles = makeStyles({
   },
 });
 
-export default function AboutCommunity() {
-  const [description, setDescription] = React.useState("");
-  const [memberCount, setMemberCount] = React.useState(0);
+export default function AboutModeration() {
+  
   const [creationTime, setCreationTime] = React.useState("");
   const options = { year: "numeric", month: "long", day: "numeric" };
-
+  const [returncomm, setReturncomm] = useState([]);
   const location = useLocation();
 
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
 
-  let getCommunity = () => {
+  const email = useSelector((state) => state.login.username);
+  
+  const getCommunityUser = () => {  
+    console.log(email);
     return new Promise((resolve, reject) => {
-      Axios.post(
-        endPointObj.url + "api/getCommunity",
-        {
-          communityName: queryString.parse(location.search).name,
+    Axios.post(
+     endPointObj.url + "api/CommunitiesListByUser",
+      {
+       // senderEmail : email,
+        senderEmail : "danesh2497@reddit.com",
+      },
+      {
+        headers: {
+          Authorization: "jwt " + sessionStorage.getItem("token"),
         },
-        {
-          headers: {
-            Authorization: "jwt " + sessionStorage.getItem("token"),
-          },
-        }
-      )
-        .then((response) => {
-          console.log("successfully fetched comm");
-          console.log(response.data, "response");
-
-          setDescription(response.data.description);
-          setMemberCount(response.data.members.length);
-          setCreationTime(
-            new Date(response.data.creationTime).toLocaleDateString(
-              undefined,
-              options
-            )
-          );
-        })
-        .catch((err) => {
-          console.error("an error occured");
-          if (err.response && err.response.data) {
-          }
-        });
+      }
+    )
+      .then((response) => {
+        console.log(response.data);
+       
+        setReturncomm(response.data.results);
+       
+      })
+      .catch((e) => {
+        console.log(e);
+      });
     });
   };
 
   useEffect(() => {
-    getCommunity().then((result) => {
+    getCommunityUser().then((result) => {
       console.log("fetched");
     });
   }, []);
@@ -93,26 +88,15 @@ export default function AboutCommunity() {
           color="textSecondary"
           gutterBottom
         >
-          About Community
+          About Moderation
         </Typography>
         <div className="row">
           <div className="col-sm-12 description">
-            <b>Description:</b>
-            <i>{description}</i>
+          This is a feed for the communities that you moderate.
           </div>
-
-          <div className="col-sm-12 description">
-            <b>Members:</b>
-            <i>{memberCount}</i>
-          </div>
-
-          <div className="col-sm-12 description">
-            <b>Created At:</b> <i>{creationTime}</i>
-          </div>
-
-          <div className="col-sm-12 description">
-            <b>Topics:</b>
-          </div>
+          {/* <div className="col-sm-7 description">members: {memberCount}</div> */}
+          <div className="col-sm-8 description">created at: {creationTime}</div>
+          <div className="col-sm-7 description">community topics</div>
         </div>
       </CardContent>
 

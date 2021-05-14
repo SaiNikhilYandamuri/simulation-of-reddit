@@ -4,21 +4,18 @@ const Message = require("../model/Messages");
 async function handle_request(msg, callback) {
   // Need to implement images later
   console.log(msg);
-  const senderEmail = msg.senderEmail;
-  const recieverEmail = msg.recieverEmail;
+  const name = msg.name;
+  const user1 = msg.user;
 
   console.log("Inside get message");
-  console.log(senderEmail);
-  console.log(recieverEmail);
 
   Message.find({
     $or: [
-      { senderEmail: senderEmail, recieverEmail: recieverEmail },
-      { senderEmail: recieverEmail, recieverEmail: senderEmail },
+      { name: name, user: user1 },
+      { user: user1, name: name },
     ],
   })
-    .lean()
-    .select({ senderEmail: 1, message: 1 })
+    .select({ name: 1, text: 1, user: 1 })
     .sort({ created_time: -1 })
     .then((error, result) => {
       if (error) {

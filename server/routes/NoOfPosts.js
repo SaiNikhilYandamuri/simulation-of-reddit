@@ -5,7 +5,7 @@ const passport = require("passport");
 
 router.post(
   "/noofposts",
-  passport.authenticate("jwt", { session: false }),
+  // passport.authenticate("jwt", { session: false }),
   async (req, res) => {
     console.log("Inside COmm");
     kafka.make_request("no_of_posts", req.body, function (err, results) {

@@ -15,10 +15,13 @@ const queryString = require("query-string");
 import Axios from "axios";
 import endPointObj from "../../endPointUrl";
 import post from "../resources/post.png";
+import { Col,NavDropdown, Dropdown } from "react-bootstrap";
 import { Input } from "reactstrap";
 function Middlebar(props) {
+  let globalPageNum = 1;
   const [alert, setAlert] = useState('');
   const [returncomm, setReturncomm] = useState([]);
+
   const [searchcommunity, setsearchcommunity] = useState([]);
   const [openmodel, setopenmodel] = useState(false);
   const [openmodel2, setopenmodel2] = useState(false);
@@ -32,10 +35,12 @@ function Middlebar(props) {
   const  [invselusers,setselinvusers] = useState([]);
   const  [commname,setcommname] = useState([]);
   const  [commname2,setcommname2] = useState([]);
-  // const [user, setUser] = useState([]);
-  // const [show, setShow] = useState(false);
 
-  const handleReq = (communityname) => {
+  const [pageSize, setPageSize] = useState(2);
+  const [pageNum, setPageNum] = useState(1);
+  
+
+  const handleReq = (communityname) => {  
     setcommname2(communityname)
    console.log(communityname);
       Axios.post(
@@ -101,71 +106,19 @@ function Middlebar(props) {
   const handleClose2 = () => {
     setopenmodel2(false);
   };
-  // const handleShow = (email) => {
-  //   Axios.post(
-  //     endPointObj.url + "api/getCommunity",
-  //     {
-  //       email,
-  //     },
-  //     {
-  //       headers: {
-  //         Authorization: "jwt " + sessionStorage.getItem("token"),
-  //       },
-  //     }
-  //   )
-  //     .then((response) => {
-  //       response.data.sort((a, b) => {
-  //         // console.log(a.timestamp, b.timestamp);
-  //         // console.log(a.timestamp < b.timestamp);
-  //         return a.timestamp < b.timestamp ? 1 : -1;
-  //       });
-  //       console.log(response.data);
-  //       setcommunity(response.data);
-  //     })
-  //     .catch((e) => {
-  //       console.log(e);
-  //     });
-  //   //api call to fetch all the communities of the user selected
-  //   setShow(true);
-  // };
-
-  // //api call to fetch all the users from all the communities  selected
-  // const getUsers = () => {
-  //   Axios.post(
-  //     endPointObj.url + "api/getUsers",
-  //     {
-  //       searchString,
-  //     },
-  //     {
-  //       headers: {
-  //         Authorization: "jwt " + sessionStorage.getItem("token"),
-  //       },
-  //     }
-  //   )
-  //     .then((response) => {
-  //       response.data.sort((a, b) => {
-  //         // console.log(a.timestamp, b.timestamp);
-  //         // console.log(a.timestamp < b.timestamp);
-  //         return a.timestamp < b.timestamp ? 1 : -1;
-  //       });
-  //       console.log(response.data);
-  //       setUser(response.data);
-  //     })
-  //     .catch((e) => {
-  //       console.log(e);
-  //     });
-  // };
-
+  
   const email = useSelector((state) => state.login.username);
   
-  const getCommunityUser = () => {  
+  const getCommunityUser = (pageNum, pageSize) => {  
     console.log(email);
     return new Promise((resolve, reject) => {
     Axios.post(
      endPointObj.url + "api/CommunitiesListByUser",
       {
        // senderEmail : email,
-        senderEmail : "danesh2497@reddit.com",
+        senderEmail : email,
+        pageNum: pageNum,
+        pageSize: pageSize
       },
       {
         headers: {
@@ -187,7 +140,7 @@ function Middlebar(props) {
   
 
   useEffect(() => {
-    getCommunityUser();
+    getCommunityUser(1, 2);
     
   }, []);
 
@@ -265,6 +218,15 @@ function Middlebar(props) {
     });
     setDisplayList(final_list);
   };
+
+  const time = (timestamp) => {
+    if (timestamp) {
+      const options = { year: "numeric", month: "long", day: "numeric" };
+      timestamp = new Date(timestamp).toLocaleDateString(undefined, options);
+      return timestamp;
+    }
+    return "";
+  };
   const handlearrayuser = (email) => {
    
     setapprovusers(approvusers => [...approvusers,email] );
@@ -273,9 +235,50 @@ function Middlebar(props) {
   const handlearrayuserinv = (email) => {
     setselinvusers(invselusers=> [...invselusers,email])
   };
+
+  const onClickNext = (pageNum, pageSize) => {
+    console.log(pageNum)
+    globalPageNum = pageNum + 1
+    
+    setPageNum(globalPageNum)
+
+    getCommunityUser(globalPageNum, pageSize)
+
+
+
+  }
+
+  const onClickPrev = (pageNum, pageSize) => {
+
+    if(pageNum > 1)
+    {
+    globalPageNum = pageNum - 1
+    setPageNum(globalPageNum)
+
+    getCommunityUser(globalPageNum, pageSize)
+    }
+  }
   
   return (
     <div className="App__content">
+      <Dropdown className="drop-down">
+            <Dropdown.Toggle variant="success" id="dropdown-basic">
+              {pageSize}
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              <Dropdown.Item onClick={()=>{getCommunityUser(pageNum, 2)}}>
+                2
+              </Dropdown.Item>
+              <Dropdown.Item onClick={()=>{getCommunityUser(pageNum, 5)}}>
+                5
+              </Dropdown.Item>
+              <Dropdown.Item onClick={()=>{getCommunityUser(pageNum, 10)}}>
+                10
+              </Dropdown.Item>
+              
+            </Dropdown.Menu>
+          </Dropdown>
       {" "}
       <div className="post-title">
         <a className="postname" href="">
@@ -289,6 +292,7 @@ function Middlebar(props) {
         pattern="^[a-zA-Z]+([ ]{1}[a-zA-Z]+)*$"
         title="It can only contain letters, single space character. It must start with letter and cannot end with special character"
       />
+     
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -297,13 +301,13 @@ function Middlebar(props) {
         show={openmodel}
         onHide={handleClose}
       >
-       
+        <div class="paper">
         <Modal.Header closeButton>
           <Modal.Title>Uses requested to join</Modal.Title>
         </Modal.Header>
        
         <Modal.Body>
-          <div class="paper">
+          
             
               <div>
               {requsers.map((com) => (
@@ -324,9 +328,9 @@ function Middlebar(props) {
                 </header>
                 ))}
                 <Button
-                          variant="contained"
+                        
                           color="primary"
-                          className="login-button-width"
+                         
                           onClick={() => {
                             approve();
                           }}
@@ -335,9 +339,9 @@ function Middlebar(props) {
                         </Button>
               </div>
           
-          </div>
+          
         </Modal.Body>
-        
+        </div>
       </Modal>
       <Modal
         aria-labelledby="transition-modal-title"
@@ -430,17 +434,33 @@ function Middlebar(props) {
         <span>
           {onChangeTriggered == false &&
             returncomm.map((com) => (
+              <article className="mod-list-width">
+              {/* <article > */}
+              <img src={post} height="55" width="55" class="thumbnail" />
               <div class="info">
                 <header>
                   <span className="subreddit-text">
                     <a className="posturl">{com.communityName}</a>
                   </span>
                 </header>
+                <div>
+                submitted on {time(com.creationTime)} by{" "}
+    <span class> {com.createdBy}</span>
+    
+
+
+
+                </div>
+                
+                
+                
+                
+                
                 <span>
               
                 <Button variant="secondary" onClick={() => {handleReq(com.communityName)}}>
                
-                Requests
+                Approve
               </Button>
               
              
@@ -453,6 +473,7 @@ function Middlebar(props) {
               </Button> */}
                 </span>
               </div>
+              </article>
             ))}
         </span>
 
@@ -461,6 +482,11 @@ function Middlebar(props) {
             {alert}
           </Alert>
         )}
+        
+        
+        <Button onClick={()=>{onClickNext(pageNum, pageSize)}}>Next</Button> 
+        <Button onClick={()=>{onClickPrev(pageNum, pageSize)}}>Previous</Button> 
+
 
 
       </div>
@@ -473,3 +499,29 @@ function Middlebar(props) {
 }
 export default Middlebar;
 
+
+
+
+{/* <article className="row post-width">
+
+
+<img src={post} height="55" width="55" class="thumbnail" />
+<div class="info">
+ 
+  <div>
+    submitted on {time(com.creationTime)} by{" "}
+    <span class> {com.createdBy}</span>
+    from{" "}
+    <span>
+      <Nav.Link
+        data-testid="Group"
+        key={com.description}
+        onClick={() => communityPage(com.communityName)}
+        className="posturl"
+      >
+        {com.communityName}
+      </Nav.Link>
+    </span>
+  </div>
+</div>
+</article> */}

@@ -20,6 +20,8 @@ const queryString = require("query-string");
 function ViewPost() {
   const location = useLocation();
   const [comment, setComment] = React.useState("");
+  const [postData, setPostData] = React.useState([]);
+  const [commentData, setFetchedComments] = React.useState([]);
   const email = useSelector((state) => state.login.username);
   const commentHandle = (e) => {
     console.log(e.target.value);
@@ -40,6 +42,8 @@ function ViewPost() {
       }
     )
       .then((response) => {
+        setFetchedComments(response.data);
+
         console.log("successfully fetched comments");
         // setTitle(response.data.communityName);
       })
@@ -50,9 +54,46 @@ function ViewPost() {
       });
   };
 
+  const fetchPostByID = () => {
+    Axios.post(
+      endPointObj.url + "api/getPostById",
+      {
+        postId: queryString.parse(location.search).id,
+      },
+      {
+        headers: {
+          Authorization: "jwt " + sessionStorage.getItem("token"),
+        },
+      }
+    )
+      .then((response) => {
+        console.log("successfully fetched individual post");
+        setPostData(response.data);
+      })
+      .catch((err) => {
+        console.error("an error occured");
+        if (err.response && err.response.data) {
+        }
+      });
+  };
+
   useEffect(() => {
     fetchComments();
+    fetchPostByID();
   }, []);
+
+  const upVoteClickCommHome = (name) => {
+    console.log(name);
+
+    fetchPostByID().then((result) => {
+      console.log("fetched post after comments");
+    });
+  };
+
+  function upVoteClick(name) {
+    upVoteClickCommHome(name);
+    console.log(name);
+  }
 
   const addComment = (comment) => {
     Axios.post(
@@ -70,7 +111,9 @@ function ViewPost() {
     )
       .then((response) => {
         console.log("successfully fetched comm");
+        setComment("");
         // setTitle(response.data.communityName);
+        fetchComments();
       })
       .catch((err) => {
         console.error("an error occured");
@@ -88,36 +131,72 @@ function ViewPost() {
           <div class="col-md-9">
             <div class="row post">
               <div class="col-md-1">
-                <VoteButton></VoteButton>
+                <VoteButton
+                  id={postData._id}
+                  votes={
+                    parseInt(postData.numberOfUpvotes) -
+                    parseInt(postData.numberOfDownvotes)
+                  }
+                  upVoteClick={upVoteClick}
+                  // postTitle={postData.postTitle}
+                  // text={postData.text}
+                  // url={postData.url}
+                  // images={postData.images}
+                  //upVoteClickCommHome={upVoteClickCommHome}
+                  // postTitle={postData.postTitle}
+                  // votes={
+                  //   parseInt(postData.numberOfUpvotes) -
+                  //   parseInt(postData.numberOfDownvotes)
+                  // }
+                  // id={postData._id}
+                  // createdByEmail={postData.createdByEmail}
+                  // commName={postData.communityName}
+                ></VoteButton>
               </div>
               <div class="col-md-11">
                 <span>
                   <span class="subreddit-text">
                     <a class="post-url" href="">
-                      CommunityName
+                      {postData.communityName}
                     </a>
                   </span>
                   <span>
-                    . Posted
-                    <span> Duration </span>
-                    by
+                    &nbsp;. Posted by &nbsp;
                     <a class="username" href="">
-                      Anonymous
-                    </a>
-                    <a class="username" href="">
-                      Write if condirtion if username is present
+                      <b>{postData.createdByEmail}</b>
                     </a>
                   </span>
                 </span>
                 <hr />
-                <a class="post-title">Post Title</a>
-                <div>
-                  <p class="post-text">ABC ABC</p>
-                  {/* Inner HTML Fix Karna Hai */}
-                </div>
+                <a class="post-title">{postData.postTitle}</a>
+                {(function () {
+                  if (postData.url != undefined) {
+                    return (
+                      <div>
+                        <p class="posturl">{postData.url}</p>
+                      </div>
+                    );
+                  } else if (postData.images != undefined) {
+                    return (
+                      <div>
+                        <div className="img-holder">
+                          <img src={postData.images} alt="" className="img" />
+                        </div>
+                      </div>
+                    );
+                  } else {
+                    return (
+                      <div>
+                        <p class="post-text">{postData.text}</p>
+                        {/* Inner HTML Fix Karna Hai */}
+                      </div>
+                    );
+                  }
+                })()}
                 <div class="post-comment">
                   <div class="form-group">
                     <textarea
+                      value={comment}
                       class="form-control"
                       placeholder="Your Thoughts?"
                       onChange={(e) => commentHandle(e)}
@@ -132,8 +211,22 @@ function ViewPost() {
                   </button>
                 </div>
                 <br></br>
+                <br></br>
+                <br></br>
+                {commentData.map((comm) => (
+                  <Comments
+                    commentedBy={comm.commentedBy}
+                    commentTime={comm.creationTime}
+                    commentBody={comm.comment}
+                    id={comm.parentId}
+                    votes={
+                      parseInt(postData.numberOfUpvotes) -
+                      parseInt(postData.numberOfDownvotes)
+                    }
+                    upVoteClick={upVoteClick}
+                  ></Comments>
+                ))}
 
-                <Comments></Comments>
                 {/* <div style={{ marginTop: "60px" }}>
                   <div class="comment">
                     <div class="username">
@@ -151,8 +244,7 @@ function ViewPost() {
           </div>
           <div class="col-md-3">
             <AboutCommunity></AboutCommunity>
-            <CommunityRules></CommunityRules>
-            <SubRedditSideBar></SubRedditSideBar>
+            <SideBar></SideBar>
           </div>
         </div>
       </div>
@@ -161,3 +253,28 @@ function ViewPost() {
 }
 
 export default ViewPost;
+
+// postTitle={postData.postTitle}
+// text={postData.text}
+// url={postData.url}
+// images={postData.images}
+// upVoteClickCommHome={upVoteClickCommHome}
+// postTitle={postData.postTitle}
+// votes={
+//   parseInt(postData.numberOfUpvotes) -
+//   parseInt(postData.numberOfDownvotes)
+// }
+// id={postData._id}
+// createdByEmail={postData.createdByEmail}
+// commName={postData.communityName}
+
+// id,
+//   votes,
+//   postTitle,
+//   createdByEmail,
+//   creationtime,
+//   // text,
+//   // url,
+//   // images,
+//   upVoteClickCommHome,
+//   commName,

@@ -1,16 +1,15 @@
 const mongoose = require("mongoose");
 
 const messageSchema = new mongoose.Schema({
-  
-  senderEmail: {
+  name: {
     type: String,
     required: true,
   },
-  recieverEmail: {
+  user: {
     type: String,
     required: true,
   },
-  message: {
+  text: {
     type: String,
     required: true,
   },

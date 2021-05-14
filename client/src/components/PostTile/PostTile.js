@@ -10,10 +10,14 @@ function PostTile({
   votes,
   postTitle,
   createdByEmail,
-  text,
+  creationtime,
+  // text,
+  // url,
+  // images,
   upVoteClickCommHome,
   commName,
 }) {
+  const options = { year: "numeric", month: "long", day: "numeric" };
   const history = useHistory();
 
   const redirectToViewPost = () => {
@@ -35,34 +39,33 @@ function PostTile({
 
   return (
     <div>
-      <div className="row post">
+      <div className="row postcss">
         <div className="col-md-1">
           <VoteButton id={id} votes={votes} upVoteClick={upVoteClick} />
         </div>
         <div className="col-md-11">
           <span className="subreddit-info">
-            <span className="subreddit-text">
+            {/* <span className="subreddit-text">
               <a className="posturl" href="">
                 {postTitle}
               </a>
-            </span>
+            </span> */}
             <span>
-              . Posted by {createdByEmail}
+              Posted by
               <a className="username" href="">
-                Username
+                &nbsp;{createdByEmail}
               </a>
+              .on{" "}
+              {new Date(creationtime).toLocaleDateString(undefined, options)}
             </span>
-            <span> . Post Duration</span>
           </span>
           <hr />
           <div className="post-title">
             <a className="postname" href="">
-              {text}
+              {postTitle}
             </a>
           </div>
-          <div>
-            <p className="post-text">Post Description</p>
-          </div>
+          <div>{/* <p className="post-text">Post Description</p> */}</div>
           <hr />
           <span>
             <a

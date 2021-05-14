@@ -50,7 +50,7 @@ async function handle_request(msg, callback) {
     case "numberOfUpvotesAsc":
       for (let i = 0; i < joined_community_array.length; i++) {
         await Post.find({ communityName: joined_community_array[i] })
-          .sort({ numberOfUpvotes: -1 })
+          .sort({ numberOfUpvotes: 1 })
           .then((result, error) => {
             if (error) {
               callback(null, error);
@@ -65,9 +65,10 @@ async function handle_request(msg, callback) {
       break;
 
     case "numberOfUpvotesDesc":
+     
       for (let i = 0; i < joined_community_array.length; i++) {
         await Post.find({ communityName: joined_community_array[i] })
-          .sort({ numberOfUpvotes: 1 })
+          .sort({ numberOfUpvotes: -1 })
           .then((result, error) => {
             if (error) {
               callback(null, error);
@@ -84,7 +85,7 @@ async function handle_request(msg, callback) {
     case "numberOfDownvotesAsc":
       for (let i = 0; i < joined_community_array.length; i++) {
         await Post.find({ communityName: joined_community_array[i] })
-          .sort({ numberOfDownvotes: -1 })
+          .sort({ numberOfDownvotes: 1 })
           .then((result, error) => {
             if (error) {
               callback(null, error);
@@ -101,7 +102,7 @@ async function handle_request(msg, callback) {
     case "numberOfDownvotesDesc":
       for (let i = 0; i < joined_community_array.length; i++) {
         await Post.find({ communityName: joined_community_array[i] })
-          .sort({ numberOfDownvotes: 1 })
+          .sort({ numberOfDownvotes: -1 })
           .then((result, error) => {
             if (error) {
               callback(null, error);

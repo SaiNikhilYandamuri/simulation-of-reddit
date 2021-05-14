@@ -37,7 +37,7 @@ const deleteCommunity = require("./routes/DeleteCommunity");
 const router = require("./router");
 const { addUser, removeUser, getUser, getUsersInRoom } = require("./users");
 const { backendServer } = require("./utils/config");
-
+const getInvitations = require("./routes/GetInvitations");
 const server = http.createServer(app);
 const io = socketio(server);
 const leaveCommunity = require("./routes/LeaveCommunity");
@@ -81,35 +81,32 @@ io.on("connection", (socket) => {
     callback();
   });
 
-  socket.on(
-    "sendMessage",
-    ({ message, senderEmail, recieverEmail }, callback) => {
-      console.log(socket.id);
-      const user = getUser(socket.id);
-      console.log(user);
-      console.log(message);
-      if (user.user) {
-        io.to(user.user).emit("message", { user: user.name, text: message });
-      }
-      console.log("Helllooooo");
-      console.log(backendServer);
-      axios
-        .post(`${backendServer}/addMessages`, {
-          message,
-          senderEmail,
-          recieverEmail,
-        })
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-
-      callback();
+  socket.on("sendMessage", ({ message, name, user1 }, callback) => {
+    console.log(socket.id);
+    const user = getUser(socket.id);
+    console.log(user);
+    console.log(message);
+    if (user.user) {
+      io.to(user.user).emit("message", { user: user.name, text: message });
     }
-  );
-  socket.on("disconnect", () => {
+    console.log("Helllooooo");
+    console.log(backendServer);
+    axios
+      .post(`${backendServer}/addMessages`, {
+        message,
+        name,
+        user1: user1,
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    callback();
+  });
+  socket.on("disconnection", () => {
     const user = removeUser(socket.id);
     console.log("User has left!");
   });
@@ -161,6 +158,17 @@ app.use("/api", votingForComments);
 app.use("/api", deleteCommunity);
 app.use("/api", multiImages);
 app.use("/api", noOfMembers);
+
 app.use("/api", noOfPosts);
 app.use("/api", UserMaxPost);
+<<<<<<< HEAD
 app.use("/api", MostUpvotedPost);
+=======
+
+
+app.use("/api", noOfPosts);
+
+app.use("/api", getInvitations);
+
+
+>>>>>>> 4d78213cbd6f70b2faebc9ddc2cbdad0592fb171

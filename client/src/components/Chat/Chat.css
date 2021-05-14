@@ -2,8 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #1a1a1d;
+  height: 90vh;
+  background-color: #b3b1b1;
 }
 
 .container {
@@ -12,7 +12,7 @@
   justify-content: space-between;
   background: #ffffff;
   border-radius: 8px;
-  height: 60%;
+  height: 70%;
   width: 35%;
 }
 

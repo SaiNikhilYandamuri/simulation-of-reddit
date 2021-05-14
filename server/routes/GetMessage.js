@@ -13,9 +13,9 @@ const client = redis.createClient(6379, "localhost");
 //cache middleware
 function cache(req, res, next) {
   console.log("inside cache");
-  const { senderEmail, recieverEmail } = req.body;
+  const { name, user } = req.body;
 
-  client.get(senderEmail + "&" + recieverEmail, (err, data) => {
+  client.get(name + "&" + user, (err, data) => {
     if (err) {
       throw err;
     }
@@ -29,29 +29,29 @@ function cache(req, res, next) {
 }
 
 router.post("/getMessages", async (req, res) => {
-  const senderEmail = req.body.senderEmail;
-  const recieverEmail = req.body.recieverEmail;
+  const name = req.body.name;
+  const user = req.body.user;
 
   console.log("Inside get message");
-  console.log(senderEmail);
-  console.log(recieverEmail);
+  console.log(name);
+  console.log(user);
 
   Message.find({
     $or: [
-      { senderEmail: senderEmail, recieverEmail: recieverEmail },
-      { senderEmail: recieverEmail, recieverEmail: senderEmail },
+      { name: name, user: user },
+      { user: user, name: name },
     ],
   })
     .sort({ created_time: -1 })
 
     .lean()
-    .select({ senderEmail: 1, message: 1 })
+    .select({ name: 1, text: 1, user: 1 })
     .then((result) => {
       console.log(result, "result");
       if (result) {
         console.log("inside error");
         client.setex(
-          req.body.senderEmail + "&" + req.body.recieverEmail,
+          req.body.name + "&" + req.body.user,
           3600,
           JSON.stringify(result)
         );

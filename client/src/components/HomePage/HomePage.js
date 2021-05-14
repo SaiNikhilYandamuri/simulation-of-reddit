@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Axios from "axios";
+import { useHistory, useLocation } from "react-router-dom";
 import SideBar from "../SideBar/SideBar";
 import PostTile from "../PostTile/PostTile";
 import SubRedditSideBar from "../SubRedditSideBar/SubRedditSideBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import endPointObj from "../../endPointUrl";
+import { useDispatch, useSelector } from "react-redux";
+import SearchComponent from "../SearchCommunity/SearchCommunity";
 import "./HomePage.css";
 import {
   faChartLine,
@@ -24,10 +29,48 @@ import {
   Alert,
   Dropdown,
 } from "react-bootstrap";
-import { useHistory } from "react-router-dom";
+const queryString = require("query-string");
 
 function HomePage() {
   const history = useHistory();
+  const location = useLocation();
+  const email = useSelector((state) => state.login.username);
+  const [alertMessage, setAlertMessage] = React.useState("");
+  const [posts, setPosts] = React.useState([]);
+
+  let getPosts = () => {
+    return new Promise((resolve, reject) => {
+      Axios.post(
+        endPointObj.url + "api/getPost",
+        {
+          userEmail: email,
+        },
+        {
+          headers: {
+            Authorization: "jwt " + sessionStorage.getItem("token"),
+          },
+        }
+      )
+        .then((response) => {
+          console.log(response);
+
+          if (response.data != "") {
+            setPosts(response.data[0]);
+          }
+        })
+        .catch((err) => {
+          console.error("an error occured");
+          if (err.response && err.response.data) {
+          }
+        });
+    });
+  };
+
+  useEffect(() => {
+    getPosts().then((result) => {
+      console.log("fetched posts");
+    });
+  }, [location]);
 
   const redirectToMessages = () => {
     history.push({
@@ -35,73 +78,45 @@ function HomePage() {
       //search: "?modalOpen=true&type=" + type,
     });
   };
-  
+
+  const upVoteClickCommHome = (name) => {
+    console.log(name);
+
+    getPosts().then((result) => {
+      console.log("fetched posts");
+    });
+  };
+
   return (
     <div>
       <div className="reddit-body">
         <div className="container">
           <div className="row">
             <hr />
-            {/* <div className="col-md-9">
-              
-              <PostTile />
-            </div> */}
             <div className="col-md-9">
-              <div className="input-group">
-                <Dropdown
-                  style={{
-                    marginTop: "10px",
-                    marginBottom: "10px",
-                    marginRight: "5px",
-                  }}
-                >
-                  <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-                    Filter By ...
-                  </Dropdown.Toggle>
+              {/* Remind about clash in csss !!!!!!!!!!!!!!!!!!!! */}
 
-                  <Dropdown.Menu>
-                    <Dropdown.Item>
-                      <FontAwesomeIcon className="icon" icon={faChartLine} />
-                      &nbsp; Most Upvoted
-                    </Dropdown.Item>
-                    <Dropdown.Item>
-                      <FontAwesomeIcon className="icon" icon={faUser} />
-                      &nbsp;Most Users
-                    </Dropdown.Item>
-                    <Dropdown.Item>
-                      <FontAwesomeIcon className="icon" icon={faComments} />
-                      &nbsp;Most Comments
-                    </Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Search for..."
-                  style={{ marginTop: "10px", marginBottom: "10px" }}
-                />
-
-                <span class="input-group-btn">
-                  <button className="search">
-                    <FontAwesomeIcon className="sicon" icon={faSearch} />
-                  </button>
-                </span>
-                <span class="input-group-btn">
-                  <button
-                    className="messages"
-                    onClick={() => {
-                      redirectToMessages();
-                    }}
-                  >
-                    <FontAwesomeIcon className="sicon" icon={faCommentAlt} />
-                  </button>
-                </span>
-              </div>
-              <PostTile />
+              {posts.map((post) => (
+                <PostTile
+                  postTitle={post.postTitle}
+                  // text={post.text}
+                  upVoteClickCommHome={upVoteClickCommHome}
+                  postTitle={post.postTitle}
+                  votes={
+                    parseInt(post.numberOfUpvotes) -
+                    parseInt(post.numberOfDownvotes)
+                  }
+                  text={post.text}
+                  id={post._id}
+                  createdByEmail={post.createdByEmail}
+                  commName={post.communityName}
+                ></PostTile>
+              ))}
             </div>
             <div className="col-md-3">
               <SideBar></SideBar>
-              <SubRedditSideBar></SubRedditSideBar>
+              {/* <SubRedditSideBar></SubRedditSideBar> */}
+              {/* Remind about clash in csss !!!!!!!!!!!!!!!!!!!! */}
             </div>
           </div>
         </div>

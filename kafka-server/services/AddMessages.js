@@ -2,14 +2,15 @@ const mongoose = require("mongoose");
 const Message = require("../model/Messages");
 
 async function handle_request(msg, callback) {
-  const senderEmail = msg.senderEmail;
-  const recieverEmail = msg.recieverEmail;
+  const name = msg.name;
+  const user1 = msg.user1;
   const message = msg.message;
+  console.log(user1);
 
   const addedmessage = new Message({
-    senderEmail: senderEmail,
-    recieverEmail: recieverEmail,
-    message: message,
+    name: name,
+    user: user1,
+    text: message,
   });
   console.log("Inside add message");
   console.log(addedmessage);
