@@ -54,7 +54,9 @@ function HomePage() {
         .then((response) => {
           console.log(response);
 
-          setPosts(response.data[0]);
+          if (response.data != "") {
+            setPosts(response.data[0]);
+          }
         })
         .catch((err) => {
           console.error("an error occured");
