@@ -5,7 +5,7 @@ const passport = require("passport");
 
 router.get(
   "/noofmembers",
-  passport.authenticate("jwt", { session: false }),
+  // passport.authenticate("jwt", { session: false }),
   async (req, res) => {
     console.log("Inside members in community");
     kafka.make_request("noofmembers", req.body, function (err, results) {
