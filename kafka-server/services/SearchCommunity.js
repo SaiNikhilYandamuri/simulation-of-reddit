@@ -16,35 +16,41 @@ async function handle_request(msg, callback) {
       const communityDetails1 = await Community.find({
         communityName: new RegExp(searchString),
       }).sort({ numberOfMembers: -1 });
-      var result = paginate(communityDetails1, 1, 2);
+      var result = paginate(communityDetails1, msg.pageNum, msg.pageSize);
       console.log("PRINTING RESULT", result);
       callback(null, result);
       break;
     case "numberOfPosts":
+      console.log(sortExpression, "sorting ============================");
       const communityDetails2 = await Community.find({
         communityName: new RegExp(searchString),
       }).sort({ numberOfPosts: -1 });
-      callback(null, communityDetails2);
+      var result = paginate(communityDetails2, msg.pageNum, msg.pageSize);
+      // console.log(result "community lengthhhh");
+      callback(null, result);
       break;
     case "numberOfUpvotesAsc":
       const communityDetails3 = await Community.find({
         communityName: new RegExp(searchString),
       }).sort({ numberOfUpvotes: -1 });
-      callback(null, communityDetails3);
+      var result = paginate(communityDetails3, msg.pageNum, msg.pageSize);
+      callback(null, result);
       break;
     case "numberOfUpvotesDesc":
       const communityDetails4 = await Community.find({
         communityName: new RegExp(searchString),
       }).sort({ numberOfUpvotes: 1 });
-      callback(null, communityDetails4);
+      var result = paginate(communityDetails4, msg.pageNum, msg.pageSize);
+      callback(null, result);
       break;
     default:
       const communityDetails5 = await Community.find({
         communityName: new RegExp(searchString),
       }).sort({ creationTime: -1 });
       console.log("I am here");
+      var result = paginate(communityDetails5, msg.pageNum, msg.pageSize);
 
-      callback(null, communityDetails5);
+      callback(null, result);
   }
 }
 

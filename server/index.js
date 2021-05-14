@@ -37,11 +37,18 @@ const deleteCommunity = require("./routes/DeleteCommunity");
 const router = require("./router");
 const { addUser, removeUser, getUser, getUsersInRoom } = require("./users");
 const { backendServer } = require("./utils/config");
-
+const getInvitations = require("./routes/GetInvitations");
 const server = http.createServer(app);
 const io = socketio(server);
 const leaveCommunity = require("./routes/LeaveCommunity");
 const votingForComments = require("./routes/VotingForComments");
+const multiImages=require("./routes/MultipleImages")
+const noOfMembers=require("./routes/NoOfMembers")
+const noOfPosts=require("./routes/NoOfPosts")
+const UserMaxPost=require("./routes/UserMaxPost")
+
+
+
 
 app.use(
   cors({
@@ -73,35 +80,32 @@ io.on("connection", (socket) => {
     callback();
   });
 
-  socket.on(
-    "sendMessage",
-    ({ message, senderEmail, recieverEmail }, callback) => {
-      console.log(socket.id);
-      const user = getUser(socket.id);
-      console.log(user);
-      console.log(message);
-      if (user.user) {
-        io.to(user.user).emit("message", { user: user.name, text: message });
-      }
-      console.log("Helllooooo");
-      console.log(backendServer);
-      axios
-        .post(`${backendServer}/addMessages`, {
-          message,
-          senderEmail,
-          recieverEmail,
-        })
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-
-      callback();
+  socket.on("sendMessage", ({ message, name, user1 }, callback) => {
+    console.log(socket.id);
+    const user = getUser(socket.id);
+    console.log(user);
+    console.log(message);
+    if (user.user) {
+      io.to(user.user).emit("message", { user: user.name, text: message });
     }
-  );
-  socket.on("disconnect", () => {
+    console.log("Helllooooo");
+    console.log(backendServer);
+    axios
+      .post(`${backendServer}/addMessages`, {
+        message,
+        name,
+        user1: user1,
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    callback();
+  });
+  socket.on("disconnection", () => {
     const user = removeUser(socket.id);
     console.log("User has left!");
   });
@@ -151,3 +155,15 @@ app.use("/api", getUserCommunities);
 app.use("/api", leaveCommunity);
 app.use("/api", votingForComments);
 app.use("/api", deleteCommunity);
+app.use("/api", multiImages);
+app.use("/api", noOfMembers);
+
+app.use("/api", noOfPosts);
+app.use("/api", UserMaxPost);
+
+
+app.use("/api", noOfPosts);
+
+app.use("/api", getInvitations);
+
+

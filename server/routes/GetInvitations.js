@@ -4,13 +4,12 @@ var kafka = require("../kafka/client");
 const passport = require("passport");
 
 router.post(
-  "/getPost",
+  "/getInvitations",
   passport.authenticate("jwt", { session: false }),
   async (req, res) => {
-    console.log("Inside get post");
-    kafka.make_request("getPost", req.body, function (err, results) {
-      //add topic/changeeee
-      console.log("Inside get post topic");
+    console.log("Inside COmm");
+    kafka.make_request("getInvitations", req.body, function (err, results) {
+      console.log("Inside getInvitations topic");
       if (err) {
         console.log("Inside err");
         res.json({
@@ -20,7 +19,6 @@ router.post(
         res.status(400).end();
       } else {
         console.log("Inside else", results);
-
         res.status(200).send(results);
       }
     });

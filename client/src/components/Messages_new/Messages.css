@@ -1,6 +1,7 @@
-.messages {
-  padding: 5% 0;
+.messages-chat {
+  padding: 0% 0;
   overflow: auto;
   flex: auto;
-  width: 90vw;
+  width: 86vw;
+  overflow-y: inherit;
 }

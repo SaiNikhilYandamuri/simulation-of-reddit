@@ -4,6 +4,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
+import AssessmentIcon from '@material-ui/icons/Assessment';
 import "./NavBar.css";
 import { useHistory } from "react-router-dom";
 import mainLogo from "../resources/redditImage.PNG";
@@ -61,6 +62,12 @@ export default function NavBar() {
     });
   };
 
+  const redirectToAnalytics = () => {
+    history.push({
+      pathname: "/analytics",
+    });
+  }
+
   const modalOpen = (type) => {
     history.push({
       pathname: "/",
@@ -97,6 +104,16 @@ export default function NavBar() {
                     className="icon"
                     onClick={() => {
                       redirectToMessages();
+                    }}
+                  />
+                </Badge>
+              </IconButton>
+              <IconButton aria-label="show 4 new mails" color="inherit">
+                <Badge color="secondary">
+                  <AssessmentIcon
+                    className="icon"
+                    onClick={() => {
+                      redirectToAnalytics();
                     }}
                   />
                 </Badge>

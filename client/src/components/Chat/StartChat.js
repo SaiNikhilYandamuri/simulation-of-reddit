@@ -4,6 +4,7 @@ import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import "./StartChat.css";
 import endPointObj from "../../endPointUrl";
+import NavBar from "../NavBar/NavBar";
 import { useDispatch, useSelector } from "react-redux";
 import Axios from "axios";
 
@@ -67,50 +68,38 @@ const StartChat = () => {
   };
 
   return (
-    <div className="joinOuterContainer">
-      <div className="joinInnerContainer">
-        <h1 className="heading">Start Chat</h1>
-        <div>
-          {/* <input
-            placeholder="Name"
-            className="joinInput"
-            type="text"
-            onChange={(event) => setName(event.target.value)}
-          /> */}
+    <div>
+      <NavBar />
+      <div className="joinOuterContainer">
+        <div className="joinInnerContainer">
+          <h1 className="heading">Start Chat</h1>
+          <div>
+            <Autocomplete
+              id="combo-box-demo"
+              options={users}
+              getOptionLabel={(option) => option.email}
+              style={{ width: 300 }}
+              renderInput={(params) => (
+                <TextField {...params} label="User Search" variant="outlined" />
+              )}
+              onChange={(event, newValue) => {
+                handleChangeNameFilter(newValue);
+              }}
+              onInputChange={(event, newInputValue) => {
+                onFilterTextChange(newInputValue);
+              }}
+            />
+          </div>
 
-          <Autocomplete
-            id="combo-box-demo"
-            options={users}
-            getOptionLabel={(option) => option.email}
-            style={{ width: 300 }}
-            renderInput={(params) => (
-              <TextField {...params} label="Combo box" variant="outlined" />
-            )}
-            onChange={(event, newValue) => {
-              handleChangeNameFilter(newValue);
-            }}
-            onInputChange={(event, newInputValue) => {
-              onFilterTextChange(newInputValue);
-            }}
-          />
+          <Link
+            onClick={(e) => (!name ? e.preventDefault() : null)}
+            to={`/chat?name=${name}&user=${user}`}
+          >
+            <button className={"button mt-20"} type="submit">
+              Start Chat
+            </button>
+          </Link>
         </div>
-        <div>
-          {/* <input
-            placeholder="User"
-            className="joinInput"
-            type="text"
-            onChange={(event) => setUser(event.target.value)}
-          /> */}
-        </div>
-
-        <Link
-          onClick={(e) => (!name ? e.preventDefault() : null)}
-          to={`/chat?name=${name}&user=${user}`}
-        >
-          <button className={"button mt-20"} type="submit">
-            Start Chat
-          </button>
-        </Link>
       </div>
     </div>
   );

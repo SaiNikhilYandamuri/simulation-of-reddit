@@ -126,12 +126,12 @@ export default function ModalWindow() {
   const [emailState, setEmailState] = React.useState("");
   const [usernameState, setUsernameState] = React.useState("");
   const [usernameValidState, setUsernameValidState] = React.useState(true);
-  const [usernameValidTextState, setUsernameValidTextState] = React.useState(
-    ""
-  );
+  const [usernameValidTextState, setUsernameValidTextState] =
+    React.useState("");
   const [alertMessage, setAlertMessage] = React.useState("");
   const [descriptionState, setDescriptionNameState] = React.useState("");
   const [communityNameState, setCommunityNameState] = React.useState("");
+  const [selectedFiles, setSelectedFiles] = React.useState([]);
 
   const ITEM_HEIGHT = 48;
   const ITEM_PADDING_TOP = 8;
@@ -146,9 +146,8 @@ export default function ModalWindow() {
 
   const [emailValidState, setEmailValidState] = React.useState(true);
   const [passwordValidState, setPasswordValidState] = React.useState(true);
-  const [passwordValidTextState, setPasswordValidTextState] = React.useState(
-    ""
-  );
+  const [passwordValidTextState, setPasswordValidTextState] =
+    React.useState("");
   const [emailValidTextState, setEmailValidTextState] = React.useState("");
   const [passwordState, setPasswordState] = React.useState("");
   const [inputFields, setInputFields] = React.useState([
@@ -168,7 +167,8 @@ export default function ModalWindow() {
   }
 
   function validateEmail(email) {
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const re =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
   }
 
@@ -226,10 +226,10 @@ export default function ModalWindow() {
     return flag;
   };
 
-  const createCommunity = (communityName, topics, rules, description) => {
+  const createCommunity = async (communityName, topics, rules, description) => {
     // console.log(commName, topics, rules, description);
 
-    Axios.post(
+    await Axios.post(
       endPointObj.url + "api/createCommunity",
       {
         createdBy: email,
@@ -256,10 +256,40 @@ export default function ModalWindow() {
           setAlertMessage(err.response.data);
         }
       });
+    let formData=new FormData();
+    console.log("Printing state of files",selectedFiles)
+    
+    for(let i=0;i<selectedFiles.length;i++)
+    {
+      formData.append("file",selectedFiles[i])
+    }
+    console.log("Done with appending")
+    
+    await Axios.post(
+      endPointObj.url + "api/multipleImages",
+      {formData,
+      community_name:communityName},
+      {
+        headers: {
+          Authorization: "jwt " + sessionStorage.getItem("token"),
+        },
+      }
+    )
+      .then((response) => {
+       
+        console.log("successfully uploaded images to community");
+      })
+      .catch((err) => {
+        console.error("an error occured");
+        
+      });
+  
+        
+      
+      
   };
 
   const signUp = (name, email, password) => {
-    
     console.log("signUp");
 
     if (inputValidatorSignUp(name, email, password)) {
@@ -298,10 +328,13 @@ export default function ModalWindow() {
         })
         .catch((err) => {
           console.log("before erro");
-          console.log(err.response.data.message);
-          setPasswordValidState(false);
-          setPasswordValidTextState(err.response.data.message);
-          
+          // console.log(err.response.data.message);
+
+          if (err.response && err.response.data) {
+            setPasswordValidState(false);
+            setPasswordValidTextState(err.response.data.message);
+          }
+
           console.error(err);
         });
     }
@@ -353,6 +386,19 @@ export default function ModalWindow() {
     console.log(event.target.value);
     setTopicName(event.target.value);
   };
+
+  const imgChangeHandler = (event) => {
+    let image_array=[]
+    for(let i=0;i<event.target.files.length;i++)
+    {
+    
+    image_array.push(event.target.files[i])
+    console.log("Current file",event.target.files[i])
+    }
+    console.log("Printing all image array",image_array)
+    setSelectedFiles(image_array)
+    
+	};
 
   useEffect(() => {
     setPasswordValidTextState("");
@@ -637,6 +683,17 @@ export default function ModalWindow() {
                           color="secondary"
                         />
                       </Grid>
+
+                      <Grid item xs={12}>
+                      
+                      <input type="file" name="file" multiple="multiple" onChange={imgChangeHandler} />
+                    
+
+                         
+                      </Grid>
+
+
+
                       <Grid item xs={12} className="comm-cancel-create">
                         <Button
                           color="primary"
