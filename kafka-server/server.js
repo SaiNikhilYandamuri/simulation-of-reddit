@@ -28,6 +28,9 @@ const votingforpost = require("./services/VotingForPost");
 const leavecommunity = require("./services/LeaveCommunity");
 const votingforcomment = require("./services/VotingForComment");
 const deletecommunity = require("./services/DeleteCommunity");
+
+const communityimages = require("./services/MultiImgCommunity");
+const noofmembers = require("./services/NoOfMembers");
 const getinvitations = require("./services/GetInvitations");
 
 function handleTopicRequest(topic_name, fname) {
@@ -96,4 +99,6 @@ handleTopicRequest("votingforpost1", votingforpost);
 handleTopicRequest("leavecommunity", leavecommunity);
 handleTopicRequest("votingforcomment", votingforcomment);
 handleTopicRequest("deletecommunity", deletecommunity);
+handleTopicRequest("community_imgs", communityimages);
+handleTopicRequest("noofmembers", noofmembers);
 handleTopicRequest("getInvitations", getinvitations);
