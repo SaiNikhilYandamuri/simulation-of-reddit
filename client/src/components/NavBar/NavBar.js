@@ -4,7 +4,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import AssessmentIcon from '@material-ui/icons/Assessment';
+import AssessmentIcon from "@material-ui/icons/Assessment";
 import "./NavBar.css";
 import { useHistory } from "react-router-dom";
 import mainLogo from "../resources/redditImage.PNG";
@@ -15,6 +15,7 @@ import InputBase from "@material-ui/core/InputBase";
 import Badge from "@material-ui/core/Badge";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
+import CheckIcon from "@material-ui/icons/Check";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import AccountCircle from "@material-ui/icons/AccountCircle";
@@ -66,7 +67,13 @@ export default function NavBar() {
     history.push({
       pathname: "/analytics",
     });
-  }
+  };
+
+  const redirectToInvitations = () => {
+    history.push({
+      pathname: "/invitationPage",
+    });
+  };
 
   const modalOpen = (type) => {
     history.push({
@@ -91,13 +98,12 @@ export default function NavBar() {
           {sessionStorage.getItem("token") !== null && (
             <div className={classes.sectionDesktop}>
               <img
-              src={mod}
-              className="reddit-image"
-             
-              onClick={() => {
-                redirectToMod();
-              }}
-            />
+                src={mod}
+                className="reddit-image"
+                onClick={() => {
+                  redirectToMod();
+                }}
+              />
               <IconButton aria-label="show 4 new mails" color="inherit">
                 <Badge color="secondary">
                   <QuestionAnswerIcon
@@ -114,6 +120,16 @@ export default function NavBar() {
                     className="icon"
                     onClick={() => {
                       redirectToAnalytics();
+                    }}
+                  />
+                </Badge>
+              </IconButton>
+              <IconButton aria-label="show 4 new mails" color="inherit">
+                <Badge color="secondary">
+                  <CheckIcon
+                    className="icon"
+                    onClick={() => {
+                      redirectToInvitations();
                     }}
                   />
                 </Badge>
