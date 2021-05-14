@@ -25,6 +25,7 @@ async function handle_request(msg, callback) {
           {
             $push: { members: emailOfUser[i] },
             $pull: { requestedToJoin: emailOfUser[i] },
+            $inc: { numberOfMembers: 1 },
           },
           function (err, doc) {
             if (err)

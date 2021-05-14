@@ -32,11 +32,10 @@ const deletecommunity = require("./services/DeleteCommunity");
 const communityimages = require("./services/MultiImgCommunity");
 const noofmembers = require("./services/NoOfMembers");
 
-const noofposts=require("./services/NoOfPosts")
-const usermaxpost=require("./services/UserMaxPost")
+const noofposts = require("./services/NoOfPosts");
+const usermaxpost = require("./services/UserMaxPost");
 
 const getinvitations = require("./services/GetInvitations");
-
 
 function handleTopicRequest(topic_name, fname) {
   //var topic_name = 'root_topic';
@@ -76,7 +75,7 @@ handleTopicRequest("add_messages1", addMessages);
 handleTopicRequest("get_messages", getMessages);
 
 handleTopicRequest("AddPost1", addPost);
-handleTopicRequest("getPost", getPost);
+handleTopicRequest("get_post", getPost);
 handleTopicRequest("invitetojoin_communitys", inviteToJoinCommunity);
 handleTopicRequest("acceptinvitationbyuser1", acceptInvitationByUser);
 handleTopicRequest("getcommunity", getCommunity);
@@ -110,9 +109,6 @@ handleTopicRequest("noofmembers", noofmembers);
 handleTopicRequest("no_of_posts", noofposts);
 handleTopicRequest("user_max_post", usermaxpost);
 
-
 handleTopicRequest("no_of_posts", noofposts);
 
 handleTopicRequest("getInvitations", getinvitations);
-
-
