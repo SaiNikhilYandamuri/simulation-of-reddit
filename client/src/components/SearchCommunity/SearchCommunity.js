@@ -171,7 +171,7 @@ function SearchCommunity() {
                   handleVotes("Most upvoted posts", pageNum, pageSize)
                 }
               >
-                Most upvoted posts
+                Most upvoted community
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
