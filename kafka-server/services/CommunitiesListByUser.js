@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Community = require("../model/Community");
+const paginate = require("../../server/utils/pagination");
 
 async function handle_request(msg, callback) {
   // Need to implement images later
@@ -19,6 +20,8 @@ Community.find(
       } else {
         console.log("Inside Else of result");
         console.log(result);
+
+        var result = paginate(result, msg.pageNum, msg.pageSize);
         callback(null, result);
       }
     });

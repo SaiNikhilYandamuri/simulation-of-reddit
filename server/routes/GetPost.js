@@ -9,7 +9,7 @@ router.post(
   passport.authenticate("jwt", { session: false }),
   async (req, res) => {
     console.log("Inside get post");
-    kafka.make_request("get_post", req.body, function (err, results) {
+    kafka.make_request("getPost", req.body, function (err, results) {
       //add topic/changeeee
       console.log("Inside get post topic");
       if (err) {

@@ -119,12 +119,14 @@ export default function CommunityPage() {
     });
   };
 
-  let getPosts = () => {
+  let getPosts = (sortExpression) => {
+    
     return new Promise((resolve, reject) => {
       Axios.post(
         endPointObj.url + "api/getPost",
         {
           communityName: queryString.parse(location.search).name,
+          sort: sortExpression,
         },
         {
           headers: {
@@ -145,17 +147,73 @@ export default function CommunityPage() {
     });
   };
 
+  //gk
+  const handletop = () => {
+    console.log("top");
+    getPosts("numberOfUpvotesDesc")
+  };
+//gk
+
+const handlenew = () => {
+  console.log("new");
+  getPosts("");
+};
   const onHover = (status) => {
     console.log(status);
     if (status == "Joined") {
       setInviteStatus("leave");
     }
+    // if (status == "leave") {
+    //   setInviteStatus("Join");
+    // }
+  };
+
+  const onHoverOut = (status) => {
+    console.log(status);
+    // if (status == "Joined") {
+    //   setInviteStatus("leave");
+    // }
     if (status == "leave") {
-      setInviteStatus("Join");
+      setInviteStatus("Joined");
     }
   };
 
+  const leaveCommunity = () => {
+    return new Promise((resolve, reject) => {
+      Axios.post(
+        endPointObj.url + "api/leaveCommunity",
+        {
+          communityName: queryString.parse(location.search).name,
+          email: email,
+        },
+        {
+          headers: {
+            Authorization: "jwt " + sessionStorage.getItem("token"),
+          },
+        }
+      )
+        .then((response) => {
+          console.log(response);
+          setInviteStatus("Join")
+          checkApprovedStatus().then((result) => {
+            console.log(result);
+          });
+        })
+        .catch((err) => {
+          console.error("an error occured");
+          if (err.response && err.response.data) {
+          }
+        });
+    });
+  };
+
+
+
+
+
+
   const requestToJoinCommunity = () => {
+
     return new Promise((resolve, reject) => {
       Axios.post(
         endPointObj.url + "api/requestToJoinCommunity",
@@ -229,13 +287,19 @@ export default function CommunityPage() {
                   color="primary"
                   href="#outlined-buttons"
                   onClick={() => {
+                    if(inviteStatus == "Join")
+                    {
                     requestToJoinCommunity();
+                    }
+                    if(inviteStatus == "leave"){
+                      leaveCommunity();
+                    }
                   }}
                   onMouseOver={() => {
                     onHover(inviteStatus);
                   }}
                   onMouseOut={() => {
-                    onHover(inviteStatus);
+                    onHoverOut(inviteStatus);
                   }}
                 >
                   {inviteStatus}
@@ -259,9 +323,17 @@ export default function CommunityPage() {
                       onChange={handleChange}
                       aria-label="disabled tabs example"
                     >
+                      
                       <Tab icon={<img src={hot}></img>}></Tab>
-                      <Tab icon={<img src={newImage}></img>}></Tab>
-                      <Tab icon={<img src={top}></img>}></Tab>
+                    
+                      <Tab icon={<img src={newImage}></img>} onClick={() => {
+                           handlenew();
+                          }}></Tab>
+                      
+                      <Tab icon={<img src={top}></img>} onClick={() => {
+                           handletop();
+                          }}
+                        ></Tab>
                     </Tabs>
                   </Paper>
                 )}
