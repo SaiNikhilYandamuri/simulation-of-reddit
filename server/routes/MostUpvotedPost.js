@@ -5,7 +5,7 @@ const passport = require("passport");
 
 router.post(
   "/mostupvotedpost",
-  passport.authenticate("jwt", { session: false }),
+  // passport.authenticate("jwt", { session: false }),
   async (req, res) => {
     console.log("Inside COmm");
     kafka.make_request("most_upvoted_post", req.body, function (err, results) {
