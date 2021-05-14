@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { useLocation, Switch } from "react-router-dom";
+import { useLocation, Switch, useHistory } from "react-router-dom";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import NavigationBar from "../NavBar/NavBar";
@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CommunityPage() {
   const email = useSelector((state) => state.login.username);
-
+  const history = useHistory();
   const location = useLocation();
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -59,6 +59,13 @@ export default function CommunityPage() {
   const [title, setTitle] = React.useState("");
   const [value, setValue] = React.useState(2);
   const [posts, setPosts] = React.useState([]);
+
+  const redirectToCreate = () => {
+    history.push({
+      pathname: "/createpost",
+      search: `?communityname=${queryString.parse(location.search).name}`,
+    });
+  };
 
   let getCommunity = () => {
     return new Promise((resolve, reject) => {
@@ -136,7 +143,7 @@ export default function CommunityPage() {
         .then((response) => {
           console.log(response);
 
-          setPosts(response.data[0]);
+          setPosts(response.data);
         })
         .catch((err) => {
           console.error("an error occured");
@@ -304,7 +311,14 @@ export default function CommunityPage() {
             <Grid container>
               <Grid item xs={8}>
                 <Paper className={classes.paperPost}>
-                  Waiting on Post component ...:(
+                  <button
+                    className="btnCreatePost"
+                    onClick={() => {
+                      redirectToCreate();
+                    }}
+                  >
+                    CREATE POST
+                  </button>
                 </Paper>
                 {posts.length > 0 && (
                   <Paper className="tabs-home" square>
