@@ -42,17 +42,14 @@ const server = http.createServer(app);
 const io = socketio(server);
 const leaveCommunity = require("./routes/LeaveCommunity");
 const votingForComments = require("./routes/VotingForComments");
-const multiImages=require("./routes/MultipleImages")
-const noOfMembers=require("./routes/NoOfMembers")
-const noOfPosts=require("./routes/NoOfPosts")
-const UserMaxPost=require("./routes/UserMaxPost")
-
-
-
+const multiImages = require("./routes/MultipleImages");
+const noOfMembers = require("./routes/NoOfMembers");
+const noOfPosts = require("./routes/NoOfPosts");
+const UserMaxPost = require("./routes/UserMaxPost");
 
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: ["http://18.217.42.36:3000"],
     methods: ["GET", "POST"],
     credentials: true,
   })
@@ -161,9 +158,6 @@ app.use("/api", noOfMembers);
 app.use("/api", noOfPosts);
 app.use("/api", UserMaxPost);
 
-
 app.use("/api", noOfPosts);
 
 app.use("/api", getInvitations);
-
-
