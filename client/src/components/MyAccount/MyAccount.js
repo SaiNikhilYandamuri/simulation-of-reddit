@@ -80,7 +80,6 @@ export default function CenteredGrid() {
   const updateAccountDetails = (
     email,
     name,
-    password,
     gender,
     location,
     description,
@@ -92,7 +91,7 @@ export default function CenteredGrid() {
         {
           email,
           name,
-          password,
+
           gender,
           location,
           description,
@@ -303,13 +302,7 @@ export default function CenteredGrid() {
                         className={formStyles.root}
                         noValidate
                         autoComplete="off"
-                      >
-                        <TextField
-                          id="standard-basic"
-                          label="password"
-                          onChange={(e) => changePasswordHandler(e)}
-                        />
-                      </form>
+                      ></form>
                     </Grid>
                     <Grid item xs={6}>
                       <form
