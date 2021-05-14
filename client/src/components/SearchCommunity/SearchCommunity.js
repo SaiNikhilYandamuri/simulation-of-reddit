@@ -12,7 +12,7 @@ import { useHistory } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 
 function SearchCommunity() {
-  let gPageSize = 0;
+  let gPageNum = 0;
   const [community, setSearchcommunity] = useState([]);
   const [pageSize, setPageSize] = useState(2);
   const [pageNum, setPageNum] = useState(1);
@@ -114,9 +114,18 @@ function SearchCommunity() {
   };
 
   const clickNext = (searchString, sortdesk, pageNum, pageSize) => {
-    gPageSize = pageSize + 1;
-    setPageSize(gPageSize);
-    getSearchCommunity(searchString, sortdesk, pageNum, gPageSize);
+    gPageNum = pageNum + 1;
+    setPageNum(gPageNum);
+    getSearchCommunity(searchString, sortdesk, gPageNum, pageSize);
+  };
+
+  const clickPrev = (searchString, sortdesk, pageNum, pageSize) => {
+    if (pageNum > 1) {
+      gPageNum = pageNum - 1;
+      setPageNum(gPageNum);
+
+      getSearchCommunity(searchString, sortdesk, gPageNum, pageSize);
+    }
   };
 
   const upVoteClick = () => {
@@ -327,19 +336,19 @@ function SearchCommunity() {
           <Button
             variant="dark"
             onClick={() =>
-              clickNext(searchString, sortString, pageNum, pageSize)
+              clickPrev(searchString, sortString, pageNum, pageSize)
             }
           >
-            Next
+            Previous
           </Button>
           &nbsp;
           <Button
             variant="dark"
             onClick={() =>
-              clickPrev(searchString, sortString, pageNum, pageSize)
+              clickNext(searchString, sortString, pageNum, pageSize)
             }
           >
-            Previous
+            Next
           </Button>
         </center>
       </div>
