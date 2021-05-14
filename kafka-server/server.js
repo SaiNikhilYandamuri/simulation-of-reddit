@@ -30,6 +30,7 @@ const votingforcomment = require("./services/VotingForComment");
 const deletecommunity = require("./services/DeleteCommunity");
 const communityimages = require("./services/MultiImgCommunity");
 const noofmembers = require("./services/NoOfMembers");
+const noofposts=require("./services/NoOfPosts")
 
 function handleTopicRequest(topic_name, fname) {
   //var topic_name = 'root_topic';
@@ -98,3 +99,4 @@ handleTopicRequest("votingforcomment", votingforcomment);
 handleTopicRequest("deletecommunity", deletecommunity);
 handleTopicRequest("community_imgs", communityimages);
 handleTopicRequest("noofmembers", noofmembers);
+handleTopicRequest("no_of_posts", noofposts);
