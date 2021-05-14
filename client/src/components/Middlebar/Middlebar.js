@@ -1,7 +1,7 @@
 import React from "react";
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable */
-import { Modal,Alert } from "react-bootstrap";
+import { Modal, Alert } from "react-bootstrap";
 
 import FormControl from "@material-ui/core/FormControl";
 import FormGroup from "@material-ui/core/FormGroup";
@@ -15,110 +15,61 @@ const queryString = require("query-string");
 import Axios from "axios";
 import endPointObj from "../../endPointUrl";
 import post from "../resources/post.png";
-import { Col,NavDropdown, Dropdown } from "react-bootstrap";
+import { Col, NavDropdown, Dropdown } from "react-bootstrap";
 import { Input } from "reactstrap";
 function Middlebar(props) {
   let globalPageNum = 1;
-  const [alert, setAlert] = useState('');
+  const [alert, setAlert] = useState("");
   const [returncomm, setReturncomm] = useState([]);
 
   const [searchcommunity, setsearchcommunity] = useState([]);
   const [openmodel, setopenmodel] = useState(false);
   const [openmodel2, setopenmodel2] = useState(false);
- 
+
   const [searchString, setSearchString] = useState("");
   const [onChangeTriggered, setOnChangeTriggerd] = useState(false);
   const [displayList, setDisplayList] = useState([]);
-  const  [requsers,setrequsers] = useState([]);
-  const  [invusers,setinvusers] = useState([]);
-  const  [approvusers,setapprovusers] = useState([]);
-  const  [invselusers,setselinvusers] = useState([]);
-  const  [commname,setcommname] = useState([]);
-  const  [commname2,setcommname2] = useState([]);
+  const [requsers, setrequsers] = useState([]);
+  const [invusers, setinvusers] = useState([]);
+  const [approvusers, setapprovusers] = useState([]);
+  const [invselusers, setselinvusers] = useState([]);
+  const [commname, setcommname] = useState([]);
+  const [commname2, setcommname2] = useState([]);
 
   const [pageSize, setPageSize] = useState(2);
   const [pageNum, setPageNum] = useState(1);
-  
 
-  const handleReq = (communityname) => {  
-    setcommname2(communityname)
-   console.log(communityname);
-      Axios.post(
-        endPointObj.url + "api/RequestedUsersList",
-        {
-          communityName: communityname,
+  const handleReq = (communityname) => {
+    setcommname2(communityname);
+    console.log(communityname);
+    Axios.post(
+      endPointObj.url + "api/RequestedUsersList",
+      {
+        communityName: communityname,
+      },
+      {
+        headers: {
+          Authorization: "jwt " + sessionStorage.getItem("token"),
         },
-        {
-          headers: {
-            Authorization: "jwt " + sessionStorage.getItem("token"),
-          },
-        }
-      )
-        .then((response) => {
-          console.log(response.data.results);
-          setrequsers(response.data.results);
-        })
-        .catch((e) => {
-          console.log(e);
-        });
+      }
+    )
+      .then((response) => {
+        console.log(response.data.results);
+        setrequsers(response.data.results);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
 
-         setopenmodel(true);
-    };
+    setopenmodel(true);
+  };
 
-  
-
-
-
-
- 
   const handleInv = (communityname) => {
     setcommname(communityname);
-      Axios.post(
-        endPointObj.url + "api/searchUser",
-        {
-          searchString : "",
-        },
-        {
-          headers: {
-            Authorization: "jwt " + sessionStorage.getItem("token"),
-          },
-        }
-      )
-        .then((response) => {
-          console.log(response.data);
-          setinvusers(response.data);
-        })
-        .catch((e) => {
-          console.log(e);
-        });
-   
-
-    setopenmodel2(true);
-    
-
-
-  };
-
-
-  const handleClose = () => {
-    setopenmodel(false);
-  };
-  const handleClose2 = () => {
-    setopenmodel2(false);
-  };
-  
-  const email = useSelector((state) => state.login.username);
-  
-  const getCommunityUser = (pageNum, pageSize) => {  
-    console.log(email);
-    return new Promise((resolve, reject) => {
     Axios.post(
-     endPointObj.url + "api/CommunitiesListByUser",
+      endPointObj.url + "api/searchUser",
       {
-       // senderEmail : email,
-        senderEmail : email,
-        pageNum: pageNum,
-        pageSize: pageSize
+        searchString: "",
       },
       {
         headers: {
@@ -128,37 +79,68 @@ function Middlebar(props) {
     )
       .then((response) => {
         console.log(response.data);
-       
-        setReturncomm(response.data.results);
-       
+        setinvusers(response.data);
       })
       .catch((e) => {
         console.log(e);
       });
+
+    setopenmodel2(true);
+  };
+
+  const handleClose = () => {
+    setopenmodel(false);
+  };
+  const handleClose2 = () => {
+    setopenmodel2(false);
+  };
+
+  const email = useSelector((state) => state.login.username);
+
+  const getCommunityUser = (pageNum, pageSize) => {
+    console.log(email);
+    return new Promise((resolve, reject) => {
+      Axios.post(
+        endPointObj.url + "api/CommunitiesListByUser",
+        {
+          // senderEmail : email,
+          senderEmail: email,
+          pageNum: pageNum,
+          pageSize: pageSize,
+        },
+        {
+          headers: {
+            Authorization: "jwt " + sessionStorage.getItem("token"),
+          },
+        }
+      )
+        .then((response) => {
+          console.log(response.data);
+
+          setReturncomm(response.data.results);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
     });
   };
-  
 
   useEffect(() => {
     getCommunityUser(1, 2);
-    
   }, []);
 
-
   const invite = (communityName) => {
-    let selusers= [];
+    let selusers = [];
     console.log(invselusers);
     console.log(communityName);
-    invselusers.map((com) => 
-       selusers.push(com)
-    )
+    invselusers.map((com) => selusers.push(com));
     console.log(selusers);
 
     Axios.post(
       endPointObj.url + "api/inviteToJoinCommunity",
       {
-        email :  selusers,
-        communityName : communityName, 
+        email: selusers,
+        communityName: communityName,
       },
       {
         headers: {
@@ -167,26 +149,22 @@ function Middlebar(props) {
       }
     )
       .then((response) => {
-        console.log(response.data); 
-        setAlert(response.data);       
+        console.log(response.data);
+        setAlert(response.data);
       })
       .catch((e) => {
         console.log(e);
       });
-   
   };
-
- 
-  
 
   const approve = () => {
     console.log("in aprrove");
-    console.log(approvusers)
-    approvusers.map((com) => {
+    console.log(approvusers);
+    // approvusers.map((com) => {
     Axios.post(
-      endPointObj.url + "api/acceptInvitationByUser",
+      endPointObj.url + "api/acceptRequestToJoinCommunity",
       {
-        email : com,
+        email: approvusers,
         communityName: commname2,
       },
       {
@@ -196,13 +174,13 @@ function Middlebar(props) {
       }
     )
       .then((response) => {
-        console.log(response.data);    
-        setAlert(response.data);  
+        console.log(response.data);
+        setAlert(response.data);
       })
       .catch((e) => {
         console.log(e);
       });
-     });
+    // });
   };
   const onChange = (opt, list) => {
     if (opt == null || opt == "undefined") {
@@ -228,58 +206,62 @@ function Middlebar(props) {
     return "";
   };
   const handlearrayuser = (email) => {
-   
-    setapprovusers(approvusers => [...approvusers,email] );
+    setapprovusers((approvusers) => [...approvusers, email]);
   };
 
   const handlearrayuserinv = (email) => {
-    setselinvusers(invselusers=> [...invselusers,email])
+    setselinvusers((invselusers) => [...invselusers, email]);
   };
 
   const onClickNext = (pageNum, pageSize) => {
-    console.log(pageNum)
-    globalPageNum = pageNum + 1
-    
-    setPageNum(globalPageNum)
+    console.log(pageNum);
+    globalPageNum = pageNum + 1;
 
-    getCommunityUser(globalPageNum, pageSize)
+    setPageNum(globalPageNum);
 
-
-
-  }
+    getCommunityUser(globalPageNum, pageSize);
+  };
 
   const onClickPrev = (pageNum, pageSize) => {
+    if (pageNum > 1) {
+      globalPageNum = pageNum - 1;
+      setPageNum(globalPageNum);
 
-    if(pageNum > 1)
-    {
-    globalPageNum = pageNum - 1
-    setPageNum(globalPageNum)
-
-    getCommunityUser(globalPageNum, pageSize)
+      getCommunityUser(globalPageNum, pageSize);
     }
-  }
-  
+  };
+
   return (
     <div className="App__content">
       <Dropdown className="drop-down">
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
-              {pageSize}
-            </Dropdown.Toggle>
+        <Dropdown.Toggle variant="success" id="dropdown-basic">
+          {pageSize}
+        </Dropdown.Toggle>
 
-            <Dropdown.Menu>
-              <Dropdown.Item onClick={()=>{getCommunityUser(pageNum, 2)}}>
-                2
-              </Dropdown.Item>
-              <Dropdown.Item onClick={()=>{getCommunityUser(pageNum, 5)}}>
-                5
-              </Dropdown.Item>
-              <Dropdown.Item onClick={()=>{getCommunityUser(pageNum, 10)}}>
-                10
-              </Dropdown.Item>
-              
-            </Dropdown.Menu>
-          </Dropdown>
-      {" "}
+        <Dropdown.Menu>
+          <Dropdown.Item
+            onClick={() => {
+              getCommunityUser(pageNum, 2);
+            }}
+          >
+            2
+          </Dropdown.Item>
+          <Dropdown.Item
+            onClick={() => {
+              getCommunityUser(pageNum, 5);
+            }}
+          >
+            5
+          </Dropdown.Item>
+          <Dropdown.Item
+            onClick={() => {
+              getCommunityUser(pageNum, 10);
+            }}
+          >
+            10
+          </Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>{" "}
       <div className="post-title">
         <a className="postname" href="">
           Your Community
@@ -292,7 +274,6 @@ function Middlebar(props) {
         pattern="^[a-zA-Z]+([ ]{1}[a-zA-Z]+)*$"
         title="It can only contain letters, single space character. It must start with letter and cannot end with special character"
       />
-     
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -302,45 +283,40 @@ function Middlebar(props) {
         onHide={handleClose}
       >
         <div class="paper">
-        <Modal.Header closeButton>
-          <Modal.Title>Uses requested to join</Modal.Title>
-        </Modal.Header>
-       
-        <Modal.Body>
-          
-            
-              <div>
+          <Modal.Header closeButton>
+            <Modal.Title>Uses requested to join</Modal.Title>
+          </Modal.Header>
+
+          <Modal.Body>
+            <div>
               {requsers.map((com) => (
                 <header>
-                
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckDefault"
-                    onClick={() => {handlearrayuser(com)}}
-                  />
-                  <label class="form-check-label" for="flexCheckDefault">
-                  <a className="posturl">{com}</a>
-                  </label>
-                </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                      onClick={() => {
+                        handlearrayuser(com);
+                      }}
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      <a className="posturl">{com}</a>
+                    </label>
+                  </div>
                 </header>
-                ))}
-                <Button
-                        
-                          color="primary"
-                         
-                          onClick={() => {
-                            approve();
-                          }}
-                        >
-                          Approve
-                        </Button>
-              </div>
-          
-          
-        </Modal.Body>
+              ))}
+              <Button
+                color="primary"
+                onClick={() => {
+                  approve();
+                }}
+              >
+                Approve
+              </Button>
+            </div>
+          </Modal.Body>
         </div>
       </Modal>
       <Modal
@@ -351,50 +327,47 @@ function Middlebar(props) {
         show={openmodel2}
         onHide={handleClose2}
       >
-      <Modal.Header closeButton>
+        <Modal.Header closeButton>
           <Modal.Title>Select users to invite</Modal.Title>
         </Modal.Header>
-        <Modal.Body >
+        <Modal.Body>
           <div class="info">
-            
-              <div>
+            <div>
               {invusers.map((com) => (
                 <header>
-                
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckDefault"
-                    onClick={() => {handlearrayuserinv(com.email)}}
-                  />
-                  {/* <label class="form-check-label" for="flexCheckDefault"> */}
-                  <label class="form-check-label">
-                  <a className="posturl">{com.email}</a>
-                  <br/>
-                  <a className="posturl">{com.name}</a>
-                  </label>
-                </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                      onClick={() => {
+                        handlearrayuserinv(com.email);
+                      }}
+                    />
+                    {/* <label class="form-check-label" for="flexCheckDefault"> */}
+                    <label class="form-check-label">
+                      <a className="posturl">{com.email}</a>
+                      <br />
+                      <a className="posturl">{com.name}</a>
+                    </label>
+                  </div>
                 </header>
-                ))}
-                <Button
-                          variant="contained"
-                          color="primary"
-                          className="login-button-width"
-                          onClick={() => {
-                            invite(commname);
-                          }}
-                        >
-                         Invite
-                        </Button>
-              </div>
-          
+              ))}
+              <Button
+                variant="contained"
+                color="primary"
+                className="login-button-width"
+                onClick={() => {
+                  invite(commname);
+                }}
+              >
+                Invite
+              </Button>
+            </div>
           </div>
         </Modal.Body>
       </Modal>
-
-
       <div>
         <span>
           {onChangeTriggered == true &&
@@ -417,13 +390,23 @@ function Middlebar(props) {
                     {com.requestedToJoin.length} Users requested to Join
                     <br />
                   </Link> */}
-                  <Button variant="secondary" onClick={() => {handleReq(com.communityName)}}>
-                Requests
-              </Button>
-              <Button variant="secondary" onClick={() => {handleInv(com.communityName)}}>
-                Invite
-              </Button>
-              {/* <Button variant="secondary" onClick={handleOpen (a.communityName)}>
+                  <Button
+                    variant="secondary"
+                    onClick={() => {
+                      handleReq(com.communityName);
+                    }}
+                  >
+                    Requests
+                  </Button>
+                  <Button
+                    variant="secondary"
+                    onClick={() => {
+                      handleInv(com.communityName);
+                    }}
+                  >
+                    Invite
+                  </Button>
+                  {/* <Button variant="secondary" onClick={handleOpen (a.communityName)}>
                 Invite
               </Button> */}
                 </span>
@@ -435,44 +418,43 @@ function Middlebar(props) {
           {onChangeTriggered == false &&
             returncomm.map((com) => (
               <article className="mod-list-width">
-              {/* <article > */}
-              <img src={post} height="55" width="55" class="thumbnail" />
-              <div class="info">
-                <header>
-                  <span className="subreddit-text">
-                    <a className="posturl">{com.communityName}</a>
-                  </span>
-                </header>
-                <div>
-                submitted on {time(com.creationTime)} by{" "}
-    <span class> {com.createdBy}</span>
-    
+                {/* <article > */}
+                <img src={post} height="55" width="55" class="thumbnail" />
+                <div class="info">
+                  <header>
+                    <span className="subreddit-text">
+                      <a className="posturl">{com.communityName}</a>
+                    </span>
+                  </header>
+                  <div>
+                    submitted on {time(com.creationTime)} by{" "}
+                    <span class> {com.createdBy}</span>
+                  </div>
 
+                  <span>
+                    <Button
+                      variant="secondary"
+                      onClick={() => {
+                        handleReq(com.communityName);
+                      }}
+                    >
+                      Approve
+                    </Button>
 
+                    <Button
+                      variant="secondary"
+                      onClick={() => {
+                        handleInv(com.communityName);
+                      }}
+                    >
+                      Invite
+                    </Button>
 
-                </div>
-                
-                
-                
-                
-                
-                <span>
-              
-                <Button variant="secondary" onClick={() => {handleReq(com.communityName)}}>
-               
-                Approve
-              </Button>
-              
-             
-              <Button variant="secondary" onClick={() => {handleInv(com.communityName)}}>
-                Invite
-              </Button>
-            
-              {/* <Button variant="secondary" onClick={handleInv()}>
+                    {/* <Button variant="secondary" onClick={handleInv()}>
                 Invite
               </Button> */}
-                </span>
-              </div>
+                  </span>
+                </div>
               </article>
             ))}
         </span>
@@ -482,27 +464,29 @@ function Middlebar(props) {
             {alert}
           </Alert>
         )}
-        
-        
-        <Button onClick={()=>{onClickNext(pageNum, pageSize)}}>Next</Button> 
-        <Button onClick={()=>{onClickPrev(pageNum, pageSize)}}>Previous</Button> 
 
-
-
+        <Button
+          onClick={() => {
+            onClickNext(pageNum, pageSize);
+          }}
+        >
+          Next
+        </Button>
+        <Button
+          onClick={() => {
+            onClickPrev(pageNum, pageSize);
+          }}
+        >
+          Previous
+        </Button>
       </div>
     </div>
   );
-
-  
-
-
 }
 export default Middlebar;
 
-
-
-
-{/* <article className="row post-width">
+{
+  /* <article className="row post-width">
 
 
 <img src={post} height="55" width="55" class="thumbnail" />
@@ -524,4 +508,5 @@ export default Middlebar;
     </span>
   </div>
 </div>
-</article> */}
+</article> */
+}

@@ -9,7 +9,7 @@ router.post(
   async (req, res) => {
     console.log("Inside COmm");
     kafka.make_request(
-      "checkapprovedstatus",
+      "checkapprovedstatus2",
       req.body,
       function (err, results) {
         console.log("Inside checkapprovedstatus topic");
