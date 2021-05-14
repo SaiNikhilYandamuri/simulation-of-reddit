@@ -79,35 +79,32 @@ io.on("connection", (socket) => {
     callback();
   });
 
-  socket.on(
-    "sendMessage",
-    ({ message, senderEmail, recieverEmail }, callback) => {
-      console.log(socket.id);
-      const user = getUser(socket.id);
-      console.log(user);
-      console.log(message);
-      if (user.user) {
-        io.to(user.user).emit("message", { user: user.name, text: message });
-      }
-      console.log("Helllooooo");
-      console.log(backendServer);
-      axios
-        .post(`${backendServer}/addMessages`, {
-          message,
-          senderEmail,
-          recieverEmail,
-        })
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-
-      callback();
+  socket.on("sendMessage", ({ message, name, user1 }, callback) => {
+    console.log(socket.id);
+    const user = getUser(socket.id);
+    console.log(user);
+    console.log(message);
+    if (user.user) {
+      io.to(user.user).emit("message", { user: user.name, text: message });
     }
-  );
-  socket.on("disconnect", () => {
+    console.log("Helllooooo");
+    console.log(backendServer);
+    axios
+      .post(`${backendServer}/addMessages`, {
+        message,
+        name,
+        user1: user1,
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    callback();
+  });
+  socket.on("disconnection", () => {
     const user = removeUser(socket.id);
     console.log("User has left!");
   });

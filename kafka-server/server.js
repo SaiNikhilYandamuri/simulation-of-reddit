@@ -71,7 +71,7 @@ handleTopicRequest("requesttojoin_communitys", requestToJoinCommunity);
 handleTopicRequest("create_communitys12", createCommunity);
 
 handleTopicRequest("search_community2", searchCommunity);
-handleTopicRequest("add_messages", addMessages);
+handleTopicRequest("add_messages1", addMessages);
 handleTopicRequest("get_messages", getMessages);
 
 handleTopicRequest("AddPost1", addPost);
