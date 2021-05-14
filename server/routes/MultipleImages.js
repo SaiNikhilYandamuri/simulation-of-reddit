@@ -14,10 +14,12 @@ router.post(
     "/multipleImages",upload.array("file"),
     passport.authenticate("jwt", { session: false }),
     async (req, res) => {
+      console.log("GOT REQUEST FILES")
       console.log("Inside multiple image upload");
-      console.log("Got image body",req.body)
+      console.log("Got image body111",req.body)
       console.log("Got file details:",req.files)
       console.log("Length of request",req.files.length)
+      console.log("Got community name to backend",req.body.community_name)
       let url_array=[]
       for(let i=0;i<req.files.length;i++)
       {
@@ -32,24 +34,24 @@ router.post(
       }
       console.log("URL ARRAY:",url_array)
 
-    // var data={
-    //     email:req.body.email,
-    //     url:result.Location
-    // }
+    var data={
+        community_name:req.body.community_name,
+        url_array:url_array
+    }
 
-    //   kafka.make_request("upload_image", data, function (err, results) {
-    //     console.log("Inside upload_image topic");
-    //     if (err) {
-    //       console.log("Inside err");
-    //       res.json({
-    //         status: "error",
-    //         msg: "Error",
-    //       });
-    //       res.status(400).end();
-    //     } else {
-    //       res.status(200).send({"message":"IMage uploaded successfully!"});
-    //     }
-    //   });
+      kafka.make_request("community_imgs", data, function (err, results) {
+        console.log("Inside upload_image topic");
+        if (err) {
+          console.log("Inside err");
+          res.json({
+            status: "error",
+            msg: "Error",
+          });
+          res.status(400).end();
+        } else {
+          res.status(200).send({"message":"IMage uploaded successfully!"});
+        }
+      });
     }
   );
 

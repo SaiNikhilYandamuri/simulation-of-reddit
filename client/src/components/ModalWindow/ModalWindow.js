@@ -132,6 +132,7 @@ export default function ModalWindow() {
   const [alertMessage, setAlertMessage] = React.useState("");
   const [descriptionState, setDescriptionNameState] = React.useState("");
   const [communityNameState, setCommunityNameState] = React.useState("");
+  const [selectedFiles, setSelectedFiles] = React.useState([]);
 
   const ITEM_HEIGHT = 48;
   const ITEM_PADDING_TOP = 8;
@@ -226,10 +227,10 @@ export default function ModalWindow() {
     return flag;
   };
 
-  const createCommunity = (communityName, topics, rules, description) => {
+  const createCommunity = async (communityName, topics, rules, description) => {
     // console.log(commName, topics, rules, description);
 
-    Axios.post(
+    await Axios.post(
       endPointObj.url + "api/createCommunity",
       {
         createdBy: email,
@@ -256,6 +257,37 @@ export default function ModalWindow() {
           setAlertMessage(err.response.data);
         }
       });
+    let formData=new FormData();
+    console.log("Printing state of files",selectedFiles)
+    
+    for(let i=0;i<selectedFiles.length;i++)
+    {
+      formData.append("file",selectedFiles[i])
+    }
+    console.log("Done with appending")
+    
+    await Axios.post(
+      endPointObj.url + "api/multipleImages",
+      {formData,
+      community_name:communityName},
+      {
+        headers: {
+          Authorization: "jwt " + sessionStorage.getItem("token"),
+        },
+      }
+    )
+      .then((response) => {
+       
+        console.log("successfully uploaded images to community");
+      })
+      .catch((err) => {
+        console.error("an error occured");
+        
+      });
+  
+        
+      
+      
   };
 
   const signUp = (name, email, password) => {
@@ -353,6 +385,19 @@ export default function ModalWindow() {
     console.log(event.target.value);
     setTopicName(event.target.value);
   };
+
+  const imgChangeHandler = (event) => {
+    let image_array=[]
+    for(let i=0;i<event.target.files.length;i++)
+    {
+    
+    image_array.push(event.target.files[i])
+    console.log("Current file",event.target.files[i])
+    }
+    console.log("Printing all image array",image_array)
+    setSelectedFiles(image_array)
+    
+	};
 
   useEffect(() => {
     setPasswordValidTextState("");
@@ -637,6 +682,17 @@ export default function ModalWindow() {
                           color="secondary"
                         />
                       </Grid>
+
+                      <Grid item xs={12}>
+                      
+                      <input type="file" name="file" multiple="multiple" onChange={imgChangeHandler} />
+                    
+
+                         
+                      </Grid>
+
+
+
                       <Grid item xs={12} className="comm-cancel-create">
                         <Button
                           color="primary"
