@@ -20,7 +20,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MailIcon from "@material-ui/icons/Mail";
 import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer";
-
+import mod from "../resources/mod.png";
 import MoreIcon from "@material-ui/icons/MoreVert";
 
 const useStyles = makeStyles((theme) => ({
@@ -41,7 +41,11 @@ export default function NavBar() {
       pathname: "/searchcommunity",
     });
   };
-
+  const redirectToMod = () => {
+    history.push({
+      pathname: "/communitymoderation",
+    });
+  };
   const history = useHistory();
 
   const classes = useStyles();
@@ -86,6 +90,14 @@ export default function NavBar() {
           </Typography>
           {sessionStorage.getItem("token") !== null && (
             <div className={classes.sectionDesktop}>
+              <img
+              src={mod}
+              className="reddit-image"
+             
+              onClick={() => {
+                redirectToMod();
+              }}
+            />
               <IconButton aria-label="show 4 new mails" color="inherit">
                 <Badge color="secondary">
                   <QuestionAnswerIcon

@@ -99,8 +99,18 @@
   height :20px
 }
 
+.moderation-main-bg{
+  background-color: blue !important;
+}
+
 .form-control {
   width: 90%;
   margin-left: 5px;
   height :20px
+}
+
+.moderation-bg{
+  flex-grow: 2 !important;
+  min-width: 100vh !important; 
+  background-color: #dae0e6 !important;
 }

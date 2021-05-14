@@ -1,22 +1,28 @@
 import React from "react";
 import UsersBar from "../UsersBar/UsersBar";
 import Middlebar from "../Middlebar/Middlebar"
+import AboutModeration from "../AboutModeration/AboutModeration"
 import NavigationBar from "../NavBar/NavBar";
+import "./CommunityModeration.css"
+import { Nav, Col, Button, NavDropdown, Dropdown } from "react-bootstrap";
+
 function CommunityModeration() {
   return (
     <div>
-      <div className="reddit-body">
+      <div className="reddit-body moderation-bg">
       <NavigationBar></NavigationBar>
+      
         <div className="container">
           <div className="row">
           
-          <div className="col-md-9">
+          <div className="col-md-12 moderation-bg">
              <Middlebar></Middlebar>
           </div>
             <hr />           
-            {/* <div className="col-md-3">
-              <UsersBar></UsersBar>             
-            </div> */}
+             <div className="col-md-3 moderation-bg">
+              {/* <UsersBar></UsersBar>              */}
+             
+            </div> 
              
           </div>
         </div>
