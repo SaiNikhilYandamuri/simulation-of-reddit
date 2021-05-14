@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Post = require("../model/Post");
+const Community = require("../model/Community");
 
 async function handle_request(msg, callback) {
   console.log("123");
@@ -27,10 +28,20 @@ async function handle_request(msg, callback) {
       if (err) {
         console.log(err);
       } else {
-        callback(null, { message: "Post added" });
+        Community.findOneAndUpdate(
+          { communityName },
+          { $inc: { numberOfPosts: 1 } },
+          function (err, doc) {
+            if (err) {
+              callback(null, err);
+            } else {
+              callback(null, { message: "Post added" });
+            }
+          }
+        );
+        // callback(null, { message: "Post added" });
       }
     });
-
   } else if (flag === "url") {
     const post = new Post({
       createdByEmail: createdByEmail,
@@ -45,11 +56,20 @@ async function handle_request(msg, callback) {
       if (err) {
         console.log(err);
       } else {
-        console.log("url added post");
-        callback(null, { message: "Post added" });
+        Community.findOneAndUpdate(
+          { communityName },
+          { $inc: { numberOfPosts: 1 } },
+          function (err, doc) {
+            if (err) {
+              callback(null, err);
+            } else {
+              callback(null, { message: "Post added" });
+            }
+          }
+        );
+        // callback(null, { message: "Post added" });
       }
     });
-
   } else if (flag === "text") {
     const post = new Post({
       createdByEmail: createdByEmail,
@@ -64,11 +84,21 @@ async function handle_request(msg, callback) {
       if (err) {
         console.log(err);
       } else {
-        callback(null, { message: "Post added" });
+        Community.findOneAndUpdate(
+          { communityName },
+          { $inc: { numberOfPosts: 1 } },
+          function (err, doc) {
+            if (err) {
+              callback(null, err);
+            } else {
+              callback(null, { message: "Post added" });
+            }
+          }
+        );
+        // callback(null, { message: "Post added" });
       }
     });
   }
-
 }
 
 exports.handle_request = handle_request;
