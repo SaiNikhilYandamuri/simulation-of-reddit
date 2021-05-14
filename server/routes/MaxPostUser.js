@@ -4,12 +4,12 @@ var kafka = require("../kafka/client");
 const passport = require("passport");
 
 router.post(
-  "/noofposts",
+  "/maxpostuser",
   // passport.authenticate("jwt", { session: false }),
   async (req, res) => {
-    console.log("Inside Number of Posts per community");
-    kafka.make_request("no_of_posts", req.body, function (err, results) {
-      console.log("Inside no of posts topic");
+    console.log("Inside max post user");
+    kafka.make_request("max_post_user", req.body, function (err, results) {
+      console.log("Inside max post topic");
       if (err) {
         console.log("Inside err");
         res.json({

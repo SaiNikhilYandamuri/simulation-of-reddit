@@ -31,19 +31,22 @@ const deletecommunity = require("./services/DeleteCommunity");
 
 const communityimages = require("./services/MultiImgCommunity");
 const noofmembers = require("./services/NoOfMembers");
-<<<<<<< HEAD
-const noofposts=require("./services/NoOfPosts")
-const usermaxpost=require("./services/UserMaxPost")
+
 const mostupvotedpost=require("./services/MostUpvotedPost")
 
 
-=======
 
 const noofposts = require("./services/NoOfPosts");
 const usermaxpost = require("./services/UserMaxPost");
 
 const getinvitations = require("./services/GetInvitations");
->>>>>>> 4d78213cbd6f70b2faebc9ddc2cbdad0592fb171
+
+const maxpostcommunity=require("./services/MaxPostCommunity")
+
+const maxpostuser=require("./services/MaxPostUser")
+
+const addpostimage=require("./services/AddPostImage")
+
 
 function handleTopicRequest(topic_name, fname) {
   //var topic_name = 'root_topic';
@@ -114,13 +117,18 @@ handleTopicRequest("deletecommunity", deletecommunity);
 handleTopicRequest("community_imgs", communityimages);
 handleTopicRequest("noofmembers", noofmembers);
 
-handleTopicRequest("no_of_posts", noofposts);
+
 handleTopicRequest("user_max_post", usermaxpost);
-<<<<<<< HEAD
+
 handleTopicRequest("most_upvoted_post", mostupvotedpost);
-=======
+
 
 handleTopicRequest("no_of_posts", noofposts);
 
 handleTopicRequest("getInvitations", getinvitations);
->>>>>>> 4d78213cbd6f70b2faebc9ddc2cbdad0592fb171
+
+handleTopicRequest("max_post_community", maxpostcommunity);
+
+handleTopicRequest("max_post_user", maxpostuser);
+
+handleTopicRequest("add_image_post", addpostimage);

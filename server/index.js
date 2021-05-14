@@ -47,9 +47,9 @@ const noOfMembers=require("./routes/NoOfMembers")
 const noOfPosts=require("./routes/NoOfPosts")
 const UserMaxPost=require("./routes/UserMaxPost")
 const MostUpvotedPost=require("./routes/MostUpvotedPost")
-
-
-
+const MaxPostCommunity=require("./routes/MaxPostCommunity")
+const MaxPostuser=require("./routes/MaxPostUser")
+const AddPostImage=require("./routes/AddPostImage")
 
 app.use(
   cors({
@@ -161,14 +161,14 @@ app.use("/api", noOfMembers);
 
 app.use("/api", noOfPosts);
 app.use("/api", UserMaxPost);
-<<<<<<< HEAD
+
 app.use("/api", MostUpvotedPost);
-=======
-
-
-app.use("/api", noOfPosts);
+app.use("/api", MaxPostCommunity);
 
 app.use("/api", getInvitations);
 
+app.use("/api", MaxPostuser);
 
->>>>>>> 4d78213cbd6f70b2faebc9ddc2cbdad0592fb171
+app.use("/api", AddPostImage);
+
+

@@ -23,7 +23,7 @@ async function handle_request(msg, callback) {
   //     }
   //   }
   // );
- 
+
   const allusers= await Community.find({createdBy:user_email},{communityName:1,numberOfMembers:1}
   , (error, allusers) => {
       if (error) {

@@ -6,34 +6,26 @@ const Post = require("../model/Post");
  
   async function handle_request(msg, callback) {
         user_email=msg.user_email
+        await Community.find({createdBy:user_email},{communityName:1,numberOfPosts:1})
+    .then((result, error) => {
+        console.log("YOLO")
+        console.log(error);
+    
+        if (error) {
+          callback(null, error);
+        } else {
+          
+          console.log("HELLO WORLD")
+         
+          console.log("Community with max posts",result)
+          callback(null, result);
+        }
+      });
+  }
         
     
 
    
-    const all_posts= await Post.aggregate(
-      [
-        
-        {
-          $group :{
-            
-              _id : "$communityName",
-              count: { $sum: 1 }
-           
-         }
-        }
-       ]
-         
-      , (error, all_posts) => {
-        if (error) {
-          callback(null, error);
-        }
-        if (all_posts) {
-            console.log("Got count")
-          console.log(all_posts);
-          callback(null, all_posts);
-        }
-      }
-    );
-  }
+    
   
   exports.handle_request = handle_request;
