@@ -70,7 +70,9 @@ export default function InvitationPage() {
   return (
     <div className="invite-page">
       <NavBar />
-      <h3>Invitations</h3>
+      <center>
+        <h3>Invitations</h3>
+      </center>
       <ListGroup>
         {invitations.map((ele) => (
           <div>
