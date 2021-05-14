@@ -21,13 +21,17 @@ import endPointObj from "../../endPointUrl";
 function AnalyticsPage() {
   const [dataMembers, setDataMembers] = React.useState([]);
   const [dataPostMembers, setdataPostMembers] = React.useState([]);
+  const [mostUpvotedPost, setdatamostUpvotedPost] = React.useState("");
+  const [mostUpvotedPostCommunityName, setdatamostUpvotedPostCommunityName] = React.useState("");
+  const [maxNoOfPost, setdatamaxNoOfPost] = React.useState("");
+  const [communityWithMaxPost, setdatacommunityWithMaxPost] = React.useState("");
   const name = useSelector((state) => state.login.username);
 
   const getNoOfMembers = () => {
     console.log("in get no of members");
-    Axios.get(
+    Axios.post(
       endPointObj.url + "api/noofmembers",
-      { email: name },
+      { user_email: name },
       {
         headers: {
           Authorization: "jwt" + sessionStorage.getItem("token"),
@@ -46,9 +50,9 @@ function AnalyticsPage() {
 
   const getNoOfPosts = () => {
     console.log("in get no of post");
-    Axios.get(
+    Axios.post(
       endPointObj.url + "api/noofposts",
-      { email: name },
+      { user_email: name },
       {
         headers: {
           Authorization: "jwt" + sessionStorage.getItem("token"),
@@ -65,9 +69,82 @@ function AnalyticsPage() {
       });
   };
 
+
+
+
+  const getMostUpvotedPost = () => {
+    console.log("in getMostUpvotedPost");
+    Axios.post(
+      endPointObj.url + "api/mostupvotedpost",
+      { user_email: name },
+      {
+        headers: {
+          Authorization: "jwt" + sessionStorage.getItem("token"),
+        },
+      }
+    )
+      .then((response) => {
+        console.log(response.data);
+        console.log(response.data.postTitle);
+        setdatamostUpvotedPost(response.data.postTitle);
+        console.log(mostUpvotedPost);
+        setdatamostUpvotedPostCommunityName(response.data.communityName);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+
+  const getMaxNoOfPost = () => {
+    console.log("in get no of post");
+    Axios.post(
+      endPointObj.url + "api/maxpostuser",
+      { user_email: name },
+      {
+        headers: {
+          Authorization: "jwt" + sessionStorage.getItem("token"),
+        },
+      }
+    )
+      .then((response) => {
+        console.log(response.data);
+        console.log(response.data._id);
+        console.log(response.data._id.member);
+        setdatamaxNoOfPost(response.data._id.member);
+        console.log(dataPostMembers);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+
+  const getCommunityWithMaxPost = () => {
+    console.log("in get no of post");
+    Axios.post(
+      endPointObj.url + "api/maxpostcommunity",
+      { user_email: name },
+      {
+        headers: {
+          Authorization: "jwt" + sessionStorage.getItem("token"),
+        },
+      }
+    )
+      .then((response) => {
+        console.log(response.data);
+        setdatacommunityWithMaxPost(response.data.communityName);
+        // console.log(dataPostMembers);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+
   useEffect(() => {
     getNoOfMembers();
     getNoOfPosts();
+    getMostUpvotedPost();
+    getMaxNoOfPost();
+    getCommunityWithMaxPost();
   }, []);
 
   return (
@@ -122,22 +199,22 @@ function AnalyticsPage() {
                     }}
                   >
                     <CartesianGrid strokeDasharray="2 2" />
-                    <XAxis dataKey="_id" />
+                    <XAxis dataKey="communityName" />
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="count" fill="#8884d8" />
+                    <Bar dataKey="numberOfPosts" fill="#8884d8" />
                     {/* <Bar dataKey="uv" fill="#82ca9d" /> */}
                   </BarChart>
                 </center>
               </div>
               <div class="col">
-                <strong>OTHER STATS</strong>
-                -Most Upvoted Post:
+                <strong><h3>OTHER STATISTICS</h3></strong><br></br><h5>
+                <strong>-</strong>Most Upvoted Post is <strong>{mostUpvotedPost}</strong> from community <strong>{mostUpvotedPostCommunityName}</strong>
                 <br></br>
-                -Maximum Number of Post Created by:
+                <strong>-</strong>Maximum Number of Post Created by: <strong>{maxNoOfPost}</strong>
                 <br></br>
-                -Community with maximum posts:
+                <strong>-</strong>Community with maximum posts: <strong>{communityWithMaxPost}</strong></h5>
               </div>
             </div>
           </div>

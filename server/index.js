@@ -42,10 +42,15 @@ const server = http.createServer(app);
 const io = socketio(server);
 const leaveCommunity = require("./routes/LeaveCommunity");
 const votingForComments = require("./routes/VotingForComments");
-const multiImages = require("./routes/MultipleImages");
-const noOfMembers = require("./routes/NoOfMembers");
-const noOfPosts = require("./routes/NoOfPosts");
-const UserMaxPost = require("./routes/UserMaxPost");
+const multiImages=require("./routes/MultipleImages")
+const noOfMembers=require("./routes/NoOfMembers")
+const noOfPosts=require("./routes/NoOfPosts")
+const UserMaxPost=require("./routes/UserMaxPost")
+const MostUpvotedPost=require("./routes/MostUpvotedPost")
+const MaxPostCommunity=require("./routes/MaxPostCommunity")
+const MaxPostuser=require("./routes/MaxPostUser")
+const AddPostImage=require("./routes/AddPostImage")
+
 
 app.use(
   cors({
@@ -155,8 +160,17 @@ app.use("/api", deleteCommunity);
 app.use("/api", multiImages);
 app.use("/api", noOfMembers);
 
-app.use("/api", noOfPosts);
 app.use("/api", UserMaxPost);
+
+app.use("/api", MostUpvotedPost);
+app.use("/api", MaxPostCommunity);
+
+
+app.use("/api", MaxPostuser);
+
+app.use("/api", AddPostImage);
+
+
 
 app.use("/api", noOfPosts);
 
