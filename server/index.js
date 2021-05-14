@@ -51,9 +51,10 @@ const MaxPostCommunity=require("./routes/MaxPostCommunity")
 const MaxPostuser=require("./routes/MaxPostUser")
 const AddPostImage=require("./routes/AddPostImage")
 
+
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: "*",
     methods: ["GET", "POST"],
     credentials: true,
   })
@@ -159,16 +160,18 @@ app.use("/api", deleteCommunity);
 app.use("/api", multiImages);
 app.use("/api", noOfMembers);
 
-app.use("/api", noOfPosts);
 app.use("/api", UserMaxPost);
 
 app.use("/api", MostUpvotedPost);
 app.use("/api", MaxPostCommunity);
 
-app.use("/api", getInvitations);
 
 app.use("/api", MaxPostuser);
 
 app.use("/api", AddPostImage);
 
 
+
+app.use("/api", noOfPosts);
+
+app.use("/api", getInvitations);
