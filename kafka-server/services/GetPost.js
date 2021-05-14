@@ -57,7 +57,7 @@ async function handle_request(msg, callback) {
             } else {
               console.log("Inside Else of result");
               console.log(result);
-              posts_array.push(result);
+              posts_array = [...posts_array, ...result];
             }
           });
       }
@@ -65,7 +65,6 @@ async function handle_request(msg, callback) {
       break;
 
     case "numberOfUpvotesDesc":
-     
       for (let i = 0; i < joined_community_array.length; i++) {
         await Post.find({ communityName: joined_community_array[i] })
           .sort({ numberOfUpvotes: -1 })
@@ -75,7 +74,7 @@ async function handle_request(msg, callback) {
             } else {
               console.log("Inside Else of result");
               console.log(result);
-              posts_array.push(result);
+              posts_array = [...posts_array, ...result];
             }
           });
       }
@@ -92,7 +91,7 @@ async function handle_request(msg, callback) {
             } else {
               console.log("Inside Else of result");
               console.log(result);
-              posts_array.push(result);
+              posts_array = [...posts_array, ...result];
             }
           });
       }
@@ -109,7 +108,7 @@ async function handle_request(msg, callback) {
             } else {
               console.log("Inside Else of result");
               console.log(result);
-              posts_array.push(result);
+              posts_array = [...posts_array, ...result];
             }
           });
       }
@@ -126,7 +125,7 @@ async function handle_request(msg, callback) {
             } else {
               console.log("Inside Else of result");
               console.log(result);
-              posts_array.push(result);
+              posts_array = [...posts_array, ...result];
             }
           });
       }

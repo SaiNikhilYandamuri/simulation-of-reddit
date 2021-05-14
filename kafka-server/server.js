@@ -95,7 +95,7 @@ handleTopicRequest(
   ListOfUserJoinedCommunityCreatedByUser
 );
 handleTopicRequest("user_search", usersearch);
-handleTopicRequest("add_comment1", addcomment);
+handleTopicRequest("add_comment2", addcomment);
 handleTopicRequest("get_comments", getcomment);
 handleTopicRequest("getPostById", getpostbyid);
 handleTopicRequest("getUserCommunities", getusercommunities);
