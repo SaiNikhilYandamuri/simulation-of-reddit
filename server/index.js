@@ -45,6 +45,7 @@ const votingForComments = require("./routes/VotingForComments");
 const multiImages=require("./routes/MultipleImages")
 const noOfMembers=require("./routes/NoOfMembers")
 const noOfPosts=require("./routes/NoOfPosts")
+const UserMaxPost=require("./routes/UserMaxPost")
 
 
 
@@ -160,3 +161,4 @@ app.use("/api", deleteCommunity);
 app.use("/api", multiImages);
 app.use("/api", noOfMembers);
 app.use("/api", noOfPosts);
+app.use("/api", UserMaxPost);
