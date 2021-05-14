@@ -14,6 +14,7 @@ import Paper from "@material-ui/core/Paper";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Axios from "axios";
+import jwt_decode from "jwt-decode";
 import endPointObj from "../../endPointUrl";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
@@ -256,19 +257,17 @@ export default function ModalWindow() {
           setAlertMessage(err.response.data);
         }
       });
-    let formData=new FormData();
-    console.log("Printing state of files",selectedFiles)
-    
-    for(let i=0;i<selectedFiles.length;i++)
-    {
-      formData.append("file",selectedFiles[i])
+    let formData = new FormData();
+    console.log("Printing state of files", selectedFiles);
+
+    for (let i = 0; i < selectedFiles.length; i++) {
+      formData.append("file", selectedFiles[i]);
     }
-    console.log("Done with appending")
-    
+    console.log("Done with appending");
+
     await Axios.post(
       endPointObj.url + "api/multipleImages",
-      {formData,
-      community_name:communityName},
+      { formData, community_name: communityName },
       {
         headers: {
           Authorization: "jwt " + sessionStorage.getItem("token"),
@@ -276,17 +275,11 @@ export default function ModalWindow() {
       }
     )
       .then((response) => {
-       
         console.log("successfully uploaded images to community");
       })
       .catch((err) => {
         console.error("an error occured");
-        
       });
-  
-        
-      
-      
   };
 
   const signUp = (name, email, password) => {
@@ -320,6 +313,8 @@ export default function ModalWindow() {
       })
         .then((response) => {
           sessionStorage.setItem("token", response.data.token.split(" ")[1]);
+          const decodedToken = jwt_decode(response.data.token.split(" ")[1]);
+          sessionStorage.setItem("name", decodedToken.name);
           dispatch(setUser(email, true));
           history.push({
             pathname: "/home",
@@ -388,17 +383,14 @@ export default function ModalWindow() {
   };
 
   const imgChangeHandler = (event) => {
-    let image_array=[]
-    for(let i=0;i<event.target.files.length;i++)
-    {
-    
-    image_array.push(event.target.files[i])
-    console.log("Current file",event.target.files[i])
+    let image_array = [];
+    for (let i = 0; i < event.target.files.length; i++) {
+      image_array.push(event.target.files[i]);
+      console.log("Current file", event.target.files[i]);
     }
-    console.log("Printing all image array",image_array)
-    setSelectedFiles(image_array)
-    
-	};
+    console.log("Printing all image array", image_array);
+    setSelectedFiles(image_array);
+  };
 
   useEffect(() => {
     setPasswordValidTextState("");
@@ -685,14 +677,13 @@ export default function ModalWindow() {
                       </Grid>
 
                       <Grid item xs={12}>
-                      
-                      <input type="file" name="file" multiple="multiple" onChange={imgChangeHandler} />
-                    
-
-                         
+                        <input
+                          type="file"
+                          name="file"
+                          multiple="multiple"
+                          onChange={imgChangeHandler}
+                        />
                       </Grid>
-
-
 
                       <Grid item xs={12} className="comm-cancel-create">
                         <Button
