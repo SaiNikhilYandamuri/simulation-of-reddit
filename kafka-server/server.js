@@ -65,7 +65,7 @@ handleTopicRequest("create_communitys12", createCommunity);
 handleTopicRequest("search_community2", searchCommunity);
 handleTopicRequest("add_messages", addMessages);
 handleTopicRequest("get_messages", getMessages);
-handleTopicRequest("add_post", addPost);
+handleTopicRequest("addPost1", addPost);
 handleTopicRequest("get_post", getPost);
 handleTopicRequest("invitetojoin_community", inviteToJoinCommunity);
 handleTopicRequest("acceptinvitationbyuser", acceptInvitationByUser);

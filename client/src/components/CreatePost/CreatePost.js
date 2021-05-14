@@ -45,7 +45,7 @@ function CreatePost() {
       Axios.post(
         endPointObj.url + "api/getUserCommunities",
         {
-          email: "nikhil12345@reditt.com",
+          email: email,
         },
         {
           headers: {
@@ -78,7 +78,7 @@ function CreatePost() {
       Axios.post(
         endPointObj.url + "api/createPost",
         {
-          createdByEmail: "nikhil12345@reddit.com",
+          createdByEmail: email,
           communityName: community_name,
           postTitle: post_title,
           flag: type,

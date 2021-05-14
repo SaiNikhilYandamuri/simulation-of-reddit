@@ -43,7 +43,7 @@ function HomePage() {
       Axios.post(
         endPointObj.url + "api/getPost",
         {
-          communityName: "HTML Tricks",
+          userEmail: email,
         },
         {
           headers: {
@@ -77,6 +77,14 @@ function HomePage() {
     });
   };
 
+  const upVoteClickCommHome = (name) => {
+    console.log(name);
+
+    getPosts().then((result) => {
+      console.log("fetched posts");
+    });
+  };
+
   return (
     <div>
       <div className="reddit-body">
@@ -85,15 +93,21 @@ function HomePage() {
             <hr />
             <div className="col-md-9">
               {/* Remind about clash in csss !!!!!!!!!!!!!!!!!!!! */}
-              
+
               {posts.map((post) => (
                 <PostTile
                   postTitle={post.postTitle}
                   // text={post.text}
-                  creationtime={post.creationTime}
+                  upVoteClickCommHome={upVoteClickCommHome}
+                  postTitle={post.postTitle}
+                  votes={
+                    parseInt(post.numberOfUpvotes) -
+                    parseInt(post.numberOfDownvotes)
+                  }
+                  text={post.text}
+                  id={post._id}
                   createdByEmail={post.createdByEmail}
-                  communityName={post.communityName}
-                  numberOfUpvotes={post.numberOfUpvotes}
+                  commName={post.communityName}
                 ></PostTile>
               ))}
             </div>
