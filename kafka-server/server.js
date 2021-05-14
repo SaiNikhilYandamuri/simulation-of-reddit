@@ -67,7 +67,7 @@ function handleTopicRequest(topic_name, fname) {
   });
 }
 
-handleTopicRequest("requesttojoin_communitys", requestToJoinCommunity);
+handleTopicRequest("requesttojoin_communitys1", requestToJoinCommunity);
 handleTopicRequest("create_communitys12", createCommunity);
 
 handleTopicRequest("search_community2", searchCommunity);
@@ -75,10 +75,10 @@ handleTopicRequest("add_messages1", addMessages);
 handleTopicRequest("get_messages", getMessages);
 
 handleTopicRequest("AddPost1", addPost);
-handleTopicRequest("getPost", getPost);
+handleTopicRequest("get_post1", getPost);
 handleTopicRequest("invitetojoin_communitys", inviteToJoinCommunity);
 handleTopicRequest("acceptinvitationbyuser1", acceptInvitationByUser);
-handleTopicRequest("getcommunity", getCommunity);
+handleTopicRequest("getcommunity1", getCommunity);
 handleTopicRequest("get_profiles", getProfile);
 handleTopicRequest("update_profiles", updateProfile);
 handleTopicRequest("upload_images", imageUpload);
@@ -86,7 +86,7 @@ handleTopicRequest(
   "approverequesttojoincommunity",
   approverequesttojoincommunity
 );
-handleTopicRequest("checkapprovedstatus", checkapprovedstatus);
+handleTopicRequest("checkapprovedstatus2", checkapprovedstatus);
 handleTopicRequest("votingforcommunity1", votingforcommunity);
 handleTopicRequest("communities_list_by_user", communitiesListByUser);
 handleTopicRequest("requested_user_list", RequestedUsersList);
@@ -95,7 +95,7 @@ handleTopicRequest(
   ListOfUserJoinedCommunityCreatedByUser
 );
 handleTopicRequest("user_search", usersearch);
-handleTopicRequest("add_comment1", addcomment);
+handleTopicRequest("add_comment2", addcomment);
 handleTopicRequest("get_comments", getcomment);
 handleTopicRequest("getPostById", getpostbyid);
 handleTopicRequest("getUserCommunities", getusercommunities);

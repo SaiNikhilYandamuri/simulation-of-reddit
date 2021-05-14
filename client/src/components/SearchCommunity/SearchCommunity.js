@@ -94,19 +94,15 @@ function SearchCommunity() {
     setSortstringdesk(string);
     setOnSortTriggerd(true);
   };
-  const onChange = (opt, list) => {
+  const onChange = (opt, list, pageNum, pageSize) => {
     if (opt == null || opt == "undefined") {
       opt = "";
     }
-
+   console.log(opt.target.value);
     setSearchString(opt.target.value);
-    getSearchCommunity(opt.target.value, " ");
-    // setOnChangeTriggerd(true);
-
-    // let final_list = community.filter((li) => {
-    //   return li.communityName.includes(opt.target.value);
-    // });
-    //setDisplayList(final_list);
+  
+    getSearchCommunity(opt.target.value, " ",pageNum,pageSize);
+  
   };
   const time = (timestamp) => {
     if (timestamp) {
@@ -217,7 +213,7 @@ function SearchCommunity() {
             type="text"
             className="comm-search"
             placeholder="Search Community Name"
-            onChange={(opt) => onChange(opt, community)}
+            onChange={(opt) => onChange(opt, community, pageNum, pageSize)}
             pattern="^[a-zA-Z]+([ ]{1}[a-zA-Z]+)*$"
             title="It can only contain letters, single space character. It must start with letter and cannot end with special character"
           />
@@ -249,51 +245,7 @@ function SearchCommunity() {
       <div>
         <br />
       </div>
-      {/* {onChangeTriggered == true &&
-        displayList.map((com) => (
-          <article className="row post-width">
-            <div class="arrows">
-              {console.log("search comm", com)}
-              <VoteButton
-                type={"community"}
-                id={com.communityName}
-                searchString={searchString}
-                sortdesk={sortdesk}
-                upVoteClick={upVoteClick}
-                votes={
-                  parseInt(com.numberOfUpvotes) -
-                  parseInt(com.numberOfDownvotes)
-                }
-              />
-            </div>
-
-            <img src={post} height="55" width="55" class="thumbnail" />
-            <div class="info">
-              <header>
-                <span className="subreddit-text">
-                  <a className="posturl">{com.description}</a>
-                </span>
-              </header>
-              <div>
-                submitted on {time(com.creationTime)} by{" "}
-                <span class> {com.createdBy}</span>
-                from{" "}
-                <span>
-                  <Nav.Link
-                    data-testid="Group"
-                    key={com.description}
-                    onClick={() => communityPage(com.communityName)}
-                    className="posturl"
-                  >
-                    {com.communityName}
-                  </Nav.Link>
-                </span>
-              </div>
-            </div>
-          </article>
-        ))} */}
-
-      {/* {onChangeTriggered == false && */}
+      
 
       {community.map((com) => (
         <article className="row post-width">
@@ -322,22 +274,24 @@ function SearchCommunity() {
           <div class="info">
             <header>
               <span className="subreddit-text">
-                <a className="posturl">{com.description}</a>
-              </span>
+              <Nav.Link
+                  data-testid="Group"
+                  key={com.communtityName}
+                  onClick={() => communityPage(com.communityName)}
+                  className="links-dashboard-groups"
+                >
+                <a className="posturl">{com.communityName}</a>
+                </Nav.Link>
+              </span>  
             </header>
             <div>
               submitted on {time(com.creationTime)}
               by <span class>{com.createdBy}</span>
               from{" "}
               <span>
-                <Nav.Link
-                  data-testid="Group"
-                  key={com.communtityName}
-                  onClick={() => communityPage(com.communityName)}
-                  className="links-dashboard-groups"
-                >
-                  {com.communityName}
-                </Nav.Link>
+                
+                  {com.description}
+                
               </span>
             </div>
           </div>

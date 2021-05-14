@@ -15,19 +15,25 @@ import {
 } from "recharts";
 import { useHistory } from "react-router-dom";
 import Axios from "axios";
+import { useSelector } from "react-redux";
 import endPointObj from "../../endPointUrl";
 
 function AnalyticsPage() {
   const [dataMembers, setDataMembers] = React.useState([]);
   const [dataPostMembers, setdataPostMembers] = React.useState([]);
+  const name = useSelector((state) => state.login.username);
 
   const getNoOfMembers = () => {
     console.log("in get no of members");
-    Axios.get(endPointObj.url + "api/noofmembers", {
-      headers: {
-        Authorization: "jwt" + sessionStorage.getItem("token"),
-      },
-    })
+    Axios.get(
+      endPointObj.url + "api/noofmembers",
+      { email: name },
+      {
+        headers: {
+          Authorization: "jwt" + sessionStorage.getItem("token"),
+        },
+      }
+    )
       .then((response) => {
         console.log(response.data);
         setDataMembers(response.data);
@@ -40,11 +46,15 @@ function AnalyticsPage() {
 
   const getNoOfPosts = () => {
     console.log("in get no of post");
-    Axios.get(endPointObj.url + "api/noofposts", {
-      headers: {
-        Authorization: "jwt" + sessionStorage.getItem("token"),
-      },
-    })
+    Axios.get(
+      endPointObj.url + "api/noofposts",
+      { email: name },
+      {
+        headers: {
+          Authorization: "jwt" + sessionStorage.getItem("token"),
+        },
+      }
+    )
       .then((response) => {
         console.log(response.data);
         setdataPostMembers(response.data);
@@ -77,8 +87,8 @@ function AnalyticsPage() {
         <div>
           <div class="container">
             <div class="row">
-              <div class="col">1 of 3</div>
-              <div class="col-10">
+              <div class="col"></div>
+              <div class="col-6">
                 <center>
                   <BarChart
                     width={500}
@@ -132,9 +142,7 @@ function AnalyticsPage() {
             </div>
           </div>
         </div>
-        
       </div>
-      
     </div>
   );
 }

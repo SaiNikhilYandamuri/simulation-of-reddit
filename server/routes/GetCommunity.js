@@ -8,7 +8,7 @@ router.post(
   passport.authenticate("jwt", { session: false }),
   async (req, res) => {
     console.log("Inside COmm");
-    kafka.make_request("getcommunity", req.body, function (err, results) {
+    kafka.make_request("getcommunity1", req.body, function (err, results) {
       console.log("Inside getcommunity topic");
       if (err) {
         console.log("Inside err");

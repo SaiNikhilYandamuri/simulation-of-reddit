@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
@@ -46,8 +46,14 @@ const StyledMenuItem = withStyles((theme) => ({
 
 export default function ProfileMenu() {
   const history = useHistory();
+  const [name, setName] = useState("");
 
   const [anchorEl, setAnchorEl] = React.useState(null);
+
+  useEffect(() => {
+    console.log(sessionStorage.getItem("name"));
+    setName(sessionStorage.getItem("name"));
+  });
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -84,15 +90,16 @@ export default function ProfileMenu() {
       >
         <div>
           <Avatar
-            alt="Remy Sharp"
+            alt={name}
             variant="square"
             src="/static/images/avatar/1.jpg"
             className="profile-avatar"
-          />
+          ></Avatar>
         </div>
         &nbsp; &nbsp;
         <i class="fas fa-angle-down icon-down"></i>
       </Button>
+
       <StyledMenu
         id="customized-menu"
         anchorEl={anchorEl}

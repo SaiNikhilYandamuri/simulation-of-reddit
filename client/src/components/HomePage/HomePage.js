@@ -55,7 +55,7 @@ function HomePage() {
           console.log(response);
 
           if (response.data != "") {
-            setPosts(response.data[0]);
+            setPosts(response.data);
           }
         })
         .catch((err) => {

@@ -163,29 +163,27 @@ function Middlebar(props) {
   const approve = () => {
     console.log("in aprrove");
     console.log(approvusers);
-    approvusers.map((com) => {
-      Axios.post(
-        endPointObj.url + "api/acceptInvitationByUser",
-        {
-          email: com,
-          communityName: commname2,
+    // approvusers.map((com) => {
+    Axios.post(
+      endPointObj.url + "api/acceptRequestToJoinCommunity",
+      {
+        email: approvusers,
+        communityName: commname2,
+      },
+      {
+        headers: {
+          Authorization: "jwt " + sessionStorage.getItem("token"),
         },
-        {
-          headers: {
-            Authorization: "jwt " + sessionStorage.getItem("token"),
-          },
-        }
-      )
-        .then((response) => {
-          setopenmodel2(false);
-          setopenmodel(false);
-          console.log(response.data);
-          setAlert(response.data);
-        })
-        .catch((e) => {
-          console.log(e);
-        });
-    });
+      }
+    )
+      .then((response) => {
+        console.log(response.data);
+        setAlert(response.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+    // });
   };
   const onChange = (opt, list) => {
     if (opt == null || opt == "undefined") {
