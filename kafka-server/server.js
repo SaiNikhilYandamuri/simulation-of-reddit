@@ -75,7 +75,7 @@ handleTopicRequest("add_messages1", addMessages);
 handleTopicRequest("get_messages", getMessages);
 
 handleTopicRequest("AddPost1", addPost);
-handleTopicRequest("get_post", getPost);
+handleTopicRequest("getPost", getPost);
 handleTopicRequest("invitetojoin_communitys", inviteToJoinCommunity);
 handleTopicRequest("acceptinvitationbyuser1", acceptInvitationByUser);
 handleTopicRequest("getcommunity", getCommunity);

@@ -11,6 +11,8 @@ function PostTile({
   postTitle,
   createdByEmail,
   creationtime,
+  upvoteMembersTrue,
+  downvoteMembersTrue,
   // text,
   // url,
   // images,
@@ -41,7 +43,13 @@ function PostTile({
     <div>
       <div className="row postcss">
         <div className="col-md-1">
-          <VoteButton id={id} votes={votes} upVoteClick={upVoteClick} />
+          <VoteButton
+            id={id}
+            votes={votes}
+            upVoteClick={upVoteClick}
+            upvoteMembersTrue={upvoteMembersTrue}
+            downvoteMembersTrue={downvoteMembersTrue}
+          />
         </div>
         <div className="col-md-11">
           <span className="subreddit-info">

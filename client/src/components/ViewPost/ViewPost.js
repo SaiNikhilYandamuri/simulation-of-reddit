@@ -168,7 +168,7 @@ function ViewPost() {
                   </span>
                 </span>
                 <hr />
-                <a class="post-title">{postData.postTitle}</a>
+                <p class="post-title">{postData.postTitle}</p>
                 {(function () {
                   if (postData.url != undefined) {
                     return (

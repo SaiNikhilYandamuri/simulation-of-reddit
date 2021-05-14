@@ -102,6 +102,14 @@ function HomePage() {
                   // text={post.text}
                   upVoteClickCommHome={upVoteClickCommHome}
                   postTitle={post.postTitle}
+                  upvoteMembersTrue={
+                    post.upvoteMembers.filter((member) => member === email)
+                      .length > 0
+                  }
+                  downvoteMembersTrue={
+                    post.downvoteMembers.filter((member) => member === email)
+                      .length > 0
+                  }
                   votes={
                     parseInt(post.numberOfUpvotes) -
                     parseInt(post.numberOfDownvotes)
