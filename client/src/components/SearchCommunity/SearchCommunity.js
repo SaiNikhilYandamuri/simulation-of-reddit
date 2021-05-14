@@ -12,6 +12,7 @@ import { useHistory } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 
 function SearchCommunity() {
+  let gPageSize = 0;
   const [community, setSearchcommunity] = useState([]);
   const [pageSize, setPageSize] = useState(2);
   const [pageNum, setPageNum] = useState(1);
@@ -112,10 +113,16 @@ function SearchCommunity() {
     return "";
   };
 
+  const clickNext = (searchString, sortdesk, pageNum, pageSize) => {
+    gPageSize = pageSize + 1;
+    setPageSize(gPageSize);
+    getSearchCommunity(searchString, sortdesk, pageNum, gPageSize);
+  };
+
   const upVoteClick = () => {
     console.log("hello");
     console.log(searchString);
-    getSearchCommunity(searchString, sortdesk);
+    getSearchCommunity(searchString, sortdesk, pageNum, pageSize);
   };
 
   useEffect(() => {
@@ -315,6 +322,27 @@ function SearchCommunity() {
           </div>
         </article>
       ))}
+      <div className="col-sm-12">
+        <center>
+          <Button
+            variant="dark"
+            onClick={() =>
+              clickNext(searchString, sortString, pageNum, pageSize)
+            }
+          >
+            Next
+          </Button>
+          &nbsp;
+          <Button
+            variant="dark"
+            onClick={() =>
+              clickPrev(searchString, sortString, pageNum, pageSize)
+            }
+          >
+            Previous
+          </Button>
+        </center>
+      </div>
     </div>
   );
 }
