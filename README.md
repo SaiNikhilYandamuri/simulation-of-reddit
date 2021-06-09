@@ -1,4 +1,7 @@
 # simulation-of-reddit
+<p align="center">  
+  <img  align="center" src="https://github.com/SaiNikhilYandamuri/simulation-of-reddit/blob/main/client/src/components/resources/redditImage.PNG">
+</p>
 
 Client folder refers to Front-end of Reddit application.
 
