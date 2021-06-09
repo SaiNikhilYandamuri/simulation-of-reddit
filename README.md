@@ -2,7 +2,7 @@
 <p align="center">  
   <img  align="center" src="https://github.com/SaiNikhilYandamuri/simulation-of-reddit/blob/main/client/src/components/resources/redditImage.PNG">
 </p>
-## Inspiration ##
+
  To gain a better understanding of the inner workings, tools and technologies used to develop a distributed full-stack application/product. 
 
 ## What it does
