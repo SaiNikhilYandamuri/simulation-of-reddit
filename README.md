@@ -42,4 +42,4 @@ Multiple image upload functionality while creating post
 Ability to create subreddits.
 More granularity in community moderations page.
 
-### Kindly refer to project report for further details
+
