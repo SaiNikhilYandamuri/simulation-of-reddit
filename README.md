@@ -1,4 +1,4 @@
-# Reddit-Clone
+# Simulation-Of-Reddit
 <p align="center">  
   <img  align="center" src="https://github.com/SaiNikhilYandamuri/simulation-of-reddit/blob/main/client/src/components/resources/redditImage.PNG">
 </p>
