@@ -3,9 +3,9 @@ const S3 = require("aws-sdk/clients/s3");
 
 const bucketName = "redditbucket1";
 const region = "us-east-2";
-const accessKeyId = "AKIA4LA6SJEMRQMJOGYS";
+const accessKeyId = "";
 
-const secretAccessKey = "tp+au5XMAjqWL940RDA8fqA8d0nvev5b9D8ECt0M";
+const secretAccessKey = "";
 
 const s3 = new S3({
   region,
