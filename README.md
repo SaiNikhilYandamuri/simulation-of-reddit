@@ -42,4 +42,10 @@ Multiple image upload functionality while creating post
 Ability to create subreddits.
 More granularity in community moderations page.
 
+## ✨ Contributors 
+<a href="https://github.com/SaiNikhilYandamuri/simulation-of-reddit/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=SaiNikhilYandamuri/simulation-of-reddit" />
+</a>
+
+
 
